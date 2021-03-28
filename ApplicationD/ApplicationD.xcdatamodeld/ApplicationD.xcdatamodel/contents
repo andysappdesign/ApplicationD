@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="PlannedMovies" representedClassName="PlannedMovies" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmdbId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="isPlannedBy" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasPlannedMovies" inverseEntity="User"/>
+    </entity>
+    <entity name="PlannedTV" representedClassName="PlannedTV" syncable="YES">
+        <attribute name="episode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmbdId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="isPlannedBy" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasPlannedTV" inverseEntity="User"/>
+    </entity>
+    <entity name="SugesstedMovies" representedClassName="SugesstedMovies" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmdbId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="suggestedBy" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasBeenSuggestedMovies" inverseEntity="User"/>
+        <relationship name="suggestedTo" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasSuggestedMovies" inverseEntity="User"/>
+    </entity>
+    <entity name="SugesstedTV" representedClassName="SugesstedTV" syncable="YES">
+        <attribute name="episode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmdbId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="suggestedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasBeenSuggestedTV" inverseEntity="User"/>
+        <relationship name="suggestedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasSuggestedTV" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="hasWatchedAnything" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastName" attributeType="String"/>
+        <attribute name="recentPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recentWatchId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recentWatchTitle" optional="YES" attributeType="String"/>
+        <attribute name="sessionID" attributeType="String"/>
+        <attribute name="totalPoints" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userID" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="hasBeenSuggestedMovies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SugesstedMovies" inverseName="suggestedBy" inverseEntity="SugesstedMovies"/>
+        <relationship name="hasBeenSuggestedTV" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SugesstedTV" inverseName="suggestedBy" inverseEntity="SugesstedTV"/>
+        <relationship name="hasPlannedMovies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlannedMovies" inverseName="isPlannedBy" inverseEntity="PlannedMovies"/>
+        <relationship name="hasPlannedTV" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlannedTV" inverseName="isPlannedBy" inverseEntity="PlannedTV"/>
+        <relationship name="hasSuggestedMovies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SugesstedMovies" inverseName="suggestedTo" inverseEntity="SugesstedMovies"/>
+        <relationship name="hasSuggestedTV" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SugesstedTV" inverseName="suggestedTo" inverseEntity="SugesstedTV"/>
+        <relationship name="hasWatchedMovies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WatchedMovies" inverseName="hasBeenWatched" inverseEntity="WatchedMovies"/>
+        <relationship name="hasWatchedTV" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WatchedTV" inverseName="hasBeenWatched" inverseEntity="WatchedTV"/>
+        <relationship name="isFreinds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="isFreinds" inverseEntity="User"/>
+    </entity>
+    <entity name="WatchedMovies" representedClassName="WatchedMovies" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmdbId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="hasBeenWatched" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasWatchedMovies" inverseEntity="User"/>
+    </entity>
+    <entity name="WatchedTV" representedClassName="WatchedTV" syncable="YES">
+        <attribute name="epside" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tmdbId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="hasBeenWatched" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasWatchedTV" inverseEntity="User"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="PlannedMovies" positionX="-18" positionY="36" width="128" height="74"/>
+        <element name="PlannedTV" positionX="-45" positionY="9" width="128" height="104"/>
+        <element name="SugesstedMovies" positionX="-27" positionY="27" width="128" height="89"/>
+        <element name="SugesstedTV" positionX="27" positionY="81" width="128" height="119"/>
+        <element name="User" positionX="-9" positionY="45" width="128" height="314"/>
+        <element name="WatchedMovies" positionX="-9" positionY="45" width="128" height="74"/>
+        <element name="WatchedTV" positionX="9" positionY="63" width="128" height="104"/>
     </elements>
 </model>
