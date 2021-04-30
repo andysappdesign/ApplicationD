@@ -16,9 +16,14 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: userCreationMain(managedObjectContext: moc)) {
-                Text("User Creation")
-            }
+            VStack {
+                NavigationLink(destination: userCreationMain(managedObjectContext: self.moc)) {
+                    Text("User Creation")
+                }
+                Spacer()
+                NavigationLink(destination: Admin(moc: self.moc)) {
+                    Text("Admin")
+                }
             }
         
         }
@@ -26,6 +31,8 @@ struct ContentView: View {
         
 
     }
+    
+}
     
 
 
@@ -35,3 +42,4 @@ struct ContentView_Previews: PreviewProvider {
             .previewDevice("iPhone 12")
     }
 }
+

@@ -1,4 +1,3 @@
-//
 //  TMDBAPI.swift
 //  Application D
 //
@@ -10,6 +9,9 @@ import Alamofire
 import SwiftyJSON
 
 class TMBDAPI {
+    
+    // This class provides the fuctionality to work with TMDb and this app,
+    // this does not provide a GUI but a backend functions
     
     // URL Preperation
     let url = "https://api.themoviedb.org/3/movie/76341?api_key=df8304134d840c4d6d11ca3c0055d5c6"
@@ -27,10 +29,6 @@ class TMBDAPI {
             }
         }
     } // end of searchBasic
-    
-    
-    
-    
     
 } // end of class TMBDAPI
 

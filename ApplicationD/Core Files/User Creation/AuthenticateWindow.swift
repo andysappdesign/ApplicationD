@@ -11,6 +11,13 @@ import WebKit
 struct AuthenticateWindow: View {
     
     var id: String
+    var string: String
+    
+    init(id: String) {
+        self.id = id
+        self.string = "https://www.themoviedb.org/authenticate/\(id)"
+        print(self.string)
+    }
     
     var body: some View {
         HStack {
