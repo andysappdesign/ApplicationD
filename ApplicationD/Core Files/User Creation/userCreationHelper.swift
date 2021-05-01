@@ -15,7 +15,6 @@ public class userCreationHelper: ObservableObject {
     
     // This class is just a backend helper class to help with user creation
 
-    let user: User
     let moc: NSManagedObjectContext
     @Published var screencount = 1
     @Published var alertBool = false
@@ -25,7 +24,6 @@ public class userCreationHelper: ObservableObject {
     
     // MARK: -  init
     init(moc: NSManagedObjectContext) {
-        self.user = User.init(context: moc)
         self.moc = moc
     }
     
@@ -37,7 +35,7 @@ public class userCreationHelper: ObservableObject {
         if first != "" {
             if second != "" {
                 if email != "" {
-                    submitDetails(first: first, second: second, email: email)
+                    submitDetails(first: first, last: second, email: email)
                     screencount = 2
                 } else {
                     alertString = "Please enter a email address"
@@ -60,23 +58,23 @@ public class userCreationHelper: ObservableObject {
     // MARK: - func updateSessionId
     
     private func updateSessionId(_ id : String) {
-        user.sessionID = id
-        print("updated user id to \(user.sessionID)")
+        UserDefaults.standard.setValue(id, forKey: "sessionId")
+        print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
     }
     
     // MARK: - private func sumbitDetails
     
-    private func submitDetails(first: String, second: String, email: String) {
-        user.firstName = first
-        user.lastName = second
-        user.email = email
-        user.userID = UUID()
-        user.recentPoints = 0
-        user.totalPoints = 0
-        user.recentWatchId = 0
-        user.sessionID = ""
-        user.hasWatchedAnything = false
-        print("user \(user.userID) created, firstName = \(user.firstName), lastName = \(user.lastName), email = \(user.email)")
+    private func submitDetails(first: String, last: String, email: String) {
+        let userId = "\(UUID())"
+        UserDefaults.standard.setValue(first, forKey: "firstName")
+        UserDefaults.standard.setValue(last, forKey: "lastName")
+        UserDefaults.standard.setValue(email, forKey: "email")
+        UserDefaults.standard.setValue(userId, forKey: "userId")
+        UserDefaults.standard.setValue(0, forKey: "recentPoints")
+        UserDefaults.standard.setValue(0, forKey: "totalPoints")
+        UserDefaults.standard.setValue(0, forKey: "recentWatchId")
+        UserDefaults.standard.setValue(false, forKey: "hasWatchedAnything")
+        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     
     // MARK: - func request
@@ -102,38 +100,30 @@ public class userCreationHelper: ObservableObject {
     
     // MARK: - func createSession
     
-    private func createSession() -> JSON {
+    private func createSession() {
         let url = "https://api.themoviedb.org/3/authentication/session/new?api_key=df8304134d840c4d6d11ca3c0055d5c6"
         let parameter : [String: String] = [
             "request_token" : requestId
         ]
-        var sessionId = JSON()
         
         AF.request(url, method: .post, parameters: parameter).responseJSON { (response) in
             switch response.result {
             case .success(let value):
-                sessionId = JSON(value)
-                print("success")
+                let json = JSON(value)
+                let sessionId = json["session_id"].stringValue
+                print("success, id = \(sessionId)")
+                self.updateSessionId(sessionId)
             case .failure(let error):
                 print("Error \(error)")
             }
         }
-        return sessionId
     } // end of createSession
     
     // MARK: func finishSetup
     
     func finishSetup() {
-        let sessionIdJSON = createSession()
-        let sessionIdString = sessionIdJSON.rawString()
-        if sessionIdString != "" {
-            updateSessionId(sessionIdString!)
-            try? self.moc.save()
-            print("User setup complete")
-        } else {
-            print("can not complete setup; session Id was empty")
-        }
-        
-        
+        createSession()
+        UserDefaults.standard.setValue(true, forKey: "hasOnboarded")
+        print("User setup complete")
     }
 }

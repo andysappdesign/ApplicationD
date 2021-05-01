@@ -24,10 +24,16 @@ struct Admin: View {
                     deleteItem(indexSet: indexSet)
                 })
             }
+            Button(action: {
+                printUserDefaults()
+            }) {
+                Text("Print User")
+            }
             .toolbar {
                 #if os(iOS)
                 EditButton()
                 #endif
+                
             }
         }
         
@@ -47,6 +53,12 @@ struct Admin: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+    
+    func printUserDefaults() {
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            print("\(key) = \(value) \n")
         }
     }
     

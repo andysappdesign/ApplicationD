@@ -36,6 +36,8 @@
 		22E33FA12610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F912610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift */; };
 		22E33FA22610B4400086A5C5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F922610B4400086A5C5 /* User+CoreDataClass.swift */; };
 		22E33FA32610B4400086A5C5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */; };
+		22ED09FE263D6AD80048ABA6 /* MovieWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */; };
+		22ED0A00263D6AED0048ABA6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED09FF263D6AED0048ABA6 /* ListView.swift */; };
 		55B4378B1772FB93B77595C5 /* Pods_ApplicationD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		22E33F912610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedMovies+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22E33F922610B4400086A5C5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWatchList.swift; sourceTree = "<group>"; };
+		22ED09FF263D6AED0048ABA6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/Core Files/Lists/ListView.swift"; sourceTree = "<absolute>"; };
 		AE52A210C56E98B129C7F859 /* Pods-ApplicationD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationD.release.xcconfig"; path = "Target Support Files/Pods-ApplicationD/Pods-ApplicationD.release.xcconfig"; sourceTree = "<group>"; };
 		B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +154,7 @@
 		22E33F462610B3120086A5C5 /* Core Files */ = {
 			isa = PBXGroup;
 			children = (
+				22ED09FC263D6AAD0048ABA6 /* Lists */,
 				22E33F4E2610B3120086A5C5 /* User Creation */,
 				22E33F532610B3120086A5C5 /* PersistantStorageFiles */,
 			);
@@ -190,6 +195,15 @@
 				22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */,
 			);
 			path = PersistantStorageFiles;
+			sourceTree = "<group>";
+		};
+		22ED09FC263D6AAD0048ABA6 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				22ED09FF263D6AED0048ABA6 /* ListView.swift */,
+				22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,8 +341,10 @@
 				22E33F9F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift in Sources */,
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,
 				22E33F982610B4400086A5C5 /* WatchedTV+CoreDataClass.swift in Sources */,
+				22ED09FE263D6AD80048ABA6 /* MovieWatchList.swift in Sources */,
 				22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
+				22ED0A00263D6AED0048ABA6 /* ListView.swift in Sources */,
 				22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */,
 				22E33F9E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift in Sources */,
 				22E33F642610B3120086A5C5 /* TMDBAPI.swift in Sources */,
