@@ -55,13 +55,6 @@ public class userCreationHelper: ObservableObject {
         
     }
     
-    // MARK: - func updateSessionId
-    
-    private func updateSessionId(_ id : String) {
-        UserDefaults.standard.setValue(id, forKey: "sessionId")
-        print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
-    }
-    
     // MARK: - private func sumbitDetails
     
     private func submitDetails(first: String, last: String, email: String) {
@@ -74,7 +67,7 @@ public class userCreationHelper: ObservableObject {
         UserDefaults.standard.setValue(0, forKey: "totalPoints")
         UserDefaults.standard.setValue(0, forKey: "recentWatchId")
         UserDefaults.standard.setValue(false, forKey: "hasWatchedAnything")
-        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
+//        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     
     // MARK: - func request
@@ -87,9 +80,9 @@ public class userCreationHelper: ObservableObject {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 returnValue = json["request_token"].stringValue
-                print("returnValue = \(returnValue)")
+//                print("returnValue = \(returnValue)")
                 self.requestId = returnValue
             case .failure(let error):
                 print(error)
@@ -97,6 +90,14 @@ public class userCreationHelper: ObservableObject {
             }
         } // end of request
     } // end of requestToken
+    
+    // MARK: func finishSetup
+    
+    func finishSetup() {
+        createSession()
+        UserDefaults.standard.setValue(true, forKey: "hasOnboarded")
+        print("User setup complete")
+    }
     
     // MARK: - func createSession
     
@@ -111,7 +112,7 @@ public class userCreationHelper: ObservableObject {
             case .success(let value):
                 let json = JSON(value)
                 let sessionId = json["session_id"].stringValue
-                print("success, id = \(sessionId)")
+//                print("success, id = \(sessionId)")
                 self.updateSessionId(sessionId)
             case .failure(let error):
                 print("Error \(error)")
@@ -119,11 +120,11 @@ public class userCreationHelper: ObservableObject {
         }
     } // end of createSession
     
-    // MARK: func finishSetup
+    // MARK: - func updateSessionId
     
-    func finishSetup() {
-        createSession()
-        UserDefaults.standard.setValue(true, forKey: "hasOnboarded")
-        print("User setup complete")
+    private func updateSessionId(_ id : String) {
+        UserDefaults.standard.setValue(id, forKey: "sessionId")
+        print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
     }
+    
 }
