@@ -76,6 +76,7 @@
 		22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWatchList.swift; sourceTree = "<group>"; };
 		22ED09FF263D6AED0048ABA6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/Core Files/Lists/ListView.swift"; sourceTree = "<absolute>"; };
+		22ED0A01263D916F0048ABA6 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE52A210C56E98B129C7F859 /* Pods-ApplicationD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationD.release.xcconfig"; path = "Target Support Files/Pods-ApplicationD/Pods-ApplicationD.release.xcconfig"; sourceTree = "<group>"; };
 		B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +131,7 @@
 		22E33F242610B1FB0086A5C5 /* ApplicationD */ = {
 			isa = PBXGroup;
 			children = (
+				22ED0A01263D916F0048ABA6 /* Playground.playground */,
 				22AEA7BB2610CBE0003993FF /* Admin.swift */,
 				22E33F292610B1FC0086A5C5 /* Assets.xcassets */,
 				22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */,

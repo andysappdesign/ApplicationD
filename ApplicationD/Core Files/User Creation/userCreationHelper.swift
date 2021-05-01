@@ -114,6 +114,7 @@ public class userCreationHelper: ObservableObject {
                 let sessionId = json["session_id"].stringValue
 //                print("success, id = \(sessionId)")
                 self.updateSessionId(sessionId)
+                self.getTMDbAccount(sessionId)
             case .failure(let error):
                 print("Error \(error)")
             }
@@ -126,5 +127,27 @@ public class userCreationHelper: ObservableObject {
         UserDefaults.standard.setValue(id, forKey: "sessionId")
         print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
     }
+    
+    //MARK: - func getTMDbAccount
+    
+    private func getTMDbAccount(_ id: String) {
+        let partUrl = "https://api.themoviedb.org/3/account?api_key=df8304134d840c4d6d11ca3c0055d5c6&session_id="
+        let sessionId = id
+        let url = partUrl + sessionId
+        
+        AF.request(url, method: .get).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                let accoundId = json["id"].stringValue
+                print("accountId: \(accoundId)")
+                UserDefaults.standard.setValue(accoundId, forKey: "accountId")
+            case .failure(let error):
+                print(error)
+            }
+  
+        }
+        
+    } // end of getTMDbAccount
     
 }
