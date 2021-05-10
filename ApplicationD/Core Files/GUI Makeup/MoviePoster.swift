@@ -11,6 +11,9 @@ struct MoviePoster: View {
     
     let size: String
     
+    // This is kept commented out until a further time
+    // when this view will be called with the right
+    // parmaters
     
     // var imageURL: String
     
