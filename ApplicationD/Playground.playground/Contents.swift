@@ -2,25 +2,27 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-func getTMDbAccount(_ id: String) {
-    let partUrl = "https://api.themoviedb.org/3/account?api_key=df8304134d840c4d6d11ca3c0055d5c6&session_id="
-    let sessionId = id
-    let url = partUrl + sessionId
-    print(url)
+let api = "df8304134d840c4d6d11ca3c0055d5c6"
+let sessionId = "f3c5d9c342c006e9ff1364a05c82f7ffd18bddd3"
+let accountId = "9909049"
+
+// MARK: func getWatchList
+
+func getWatchList() {
+    let url = "https://api.themoviedb.org/3/account/\(accountId)/watchlist/movies?api_key=\(api)&session_id=\(sessionId)&sort_by=created_at.asc&page=100"
     
     AF.request(url, method: .get).responseJSON { (responce) in
         switch responce.result {
         case .success(let value):
             let json = JSON(value)
-            let accoundId = json["id"].stringValue
-            print("accountId: \(accoundId)")
-            UserDefaults.standard.setValue(accoundId, forKey: "accountId")
+            print(json)
         case .failure(let error):
             print(error)
+    
         }
-
     }
     
-} // end of getTMDbAccount
+    
+} // end of getWatchList
 
-getTMDbAccount("e4a3df067f60ddb7a003c924b0a857db9af8080d")
+getWatchList()

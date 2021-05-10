@@ -12,17 +12,20 @@ struct Admin: View {
     
     var moc: NSManagedObjectContext
     @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
+    let firstName = UserDefaults.standard.string(forKey: "firstName")
+    let sessionId = UserDefaults.standard.string(forKey: "sessionId")
+    let accountId = UserDefaults.standard.string(forKey: "accountId")
     
     var body: some View {
         VStack {
             Text("Admin View")
             List {
-                ForEach(users, id: \.self) { user in
-                    Text("User: \(user.firstName) \(user.lastName)")
-                }
-                .onDelete(perform: { indexSet in
-                    deleteItem(indexSet: indexSet)
-                })
+                Text("First Name:")
+                Text(self.firstName ?? "Unkown Name")
+                Text("Session ID:")
+                Text(self.sessionId ?? "Unkown ID")
+                Text("Acccount ID:")
+                Text(self.accountId ?? "Unkown ID")
             }
             Button(action: {
                 printUserDefaults()
