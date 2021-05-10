@@ -20,11 +20,14 @@ public class userCreationHelper: ObservableObject {
     @Published var alertBool = false
     @Published var alertString = ""
     @Published var requestId = ""
+    @Binding var isOnboarding: Bool
     
     
     // MARK: -  init
-    init(moc: NSManagedObjectContext) {
+    init(moc: NSManagedObjectContext, Onboarded: Binding<Bool>) {
+        self._isOnboarding = Onboarded
         self.moc = moc
+       
     }
     
     // MARK: - func createUserProfile
@@ -95,7 +98,7 @@ public class userCreationHelper: ObservableObject {
     
     func finishSetup() {
         createSession()
-        UserDefaults.standard.setValue(true, forKey: "hasOnboarded")
+        self.isOnboarding.toggle() 
         print("User setup complete")
     }
     

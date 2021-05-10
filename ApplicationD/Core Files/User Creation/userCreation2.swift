@@ -15,36 +15,41 @@ struct userCreation2: View {
     @ObservedObject var helper: userCreationHelper
     
     var body: some View {
-        Text("Guest Setup")
-        Button(action: {
-            helper.request()
-        }) {
-            Text("Request Token")
-        }
-        if helper.requestId != "" {
-            List {
-                NavigationLink(destination: AuthenticateWindow(id: helper.requestId)) {
-                    Text("Auth")
+        NavigationView {
+            VStack {
+                Text("User Setup")
+                Button(action: {
+                    helper.request()
+                }) {
+                    Text("Request Token")
+                }
+                if helper.requestId != "" {
+                    List {
+                        NavigationLink(destination: AuthenticateWindow(id: helper.requestId)) {
+                            Text("Auth")
+                        }
+                    }
+                }
+                Button(action: {
+                    helper.finishSetup()
+                }) {
+                    Text("Create Session")
                 }
             }
-        }
-        Button(action: {
-            helper.finishSetup()
-        }) {
-            Text("Create Session")
+            
         }
     }
 }
 
-struct userCreation2_Previews: PreviewProvider {
-    static var previews: some View {
-                let app = ApplicationDApp()
-                let context = app.persistenceController.container.viewContext
-                Group {
-                    userCreation2(helper: userCreationHelper.init(moc: context))
-                        .previewDevice("iPhone 12")
-                    userCreation2(helper: userCreationHelper.init(moc: context))
-                        .previewDevice("iPod touch (7th generation)")
-                }
-    }
-}
+//struct userCreation2_Previews: PreviewProvider {
+//    static var previews: some View {
+//                let app = ApplicationDApp()
+//                let context = app.persistenceController.container.viewContext
+//                Group {
+//                    userCreation2(helper: userCreationHelper.init(moc: context))
+//                        .previewDevice("iPhone 12")
+//                    userCreation2(helper: userCreationHelper.init(moc: context))
+//                        .previewDevice("iPod touch (7th generation)")
+//                }
+//    }
+//}

@@ -13,14 +13,14 @@ struct userCreationMain: View {
     // This stucture is the master view for user creation and allows the screens
     // to change once completed.
     
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var present
     @ObservedObject var helper: userCreationHelper
     
+    
     // MARK: - init
     
-    init(managedObjectContext: NSManagedObjectContext) {
-        self.helper = userCreationHelper.init(moc: managedObjectContext)
+    init(managedObjectContext: NSManagedObjectContext, isOnboarding: Binding<Bool>) {
+        self.helper = userCreationHelper.init(moc: managedObjectContext, Onboarded: isOnboarding)
         print("userCreationMain called & opening screen 1")
     }
     

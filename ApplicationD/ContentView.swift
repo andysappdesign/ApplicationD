@@ -11,24 +11,20 @@ import CoreData
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
-    
-    
+    @AppStorage("_isOnboarding") var isOnboarding: Bool = true
+
     
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: userCreationMain(managedObjectContext: self.moc)) {
-                    Text("User Creation")
-                }
-                Spacer()
-                NavigationLink(destination: Admin(moc: self.moc)) {
-                    Text("Admin")
-                }
+                Text("You are on the main app!")
+                
             }
         
         }
-        
-        
+        .fullScreenCover(isPresented: $isOnboarding, content: {
+            Onboarding(hasCompletedOnboarding: $isOnboarding, managedObjectContext: self.moc)
+        })
 
     }
     
@@ -38,8 +34,13 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewDevice("iPhone 12")
+        Group {
+            ContentView()
+                .previewDevice("iPod touch (7th generation)")
+            ContentView()
+                .previewDevice("iPhone 12 Pro Max")
+                
+        }
     }
 }
 

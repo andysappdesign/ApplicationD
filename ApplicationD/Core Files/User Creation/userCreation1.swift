@@ -50,15 +50,15 @@ struct userCreation1: View {
     }
 }
 
-struct userCreation1_Previews: PreviewProvider {
-    static var previews: some View {
-        let app = ApplicationDApp()
-        let context = app.persistenceController.container.viewContext
-        Group {
-            userCreation1(helper: userCreationHelper.init(moc: context))
-                .previewDevice("iPhone 12")
-            userCreation1(helper: userCreationHelper.init(moc: context))
-                .previewDevice("iPod touch (7th generation)")
-        }
-    }
-}
+//struct userCreation1_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let app = ApplicationDApp()
+//        let context = app.persistenceController.container.viewContext
+//        Group {
+//            userCreation1(helper: userCreationHelper.init(moc: context))
+//                .previewDevice("iPhone 12")
+//            userCreation1(helper: userCreationHelper.init(moc: context))
+//                .previewDevice("iPod touch (7th generation)")
+//        }
+//    }
+//}

@@ -12,6 +12,8 @@
 		2205D15026493EF800F96882 /* loadPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D14F26493EF800F96882 /* loadPoints.swift */; };
 		2205D1552649566900F96882 /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D1542649566900F96882 /* MoviePoster.swift */; };
 		2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15826495F1A00F96882 /* ProfilePicture.swift */; };
+		2205D15B2649627300F96882 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15A2649627300F96882 /* Onboarding.swift */; };
+		2205D15D2649649000F96882 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15C2649649000F96882 /* TutorialPage.swift */; };
 		22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEA7BB2610CBE0003993FF /* Admin.swift */; };
 		22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */; };
 		22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F272610B1FB0086A5C5 /* ContentView.swift */; };
@@ -53,6 +55,8 @@
 		2205D14F26493EF800F96882 /* loadPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadPoints.swift; sourceTree = "<group>"; };
 		2205D1542649566900F96882 /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		2205D15826495F1A00F96882 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		2205D15A2649627300F96882 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		2205D15C2649649000F96882 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 		22AEA7BB2610CBE0003993FF /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		22E33F222610B1FB0086A5C5 /* ApplicationD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDApp.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			children = (
 				2205D1542649566900F96882 /* MoviePoster.swift */,
 				2205D15826495F1A00F96882 /* ProfilePicture.swift */,
+				2205D15C2649649000F96882 /* TutorialPage.swift */,
 			);
 			path = "GUI Makeup";
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */,
 				22E33F302610B1FC0086A5C5 /* ApplicationD.xcdatamodeld */,
 				22E33F272610B1FB0086A5C5 /* ContentView.swift */,
+				2205D15A2649627300F96882 /* Onboarding.swift */,
 				22E33F462610B3120086A5C5 /* Core Files */,
 				22E33F332610B1FC0086A5C5 /* Info.plist */,
 				22E33F2E2610B1FC0086A5C5 /* Persistence.swift */,
@@ -365,6 +371,7 @@
 				2205D1552649566900F96882 /* MoviePoster.swift in Sources */,
 				22E33FA22610B4400086A5C5 /* User+CoreDataClass.swift in Sources */,
 				22E33F992610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift in Sources */,
+				2205D15D2649649000F96882 /* TutorialPage.swift in Sources */,
 				2205D14E26493E3D00F96882 /* PointSystem.swift in Sources */,
 				22E33F9B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift in Sources */,
 				22E33F9C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift in Sources */,
@@ -375,6 +382,7 @@
 				2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */,
 				22E33FA12610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift in Sources */,
 				22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */,
+				2205D15B2649627300F96882 /* Onboarding.swift in Sources */,
 				22E33F9F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift in Sources */,
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,
 				22E33F982610B4400086A5C5 /* WatchedTV+CoreDataClass.swift in Sources */,
