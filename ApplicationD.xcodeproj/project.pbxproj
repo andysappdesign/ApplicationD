@@ -152,7 +152,7 @@
 			path = "GUI Makeup";
 			sourceTree = "<group>";
 		};
-		22337F942653E007008089A9 /* AysncImage */ = {
+		22337F942653E007008089A9 /* AsyncImage */ = {
 			isa = PBXGroup;
 			children = (
 				22337F962653E01F008089A9 /* AsyncImage.swift */,
@@ -160,7 +160,7 @@
 				22337F952653E01F008089A9 /* ImageCache.swift */,
 				22337F982653E01F008089A9 /* ImageLoader.swift */,
 			);
-			path = AysncImage;
+			path = AsyncImage;
 			sourceTree = "<group>";
 		};
 		22E33F192610B1FB0086A5C5 = {
@@ -210,7 +210,7 @@
 		22E33F462610B3120086A5C5 /* Core Files */ = {
 			isa = PBXGroup;
 			children = (
-				22337F942653E007008089A9 /* AysncImage */,
+				22337F942653E007008089A9 /* AsyncImage */,
 				2205D14C26493E0B00F96882 /* Points System */,
 				2205D151264955DA00F96882 /* GUI Makeup */,
 				22ED09FC263D6AAD0048ABA6 /* Lists */,
