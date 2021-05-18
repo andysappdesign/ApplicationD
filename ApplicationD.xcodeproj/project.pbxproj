@@ -14,7 +14,7 @@
 		2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15826495F1A00F96882 /* ProfilePicture.swift */; };
 		2205D15B2649627300F96882 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15A2649627300F96882 /* Onboarding.swift */; };
 		2205D15D2649649000F96882 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15C2649649000F96882 /* TutorialPage.swift */; };
-		223D86172653D53600D4B3C3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223D86162653D53600D4B3C3 /* ListView.swift */; };
+		22337F932653DF81008089A9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F922653DF81008089A9 /* ListView.swift */; };
 		22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEA7BB2610CBE0003993FF /* Admin.swift */; };
 		22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */; };
 		22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F272610B1FB0086A5C5 /* ContentView.swift */; };
@@ -57,7 +57,7 @@
 		2205D15826495F1A00F96882 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		2205D15A2649627300F96882 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		2205D15C2649649000F96882 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
-		223D86162653D53600D4B3C3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/ListView.swift"; sourceTree = "<absolute>"; };
+		22337F922653DF81008089A9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/Core Files/Lists/ListView.swift"; sourceTree = "<absolute>"; };
 		22AEA7BB2610CBE0003993FF /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		22E33F222610B1FB0086A5C5 /* ApplicationD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDApp.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		22ED09FC263D6AAD0048ABA6 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				223D86162653D53600D4B3C3 /* ListView.swift */,
+				22337F922653DF81008089A9 /* ListView.swift */,
 				22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */,
 			);
 			path = Lists;
@@ -367,7 +367,7 @@
 				22E33F9D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift in Sources */,
 				22E33F962610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift in Sources */,
 				22E33F322610B1FC0086A5C5 /* ApplicationD.xcdatamodeld in Sources */,
-				223D86172653D53600D4B3C3 /* ListView.swift in Sources */,
+				22337F932653DF81008089A9 /* ListView.swift in Sources */,
 				22E33FA32610B4400086A5C5 /* User+CoreDataProperties.swift in Sources */,
 				2205D1552649566900F96882 /* MoviePoster.swift in Sources */,
 				22E33FA22610B4400086A5C5 /* User+CoreDataClass.swift in Sources */,
