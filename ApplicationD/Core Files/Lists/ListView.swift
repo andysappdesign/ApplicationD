@@ -10,6 +10,16 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @ObservedObject var watchList: MovieWatchList
+    
+    init() {
+        self.watchList = MovieWatchList()
+        watchList.loadList {
+            print("generated list")
+        }
+    }
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

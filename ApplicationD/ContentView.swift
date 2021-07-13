@@ -18,6 +18,10 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Text("You are on the main app!")
+                Spacer()
+                NavigationLink(destination: ListView()) {
+                    Text("ListView")
+                }
                 
             }
         
@@ -28,7 +32,7 @@ struct ContentView: View {
 
     }
     
-}
+} // end of view
     
 
 
