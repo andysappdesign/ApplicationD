@@ -22,13 +22,19 @@ struct ContentView: View {
                 NavigationLink(destination: ListView()) {
                     Text("ListView")
                 }
+                Spacer()
+                Button_Row(button1Text: "My Wall", button2Text: "My Profile")
+                Spacer()
+                
                 
             }
         
-        }
+        } // end of NavigationViw
         .fullScreenCover(isPresented: $isOnboarding, content: {
             Onboarding(hasCompletedOnboarding: $isOnboarding, managedObjectContext: self.moc)
         })
+        
+        .background(Color("#ECF39E"))
 
     }
     
