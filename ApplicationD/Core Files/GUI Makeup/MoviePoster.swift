@@ -57,8 +57,7 @@ struct MoviePoster: View {
     
     var body: some View {
         VStack {
-            Text(rawPoster)
-            Spacer()
+//            Text(rawPoster)
             ZStack {
                 Image(self.imageString)
                     .resizable()
@@ -68,7 +67,6 @@ struct MoviePoster: View {
                     .shadow(color: .gray, radius: 12, x: 0, y: 2)
                     
             }
-            Spacer ()
         }
     } // end of body
 

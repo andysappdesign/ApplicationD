@@ -13,7 +13,12 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
     
+    let GUISize = GUISizes()
+    
     var name: String
+    var nextFilmString: String = "Luca"
+    var nextFilmImageString: String = "piratesMoviePoster"
+    
 
     init() {
         name = UserDefaults.standard.string(forKey: "firstName") ?? "User"
@@ -26,13 +31,32 @@ struct ContentView: View {
             ZStack {
                 Color("#ECF39E").edgesIgnoringSafeArea(.all)
                 VStack {
-                    Text("Welcome \(self.name)")
+                    Text("My Home")
                         .font(.largeTitle)
-                        .fontWeight(.regular)
-                    Spacer()
-                    HStack  {
-                        Text("poster")
+                        .fontWeight(.bold)
+                    HStack {
+                        Text("Welcome \(self.name)")
+                            .font(.title)
+                            .fontWeight(.regular)
+                            .padding(.leading)
                         Spacer()
+                    }
+                    Spacer()
+                        .frame(height: 30)
+                    HStack  {
+                        Spacer()
+                        MoviePoster(size: .large, imageString: self.nextFilmImageString)
+                            .padding(.leading)
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            Text("Next to watch on my list is \(self.nextFilmString)")
+                            Spacer()
+                                .frame(height: 30)
+                            customButtonLayout(text: "My Lists")
+                        }
+                        .padding(.trailing)
+                        .frame(height: GUISize.largePosterHeight)
                     }
                     Spacer()
                     Button_Row(button1Text: "My Wall", button2Text: "My Profile")
@@ -52,13 +76,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
             ContentView()
                 .previewDevice("iPod touch (7th generation)")
-            ContentView()
-                .previewDevice("iPhone 12 Pro Max")
-                
-        }
+        
     }
 }
 
