@@ -2,62 +2,90 @@
 //  MoviePoster.swift
 //  ApplicationD
 //
-//  Created by Andrew Cumming on 10/05/2021.
+//  Created by Andrew Cumming on 14/07/2021.
 //
 
 import SwiftUI
 
 struct MoviePoster: View {
     
-    let size: String
+    let GUISize = GUISizes()
     
-    // This is kept commented out until a further time
-    // when this view will be called with the right
-    // parmaters
+    enum Sizes {
+        case small
+        case medium
+        case large
+        case extraLarge
+    }
     
-    // var imageURL: String
+    var imageString: String
+    var posterSize: Sizes
+    var rawPoster: String = ""
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var aspectRatio: CGSize = CGSize(width: 11, height: 17)
+    
+    init(size: Sizes, imageString: String) {
+        self.posterSize = size
+        self.imageString = imageString
+        
+        switch posterSize {
+        case .small:
+            rawPoster = "S"
+            width = GUISize.smallPosterWidth
+            height = GUISize.smallPosterHeight
+            aspectRatio = GUISize.smallPosterAspectRatio
+        case .medium:
+            rawPoster = "M"
+            width = GUISize.mediumPosterWidth
+            height = GUISize.mediumPosterHeight
+            aspectRatio = GUISize.mediumPosterAspectRatio
+        case .large:
+            rawPoster = "L"
+            width = GUISize.largePosterWidth
+            height = GUISize.largePosterHeight
+            aspectRatio = GUISize.largePosterAspectRatio
+        case .extraLarge:
+            rawPoster = "XL"
+            width = GUISize.extraLargePosterWidth
+            height = GUISize.extraLargePosterHeight
+            aspectRatio = GUISize.extraLargePosterAspectRatio
+        }
+
+    }
     
     
     var body: some View {
         VStack {
-            if self.size == "S" || self.size == "s" {
-                Image("piratesMoviePoster")
+            Text(rawPoster)
+            Spacer()
+            ZStack {
+                Image(self.imageString)
                     .resizable()
-                    .aspectRatio(CGSize(width: 11, height: 17), contentMode: .fit)
+                    .aspectRatio(self.aspectRatio, contentMode: .fit)
+                    .frame(width: self.width, height: self.height)
+                    .border(Color("#132A13"), width: 0.3)
+                    .shadow(color: .gray, radius: 12, x: 0, y: 2)
+                    
             }
-            if self.size == "M" || self.size == "m" {
-                Image("piratesMoviePoster")
-                    .resizable()
-                    .aspectRatio(CGSize(width: 3, height: 4), contentMode: .fit)
-            }
-            if self.size == "L" || self.size == "l"{
-                Image("piratesMoviePoster")
-                    .resizable()
-                    .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fit)
-            }
-            if self.size == "XL" || self.size == "xl" {
-                Image("piratesMoviePoster")
-                    .resizable()
-                    .aspectRatio(CGSize(width: 27, height: 40), contentMode: .fit)
-            }
+            Spacer ()
         }
-    }
+    } // end of body
+
+
 }
 
 struct MoviePoster_Previews: PreviewProvider {
     static var previews: some View {
-
         Group {
-            MoviePoster(size: "s")
+            MoviePoster(size: .small, imageString: "piratesMoviePoster")
                 .previewDevice("iPod touch (7th generation)")
-            MoviePoster(size: "m")
+            MoviePoster(size: .medium, imageString: "piratesMoviePoster")
                 .previewDevice("iPod touch (7th generation)")
-            MoviePoster(size: "l")
+            MoviePoster(size: .large, imageString: "piratesMoviePoster")
                 .previewDevice("iPod touch (7th generation)")
-            MoviePoster(size: "xl")
+            MoviePoster(size: .extraLarge, imageString: "piratesMoviePoster")
                 .previewDevice("iPod touch (7th generation)")
-            
         }
-
     }
 }

@@ -12,32 +12,40 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
+    
+    var name: String
+
+    init() {
+        name = UserDefaults.standard.string(forKey: "firstName") ?? "User"
+    }
 
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("You are on the main app!")
-                Spacer()
-                NavigationLink(destination: ListView()) {
-                    Text("ListView")
-                }
-                Spacer()
-                Button_Row(button1Text: "My Wall", button2Text: "My Profile")
-                Spacer()
-                
-                
-            }
         
-        } // end of NavigationViw
+        NavigationView {
+            ZStack {
+                Color("#ECF39E").edgesIgnoringSafeArea(.all)
+                VStack {
+                    Text("Welcome \(self.name)")
+                        .font(.largeTitle)
+                        .fontWeight(.regular)
+                    Spacer()
+                    HStack  {
+                        Text("poster")
+                        Spacer()
+                    }
+                    Spacer()
+                    Button_Row(button1Text: "My Wall", button2Text: "My Profile")
+                    Spacer()
+                    
+                    
+                } // end of VStack
+            } // end of Zstack
+        } // end of NavigationView
         .fullScreenCover(isPresented: $isOnboarding, content: {
             Onboarding(hasCompletedOnboarding: $isOnboarding, managedObjectContext: self.moc)
-        })
-        
-        .background(Color("#ECF39E"))
-
+        }) // end of fullScreenCover
     }
-    
 } // end of view
     
 
