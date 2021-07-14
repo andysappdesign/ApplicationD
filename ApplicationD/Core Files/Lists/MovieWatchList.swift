@@ -45,7 +45,7 @@ class MovieWatchList: ObservableObject {
     // MARK: - func getWatchList
     
     private func getWatchList(completionHandler: @escaping (JSON) -> Void) {
-        let url = "https://api.themoviedb.org/3/account/\(self.accountId)/watchlist/movies&api_key=df8304134d840c4d6d11ca3c0055d5c6&language=en-GB&session_id=\(self.sessionId))&sort_by=created_at.asc&page=1"
+        let url = "https://api.themoviedb.org/3/account/\(self.accountId)/watchlist/movies?api_key=df8304134d840c4d6d11ca3c0055d5c6&language=en-GB&session_id=\(self.sessionId)&sort_by=created_at.asc&page=1"
         
         //print("sessionid: \(self.sessionId), accountId: \(self.accountId)")
         
