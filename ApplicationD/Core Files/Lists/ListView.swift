@@ -21,11 +21,14 @@ struct ListView: View {
     }
     
     var body: some View {
-        NavigationLink(
-            destination: WatchList(),
-            label: {
-                Text("Watch List")
+        ZStack {
+            Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
+            NavigationLink(
+                destination: WatchList(Movie: self.watchList),
+                label: {
+                    Text("Watch List")
             })
+        }
     }
 }
 

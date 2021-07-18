@@ -9,6 +9,10 @@ import SwiftUI
 
 struct threePosterRow: View {
     
+    
+    let GUISize = GUISizes()
+    var size = GUISizes.Sizes.small
+    
     init(object1: Int, object2: Int, object3: Int, MoviesWatchList: MovieWatchList) {
         self.object1 = MoviesWatchList.objectArray[object1]
         if MoviesWatchList.objectArray.count >= (object2 + 1) {
@@ -25,22 +29,30 @@ struct threePosterRow: View {
     }
     
     let object1: JSONObject
-    let object2: JSONObject?
-    let object3: JSONObject?
+    let object2: JSONObject
+    let object3: JSONObject
     
     var body: some View {
         HStack {
             VStack {
-                MoviePoster(size: .small, imageString: "piratesMoviePoster")
-                Text(object1.title)
+                MoviePoster(size: self.size, urlString: object1.poster_path)
             }
             VStack {
-                MoviePoster(size: .small, imageString: "piratesMoviePoster")
-                Text(object2?.title ?? "")
+                if object2.title != "" {
+                    MoviePoster(size: self.size, urlString: object2.poster_path)
+                }
+                else {
+                    blankMoviePosition(size: self.size)
+                }
+                
             }
             VStack {
-                MoviePoster(size: .small, imageString: "piratesMoviePoster")
-                Text(object3?.title ?? "")
+                if object3.title != "" {
+                    MoviePoster(size: self.size, urlString: object3.poster_path)
+                }
+                else {
+                    blankMoviePosition(size: self.size)
+                }
             }
         }
     }

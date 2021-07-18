@@ -149,9 +149,9 @@
 		2205D14C26493E0B00F96882 /* Points System */ = {
 			isa = PBXGroup;
 			children = (
+				2205D14F26493EF800F96882 /* loadPoints.swift */,
 				2205D14A26493E0000F96882 /* Points_System.json */,
 				2205D14D26493E3D00F96882 /* PointSystem.swift */,
-				2205D14F26493EF800F96882 /* loadPoints.swift */,
 			);
 			path = "Points System";
 			sourceTree = "<group>";

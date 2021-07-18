@@ -10,6 +10,9 @@ import SwiftUI
 
 class GUISizes {
     
+    // URL Begining
+    let urlFirstHalf = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"
+    
     // Device Information
     let screenSize: CGRect
     let screenWidth: CGFloat
@@ -18,8 +21,6 @@ class GUISizes {
     
     // Row Information
     let rowWidth: CGFloat
-    
-    
     
     // Two Button Row Information
     let twoButtonRow_ButtonWidth: CGFloat
@@ -41,6 +42,15 @@ class GUISizes {
     let mediumPosterAspectRatio = CGSize(width: 2, height: 3)
     let largePosterAspectRatio = CGSize(width: 2, height: 3)
     let extraLargePosterAspectRatio = CGSize(width: 27, height: 40)
+    
+    // Sizes
+    
+    enum Sizes {
+        case small
+        case medium
+        case large
+        case extraLarge
+    }
     
     
     

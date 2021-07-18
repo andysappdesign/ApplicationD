@@ -82,7 +82,7 @@ class MovieWatchList: ObservableObject {
     private func getObject(positionNumber: Int) -> JSONObject {
         let object = watchListArray[positionNumber]
         let newObject = JSONObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!)
-        print("title: \(newObject.title), position: \(positionNumber)")
+        print("title: \(newObject.title), position: \(positionNumber), poster_path: \(newObject.poster_path)")
         return newObject
     } // end of getObject
     
@@ -91,15 +91,21 @@ class MovieWatchList: ObservableObject {
     
     func calculateRowAmountandObjectPositions(arrayCount: Int) {
         //RowAmount
-        let temp = Double(arrayCount) / 3
-        let roundTemp = temp.rounded(.up)
-        let intTemp = Int(roundTemp)
-        print("arrayCount has converted to \(intTemp) rows")
+//        print("arrayCount = \(arrayCount)")
+        let posterPerRow = Double(arrayCount) / 3
+//        print("posterPerRow = \(posterPerRow)")
+        let rowOfThreePosters = posterPerRow / 3
+//        print("rowOfThreePosters = \(rowOfThreePosters)")
+        let roundedRow = rowOfThreePosters.rounded(.up)
+//        print("Rowedrow = \(roundedRow)")
+        let intRow = Int(roundedRow)
+//        print("intRow = \(intRow)")
+        print("arrayCount has converted to \(intRow) rows")
         
         //Object Positions
         print(rowObjectPositions)
         var n = -1
-        for i in 1..<(intTemp + 1) {
+        for i in 1..<(intRow + 1) {
             let group = [n + 1, n + 2, n + 3]
             self.rowObjectPositions.append(group)
             n = n + 3

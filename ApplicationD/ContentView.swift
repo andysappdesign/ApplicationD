@@ -19,6 +19,8 @@ struct ContentView: View {
     var nextFilmString: String = "Luca"
     var nextFilmImageString: String = "piratesMoviePoster"
     
+    static var colourString = "#ECF39E"
+    
 
     init() {
         name = UserDefaults.standard.string(forKey: "firstName") ?? "User"
@@ -29,7 +31,7 @@ struct ContentView: View {
         
         NavigationView {
             ZStack {
-                Color("#ECF39E").edgesIgnoringSafeArea(.all)
+                Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
                 VStack {
                     Text("My Home")
                         .font(.largeTitle)
@@ -45,8 +47,8 @@ struct ContentView: View {
                         .frame(height: 30)
                     HStack  {
                         Spacer()
-                        MoviePoster(size: .large, imageString: self.nextFilmImageString)
-                            .padding(.leading)
+//                        MoviePoster(size: .large, imageString: self.nextFilmImageString)
+//                            .padding(.leading)
                         Spacer()
                         VStack {
                             Spacer()

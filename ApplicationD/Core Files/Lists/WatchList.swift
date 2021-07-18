@@ -10,23 +10,20 @@ import SwiftUI
 struct WatchList: View {
     
     let GUISize = GUISizes()
-    @ObservedObject var Movie = MovieWatchList()
+    @ObservedObject var Movie: MovieWatchList
     // let TV = TVWatchList()
-    
 
     var body: some View {
-        List{
-            ForEach(Movie.rowObjectPositions, id: \.self) { array in
-                threePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
+        ZStack {
+            Color.red
+                .edgesIgnoringSafeArea(.top)
+            List{
+                ForEach(Movie.rowObjectPositions, id: \.self) { array in
+                    threePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
+                }.background(Color(ContentView.colourString))
+                
             }
         }
-        
-        
     }
 }
 
-//struct WatchList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WatchList()
-//    }
-//}
