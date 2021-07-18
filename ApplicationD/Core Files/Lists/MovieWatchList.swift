@@ -31,7 +31,7 @@ class MovieWatchList: ObservableObject {
     // MARK:- init
     init() {
         loadList {
-            print("completed")
+//            print("completed")
         }
     }
  
@@ -43,13 +43,13 @@ class MovieWatchList: ObservableObject {
                 self.watchListArray = responce["results"].arrayValue
                 let count = self.watchListArray.count
                 print("Watchlist contains \(count) items")
-                print("Downloaded list sucessful")
+//                print("Downloaded list sucessful")
                 for (index, _) in self.watchListArray.enumerated() {
                     //print(index)
                     let temp = self.getObject(positionNumber: index)
                     self.objectArray.append(temp)
                 }
-                self.calculateRowAmountandObjectPositions(arrayCount: self.objectArray.count)
+                self.calculateRowAmountandObjectPositions(arrayCount: count)
                 completionHander()
             } else {
                 print("responce is empty")
@@ -82,7 +82,7 @@ class MovieWatchList: ObservableObject {
     private func getObject(positionNumber: Int) -> JSONObject {
         let object = watchListArray[positionNumber]
         let newObject = JSONObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!)
-        print("title: \(newObject.title), position: \(positionNumber), poster_path: \(newObject.poster_path)")
+        print("title: \(newObject.title), position: \(positionNumber)")
         return newObject
     } // end of getObject
     
@@ -91,26 +91,33 @@ class MovieWatchList: ObservableObject {
     
     func calculateRowAmountandObjectPositions(arrayCount: Int) {
         //RowAmount
-//        print("arrayCount = \(arrayCount)")
-        let posterPerRow = Double(arrayCount) / 3
-//        print("posterPerRow = \(posterPerRow)")
-        let rowOfThreePosters = posterPerRow / 3
-//        print("rowOfThreePosters = \(rowOfThreePosters)")
-        let roundedRow = rowOfThreePosters.rounded(.up)
-//        print("Rowedrow = \(roundedRow)")
+        print("arrayCount = \(arrayCount)")
+        let row = Double(arrayCount) / 3
+        print("row = \(row)")
+        let roundedRow = row.rounded(.up)
+        print("Rowedrow = \(roundedRow)")
         let intRow = Int(roundedRow)
-//        print("intRow = \(intRow)")
+        print("intRow = \(intRow)")
         print("arrayCount has converted to \(intRow) rows")
         
         //Object Positions
-        print(rowObjectPositions)
-        var n = -1
-        for i in 1..<(intRow + 1) {
-            let group = [n + 1, n + 2, n + 3]
-            self.rowObjectPositions.append(group)
-            n = n + 3
-            print("round \(i): n = \(n)")
-        }
+        rowObjectPositions = []
+        var n = 0
+        var rowGroup: [Int] = []
+        print("arrayCount = \(arrayCount)")
+        for i in 0..<(intRow) {
+            for _ in 0...2 {
+                if n != arrayCount {
+                    rowGroup.append(n)
+                    
+                } // end of if
+                n += 1
+                print(n)
+            } // end of for
+            print("round \(i): n = \(n), rowGroup = \(rowGroup)")
+            rowObjectPositions.append(rowGroup)
+            rowGroup = []
+        } // end of for
         print(rowObjectPositions)
     }
     

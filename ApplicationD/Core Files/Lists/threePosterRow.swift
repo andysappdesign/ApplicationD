@@ -13,19 +13,27 @@ struct threePosterRow: View {
     let GUISize = GUISizes()
     var size = GUISizes.Sizes.small
     
+    // Three Objects
+    
     init(object1: Int, object2: Int, object3: Int, MoviesWatchList: MovieWatchList) {
         self.object1 = MoviesWatchList.objectArray[object1]
-        if MoviesWatchList.objectArray.count >= (object2 + 1) {
-            self.object2 = MoviesWatchList.objectArray[object2]
-        } else {
-            self.object2 = JSONObject()
-        }
-        if MoviesWatchList.objectArray.count >= (object3 + 1) {
-            self.object3 = MoviesWatchList.objectArray[object3]
-        } else {
-            self.object3 = JSONObject()
-        }
-        
+        self.object2 = MoviesWatchList.objectArray[object2]
+        self.object3 = MoviesWatchList.objectArray[object3]
+    }
+    
+    // Two Objects
+    
+    init(object1: Int, object2: Int, MoviesWatchList: MovieWatchList) {
+        self.object1 = MoviesWatchList.objectArray[object1]
+        self.object2 = MoviesWatchList.objectArray[object2]
+        self.object3 = JSONObject()
+    }
+    
+    // One Object
+    init(object1: Int, MoviesWatchList: MovieWatchList) {
+        self.object1 = MoviesWatchList.objectArray[object1]
+        self.object2 = JSONObject()
+        self.object3 = JSONObject()
     }
     
     let object1: JSONObject
