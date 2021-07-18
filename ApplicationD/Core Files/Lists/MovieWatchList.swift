@@ -18,12 +18,22 @@ class MovieWatchList: ObservableObject {
     let sessionId = UserDefaults.standard.string(forKey: "sessionId") ?? "000000000"
     let accountId = UserDefaults.standard.string(forKey: "accountId") ?? "000000000"
     @Published var watchListArray: [JSON] = []
+    @Published var objectArray: [JSONObject] = []
+    @Published var rowCount: Int = 0
+    @Published var rowObjectPositions = [[Int]]()
     
     // MARK: TESTING ONLY VARIABLES
     
     let TESTapi = "df8304134d840c4d6d11ca3c0055d5c6"
     let TESTsessionId = "3ebe85700311a36a740bb1f8cc4efe7b506cd9f4"
     let TESTaccountId = "9909049"
+    
+    // MARK:- init
+    init() {
+        loadList {
+            print("completed")
+        }
+    }
  
     // MARK:- loadList
     
@@ -34,6 +44,12 @@ class MovieWatchList: ObservableObject {
                 let count = self.watchListArray.count
                 print("Watchlist contains \(count) items")
                 print("Downloaded list sucessful")
+                for (index, _) in self.watchListArray.enumerated() {
+                    //print(index)
+                    let temp = self.getObject(positionNumber: index)
+                    self.objectArray.append(temp)
+                }
+                self.calculateRowAmountandObjectPositions(arrayCount: self.objectArray.count)
                 completionHander()
             } else {
                 print("responce is empty")
@@ -53,7 +69,7 @@ class MovieWatchList: ObservableObject {
             switch responce.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
+                //print(json)
                 completionHandler(json)
             case .failure(let error):
                 print(error)
@@ -63,19 +79,33 @@ class MovieWatchList: ObservableObject {
     
     // MARK: - func getObject
 
-    private func getObject(positionNumber: Int) {
+    private func getObject(positionNumber: Int) -> JSONObject {
         let object = watchListArray[positionNumber]
-    //    print(object)
-        let posterURL = object["poster_path"].stringValue
-        print(posterURL)
-        
+        let newObject = JSONObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!)
+        print("title: \(newObject.title), position: \(positionNumber)")
+        return newObject
     } // end of getObject
     
-    // MARK - getPosterURL
+
+    // MARK:- func calculateRowAmount
     
-    private func getPosterURL(object: JSON) {
+    func calculateRowAmountandObjectPositions(arrayCount: Int) {
+        //RowAmount
+        let temp = Double(arrayCount) / 3
+        let roundTemp = temp.rounded(.up)
+        let intTemp = Int(roundTemp)
+        print("arrayCount has converted to \(intTemp) rows")
         
+        //Object Positions
+        print(rowObjectPositions)
+        var n = -1
+        for i in 1..<(intTemp + 1) {
+            let group = [n + 1, n + 2, n + 3]
+            self.rowObjectPositions.append(group)
+            n = n + 3
+            print("round \(i): n = \(n)")
+        }
+        print(rowObjectPositions)
     }
     
-
 }

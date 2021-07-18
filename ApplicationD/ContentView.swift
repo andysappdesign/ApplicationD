@@ -53,7 +53,11 @@ struct ContentView: View {
                             Text("Next to watch on my list is \(self.nextFilmString)")
                             Spacer()
                                 .frame(height: 30)
-                            customButtonLayout(text: "My Lists")
+                            NavigationLink(
+                                destination: ListView()
+                            ) {
+                                customButtonLayout(text: "My Lists")
+                            }
                         }
                         .padding(.trailing)
                         .frame(height: GUISize.largePosterHeight)
