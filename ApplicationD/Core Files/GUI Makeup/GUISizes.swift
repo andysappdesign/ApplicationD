@@ -18,7 +18,6 @@ class GUISizes {
     let screenWidth: CGFloat
     let screenHeight: CGFloat
     
-    
     // Row Information
     let rowWidth: CGFloat
     
@@ -43,6 +42,13 @@ class GUISizes {
     let largePosterAspectRatio = CGSize(width: 2, height: 3)
     let extraLargePosterAspectRatio = CGSize(width: 27, height: 40)
     
+    // Bottem Bar Information
+    let barHeight: CGFloat
+    let barSpacer: CGFloat
+    let fontSize: Font
+    let fontColor: Color
+    let buttonSquareSize: CGFloat // same for width and height
+    
     // Sizes
     
     enum Sizes {
@@ -55,26 +61,33 @@ class GUISizes {
     
     
     init() {
-        screenSize = UIScreen.main.bounds
-        screenWidth = screenSize.width
-        screenHeight = screenSize.height
-        rowWidth = screenWidth
-        let twoButtonRow_Width = rowWidth / 2
+        self.screenSize = UIScreen.main.bounds
+        self.screenWidth = self.screenSize.width
+        self.screenHeight = self.screenSize.height
+        self.rowWidth = self.screenWidth
+        let twoButtonRow_Width = self.rowWidth / 2
         
-        twoButtonRow_ButtonWidth = twoButtonRow_Width - 30
-        twoButtonRow_ButtonHeight = (twoButtonRow_Width / 3) * 0.9
+        self.twoButtonRow_ButtonWidth = twoButtonRow_Width - 30
+        self.twoButtonRow_ButtonHeight = (twoButtonRow_Width / 3) * 0.9
         
-        smallPosterWidth = twoButtonRow_Width / 2
-        smallPosterHeight = twoButtonRow_Width * 0.75
+        self.smallPosterWidth = twoButtonRow_Width / 2
+        self.smallPosterHeight = twoButtonRow_Width * 0.75
         
-        mediumPosterWidth = twoButtonRow_Width * 0.75
-        mediumPosterHeight = smallPosterHeight * 1.5
+        self.mediumPosterWidth = twoButtonRow_Width * 0.75
+        self.mediumPosterHeight = self.smallPosterHeight * 1.5
         
-        largePosterWidth = smallPosterWidth * 1.45
-        largePosterHeight = smallPosterHeight * 1.45
+        self.largePosterWidth = self.smallPosterWidth * 1.45
+        self.largePosterHeight = self.smallPosterHeight * 1.45
         
-        extraLargePosterWidth = mediumPosterWidth * 1.82
-        extraLargePosterHeight = mediumPosterHeight * 1.8
+        self.extraLargePosterWidth = self.mediumPosterWidth * 1.82
+        self.extraLargePosterHeight = self.mediumPosterHeight * 1.8
+        
+        self.barHeight = twoButtonRow_ButtonHeight * 0.9
+        self.barSpacer = 20.0
+        self.fontSize = .title
+        self.fontColor = Color("#90a955")
+        self.buttonSquareSize = self.barHeight * 0.7
+        
         
     }
     
