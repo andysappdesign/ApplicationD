@@ -1,5 +1,5 @@
 //
-//  JSONObject.swift
+//  JSONMovieObject.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 14/07/2021.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct JSONObject: Identifiable {
+struct JSONMovieObject: Identifiable {
+    
     var id: Int
     var video: Bool
     var original_language: String

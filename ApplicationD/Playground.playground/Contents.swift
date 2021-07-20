@@ -1,41 +1,98 @@
-import UIKit
+import Foundation
 import Alamofire
 import SwiftyJSON
 
-let api = "df8304134d840c4d6d11ca3c0055d5c6"
-let sessionId = "3ebe85700311a36a740bb1f8cc4efe7b506cd9f4"
-let accountId = "9909049"
-var watchListArray: [JSON] = []
+let movieID = 508943
+let API = "df8304134d840c4d6d11ca3c0055d5c6"
+var castArray: [JSON] = []
+var objectArray: [castObjects] = []
+var fourCastArray: [castObjects] = []
 
-func loadList() {
-    getWatchList { (responce) in
+var firstPersonURL = ""
+var secondPersonURL = ""
+var thirdPersonURL = ""
+var fourthPersonURL = ""
+
+struct castObjects: Identifiable {
+    
+    let id: Int
+    let know_for_department: String
+    let name: String
+    let popularitty: Int
+    let cast_id: Int
+    
+}
+
+func loadList(completionHander: @escaping (JSON) -> Void) {
+    let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(API)&language=en-US"
+    
+    AF.request(url, method: .get).responseJSON { (responce) in
+        switch responce.result {
+        case .success(let value):
+            let json = JSON(value)
+            completionHander(json)
+        case .failure(let error):
+            print(error)
+        }
+    }
+}
+
+func getObjects() {
+    for i in 0..<castArray.count {
+        let json = castArray[i]
+        let object = castObjects(id: json["id"].int!, know_for_department: json["known_for_department"].string!, name: json["name"].string!, popularitty: json["popularity"].int!, cast_id: json["cast_id"].int!)
+        objectArray.append(object)
+    }
+}
+
+func getCast(completionHandler: @escaping () -> Void) {
+    loadList { (responce) in
         if responce != JSON() {
-            watchListArray = responce["results"].arrayValue
-            let count = watchListArray.count
-            print("Watchlist contains \(count) items")
-//            print(watchListArray)
-//            for i in 0..<count {
-//                print(i)
-//                getObject(positionNumber: i)
-//            }
-            let i = 0
-            if i == 0 {
-                print(i)
-                getObject(positionNumber: i)
-            } else {
-                
-            }
+            castArray = responce["cast"].arrayValue
+            getObjects()
+            sortList()
+            print("getCast completed")
+            completionHandler()
+            
         } else {
             print("responce is empty")
-            // TODO
         }
-    } // end of getWatchList
-} // end of loadList
+    }
+}
 
-// MARK: func getWatchList
+func sortList() {
+    for i in 1...4 {
+        let temp = objectArray[i]
+        print(temp)
+        fourCastArray.append(temp)
+    }
 
-func getWatchList(completionHandler: @escaping (JSON) -> Void) {
-    let url = "https://api.themoviedb.org/3/account/\(accountId)/watchlist/movies?api_key=\(api)&session_id=\(sessionId)&sort_by=created_at.asc&page=1"
+    
+}
+
+// MARK:- getProfilePic
+
+func getProfilePic(personID: Int, completionHandler: @escaping (String) -> Void) {
+    getImages(personID: personID) { (responce) in
+        if responce != JSON() {
+            let tempArray = responce["profiles"].array!
+            let object = tempArray[0]
+            let path = object["file_path"].string!
+            completionHandler(path)
+            
+        } else {
+            print("responce is empty")
+
+        }
+        
+    }
+    
+}
+
+// MARK: getImages
+
+func getImages(personID: Int, completionHandler: @escaping (JSON) -> Void) {
+    let url = "https://api.themoviedb.org/3/person/\(personID)/images?api_key=\(API)"
     
     AF.request(url, method: .get).responseJSON { (responce) in
         switch responce.result {
@@ -44,29 +101,58 @@ func getWatchList(completionHandler: @escaping (JSON) -> Void) {
             completionHandler(json)
         case .failure(let error):
             print(error)
-    
         }
-    } // end of AF.request
+    }
+}
+
+func populateCastRow() {
+    getCast {
+        for i in 0...fourCastArray.count {
+            if i == 0 {
+                let temp = fourCastArray[i]
+                let id = temp.id
+                getProfilePic(personID: id) { (responce) in
+                    firstPersonURL = responce
+                    print("firstPersonURL: \(firstPersonURL)")
+                    
+                }
+            } // end of first person
+            if i == 1 {
+                let temp = fourCastArray[i]
+                let id = temp.id
+                getProfilePic(personID: id) { (responce) in
+                    secondPersonURL = responce
+                    print("secondPersonURL: \(secondPersonURL)")
+                    
+                }
+            } // end of second person
+            if i == 2 {
+                let temp = fourCastArray[i]
+                let id = temp.id
+                getProfilePic(personID: id) { (responce) in
+                    thirdPersonURL = responce
+                    print("thirdPersonURL: \(thirdPersonURL)")
+                    
+                }
+            } // end of third person
+            if i == 3 {
+                let temp = fourCastArray[i]
+                let id = temp.id
+                getProfilePic(personID: id) { (responce) in
+                    fourthPersonURL = responce
+                    print("fourthPersonURL: \(fourthPersonURL)")
+                    
+                }
+            } // end of fourth person
+        }
+        
+        
+        
+        
+    }
     
-} // end of getWatchList
+}
 
+populateCastRow()
 
-// MARK: func getObject
-
-private func getObject(positionNumber: Int) {
-    let object = watchListArray[positionNumber]
-//    print(object)
-    let posterURL = object["poster_path"].stringValue
-    print(posterURL)
-    
-} // end of getObject
-
-
-
-
-private func getPoster() {
-    
-} // end of getPoster
-
-loadList()
 

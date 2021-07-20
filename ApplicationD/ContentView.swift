@@ -67,16 +67,41 @@ struct ContentView: View {
                     Spacer()
                     Button_Row(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
+                    bottomBar()
                     
                     
                 } // end of VStack
             } // end of Zstack
+            .navigationBarTitleDisplayMode(.inline)
         } // end of NavigationView
         .fullScreenCover(isPresented: $isOnboarding, content: {
             Onboarding(hasCompletedOnboarding: $isOnboarding, managedObjectContext: self.moc)
         }) // end of fullScreenCover
     }
 } // end of view
+
+// MARK:- extension UINavigationController
+
+extension UINavigationController {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let standard = UINavigationBarAppearance()
+        standard.backgroundColor = UIColor(Color("#31572c"))
+        
+        let compact = UINavigationBarAppearance()
+        compact.backgroundColor = UIColor(Color("#31572c"))
+        
+        let scrollEdge = UINavigationBarAppearance()
+        scrollEdge.backgroundColor = UIColor(Color("#31572c"))
+        
+        navigationBar.standardAppearance = standard
+        navigationBar.compactAppearance = compact
+        navigationBar.scrollEdgeAppearance = scrollEdge
+        
+        
+    } // End of viewDidLoad
+}
     
 
 

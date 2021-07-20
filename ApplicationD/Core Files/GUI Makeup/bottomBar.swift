@@ -14,56 +14,56 @@ struct bottomBar: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(width: GUISize.screenWidth, height: GUISize.barHeight)
+                .frame(width: GUISize.screenWidth, height: GUISize.bottomBarHeight)
                 .foregroundColor(Color("#31572c"))
             HStack {
                 HStack{
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                     Image(systemName: "house")
                         .resizable()
                         .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                 }
                 Text("|")
-                    .font(GUISize.fontSize)
-                    .foregroundColor(GUISize.fontColor)
+                    .font(GUISize.bottomBarFontSize)
+                    .foregroundColor(GUISize.bottomBarFontColor)
                 HStack {
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                     Image(systemName: "magnifyingglass")
                         .resizable()
                         .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                 }
                 Text("|")
-                    .font(GUISize.fontSize)
-                    .foregroundColor(GUISize.fontColor)
+                    .font(GUISize.bottomBarFontSize)
+                    .foregroundColor(GUISize.bottomBarFontColor)
                 HStack {
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                     Image(systemName: "list.star")
                         .resizable()
                         .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                 }
                 Text("|")
-                    .font(GUISize.fontSize)
-                    .foregroundColor(GUISize.fontColor)
+                    .font(GUISize.bottomBarFontSize)
+                    .foregroundColor(GUISize.bottomBarFontColor)
                 HStack {
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                     Image(systemName: "gamecontroller")
                         .resizable()
                         .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
-                        .frame(width: GUISize.barSpacer)
+                        .frame(width: GUISize.bottomBarSpacer)
                 }
                 
-            } .frame(width: GUISize.screenWidth, height: GUISize.barHeight)
+            } .frame(width: GUISize.screenWidth, height: GUISize.bottomBarHeight)
             .foregroundColor(Color("#ECF39E"))
                 
             

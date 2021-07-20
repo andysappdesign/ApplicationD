@@ -17,6 +17,9 @@ struct blankMoviePosition: View {
     
     init(size: GUISizes.Sizes) {
         switch size {
+        case .extraSmall:
+            width = GUISize.extraSmallPosterWidth
+            height = GUISize.extraSmallPosterHeight
         case .small:
             width = GUISize.smallPosterWidth
             height = GUISize.smallPosterHeight

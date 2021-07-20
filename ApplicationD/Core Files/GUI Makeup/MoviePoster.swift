@@ -25,6 +25,11 @@ struct MoviePoster: View {
         self.urlString = GUISize.urlFirstHalf + urlString
         
         switch posterSize {
+        case .extraSmall:
+            rawPoster = "XS"
+            width = GUISize.extraSmallPosterWidth
+            height = GUISize.extraSmallPosterHeight
+            aspectRatio = GUISize.extraSmallPosterAspectRatio
         case .small:
             rawPoster = "S"
             width = GUISize.smallPosterWidth
@@ -73,6 +78,8 @@ struct MoviePoster: View {
 struct MoviePoster_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            MoviePoster(size: .extraSmall, urlString: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg")
+                .previewDevice("iPod touch (7th generation)")
             MoviePoster(size: .small, urlString: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg")
                 .previewDevice("iPod touch (7th generation)")
             MoviePoster(size: .medium, urlString: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg")

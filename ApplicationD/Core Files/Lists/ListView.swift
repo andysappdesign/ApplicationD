@@ -23,11 +23,22 @@ struct ListView: View {
     var body: some View {
         ZStack {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
-            NavigationLink(
-                destination: WatchList(Movie: self.watchList),
-                label: {
-                    Text("Watch List")
-            })
+            VStack {
+                NavigationLink(
+                    destination: WatchList(Movie: self.watchList),
+                    label: {
+                        Text("Watch List")
+                })
+                Spacer()
+                NavigationLink(
+                    destination: Indervidual_Information(overview: "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her."),
+                    label: {
+                        Text("Information")
+                    }
+                    )
+            }
+            
+                
         }
     }
 }
