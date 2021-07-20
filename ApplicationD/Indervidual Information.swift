@@ -69,7 +69,7 @@ struct Indervidual_Information: View {
                 Spacer()
                     .frame(height: 10)
                 if self.castBoxBool == true {
-                    CastRow(movieID: self.movieID)
+                    CastRow(controller: self.castRowController)
                 } else {
                         Rectangle()
                             .frame(width: GUISize.rowWidth, height:2.5)

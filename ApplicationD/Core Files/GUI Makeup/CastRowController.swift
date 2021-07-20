@@ -17,10 +17,22 @@ class CastRowController: ObservableObject {
     var objectArray: [castObjects] = []
     let urlFirstHalf = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2"
     @Published var fourCastArray: [castObjects] = []
+    
     @Published var firstPersonURL: String = ""
+    @Published var firstPersonName: String = ""
+    @Published var firstPersonCharacter: String = ""
+    
     @Published var secondPersonURL: String = ""
+    @Published var secondPersonName: String = ""
+    @Published var secondPersonCharacter: String = ""
+    
     @Published var thirdPersonURL: String = ""
+    @Published var thirdPersonName: String = ""
+    @Published var thirdPersonCharacter: String = ""
+    
     @Published var fourthPersonURL: String = ""
+    @Published var fourthPersonName: String = ""
+    @Published var fourthPersonCharacter: String = ""
     
     // MARK:- init
     
@@ -66,7 +78,7 @@ class CastRowController: ObservableObject {
     private func getObjects() {
         for i in 0..<castArray.count {
             let json = self.castArray[i]
-            let object = castObjects(id: json["id"].int!, name: json["name"].string!, profilePicURL: "", cast_id: json["cast_id"].int!)
+            let object = castObjects(id: json["id"].int!, name: json["name"].string!, profilePicURL: "", cast_id: json["cast_id"].int!, character: json["character"].string!)
             self.objectArray.append(object)
         }
     }
@@ -116,10 +128,42 @@ class CastRowController: ObservableObject {
         }
     }
     
+    // MARK: - getNames
+    
+    private func getNames() {
+        for i in 0...self.fourCastArray.count {
+            if i == 0 {
+                let temp = self.fourCastArray[i]
+                self.firstPersonName = temp.name
+                self.firstPersonCharacter = temp.character
+                print("First Person, Name: \(self.firstPersonName), Character: \(self.firstPersonCharacter)")
+            }
+            if i == 1 {
+                let temp = self.fourCastArray[i]
+                self.secondPersonName = temp.name
+                self.secondPersonCharacter = temp.character
+                print("Second Person, Name: \(self.secondPersonName), Character: \(self.secondPersonCharacter)")
+            }
+            if i == 2 {
+                let temp = self.fourCastArray[i]
+                self.thirdPersonName = temp.name
+                self.thirdPersonCharacter = temp.character
+                print("Third Person, Name: \(self.thirdPersonName), Character: \(self.thirdPersonCharacter)")
+            }
+            if i == 3 {
+                let temp = self.fourCastArray[i]
+                self.fourthPersonName = temp.name
+                self.fourthPersonCharacter = temp.character
+                print("Fourth Person, Name: \(self.fourthPersonName), Character: \(self.fourthPersonCharacter)")
+            }
+        }
+    }
+    
     // MARK:- populateCastRow
     
     func populateCastRow() {
         getCast {
+            self.getNames()
             for i in 0...self.fourCastArray.count {
                 if i == 0 {
                     let temp = self.fourCastArray[i]

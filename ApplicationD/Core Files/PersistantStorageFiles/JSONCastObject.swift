@@ -24,5 +24,6 @@ struct castObjects: Identifiable {
     let name: String
     let profilePicURL: String
     let cast_id: Int
+    let character: String
     
 }

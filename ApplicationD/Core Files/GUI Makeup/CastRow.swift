@@ -12,8 +12,12 @@ struct CastRow: View {
     let GUISize = GUISizes()
     @ObservedObject var controller: CastRowController
     
-    init(movieID: Int) {
-        self.controller = CastRowController(movieID: movieID)
+    init(controller: CastRowController) {
+        self.controller = controller
+    }
+    
+    init(TESTINGid: Int) {
+        self.controller = CastRowController(movieID: TESTINGid)
         controller.populateCastRow()
     }
     
@@ -32,18 +36,26 @@ struct CastRow: View {
                 Spacer()
                 VStack{
                     MoviePoster(size: .extraSmall, urlString: controller.firstPersonURL)
+                    Text(controller.firstPersonName)
+                    Text(controller.firstPersonCharacter)
                 }
                 Spacer()
                 VStack{
                     MoviePoster(size: .extraSmall, urlString: controller.secondPersonURL)
+                    Text(controller.secondPersonName)
+                    Text(controller.secondPersonCharacter)
                 }
                 Spacer()
                 VStack{
                     MoviePoster(size: .extraSmall, urlString: controller.thirdPersonURL)
+                    Text(controller.thirdPersonName)
+                    Text(controller.thirdPersonCharacter)
                 }
                 Spacer()
                 VStack {
                     MoviePoster(size: .extraSmall, urlString: controller.fourthPersonURL)
+                    Text(controller.fourthPersonName)
+                    Text(controller.fourthPersonCharacter)
                 }
                 Spacer()
             }
@@ -55,6 +67,6 @@ struct CastRow: View {
 
 struct CastRow_Previews: PreviewProvider {
     static var previews: some View {
-        CastRow(movieID: 508943)
+        CastRow(TESTINGid: 508943)
     }
 }
