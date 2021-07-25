@@ -12,6 +12,11 @@ struct CastRow: View {
     let GUISize = GUISizes()
     @ObservedObject var controller: CastRowController
     
+    let actorText: Font = .custom("SFProText", size: 10)
+    let actorWeight: Font.Weight = .medium
+    let characterText: Font = .custom("SFProText", size: 8)
+    let characterWeight: Font.Weight = .thin
+    
     init(controller: CastRowController) {
         self.controller = controller
     }
@@ -35,33 +40,59 @@ struct CastRow: View {
             HStack {
                 Spacer()
                 VStack{
+                    Spacer()
                     MoviePoster(size: .extraSmall, urlString: controller.firstPersonURL)
                     Text(controller.firstPersonName)
+                        .font(self.actorText)
+                        .fontWeight(self.actorWeight)
                     Text(controller.firstPersonCharacter)
+                        .font(self.characterText)
+                        .fontWeight(self.characterWeight)
+                    Spacer()
                 }
                 Spacer()
                 VStack{
+                    Spacer()
                     MoviePoster(size: .extraSmall, urlString: controller.secondPersonURL)
                     Text(controller.secondPersonName)
+                        .font(self.actorText)
+                        .fontWeight(self.actorWeight)
                     Text(controller.secondPersonCharacter)
+                        .font(self.characterText)
+                        .fontWeight(self.characterWeight)
+                    Spacer()
                 }
                 Spacer()
                 VStack{
+                    Spacer()
                     MoviePoster(size: .extraSmall, urlString: controller.thirdPersonURL)
                     Text(controller.thirdPersonName)
+                        .font(self.actorText)
+                        .fontWeight(self.actorWeight)
                     Text(controller.thirdPersonCharacter)
+                        .font(self.characterText)
+                        .fontWeight(self.characterWeight)
+                    Spacer()
                 }
                 Spacer()
                 VStack {
+                    Spacer()
                     MoviePoster(size: .extraSmall, urlString: controller.fourthPersonURL)
                     Text(controller.fourthPersonName)
+                        .font(self.actorText)
+                        .fontWeight(self.actorWeight)
                     Text(controller.fourthPersonCharacter)
+                        .font(self.characterText)
+                        .fontWeight(self.characterWeight)
+                    Spacer()
                 }
                 Spacer()
             }
             .frame(width: GUISize.rowWidth)
+            .multilineTextAlignment(.center)
+            
         }
-        .frame(width: GUISize.rowWidth, height: GUISize.smallPosterHeight + 10)
+        .frame(width: GUISize.rowWidth, height: GUISize.smallPosterHeight + 20)
     }
 }
 
