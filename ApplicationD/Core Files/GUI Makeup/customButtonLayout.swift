@@ -11,11 +11,27 @@ struct customButtonLayout: View {
     
     let text: String
     let GUISize = GUISizes()
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    
+    init(size: GUISizes.buttonSize, text: String){
+        if size == .small {
+            self.width = GUISize.indervidualInformationButtonWidth
+            self.height = GUISize.indervidualInformationButtonHeight
+            print("small")
+        }
+        if size == .medium {
+            self.width = GUISize.twoButtonRow_ButtonWidth
+            self.height = GUISize.twoButtonRow_ButtonHeight
+            print("medium")
+        }
+        self.text = text
+    }
     
     var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 3)
-                    .frame(width: GUISize.twoButtonRow_ButtonWidth, height: GUISize.twoButtonRow_ButtonHeight)
+                    .frame(width: self.width, height: self.height)
                     .foregroundColor(Color("#31572c"))
                     .shadow(color: Color("#132A13"), radius: 1, x: 0, y: 2)
                     .shadow(color: Color("#132A13"), radius: 1, x: 2, y: 2)
@@ -29,6 +45,6 @@ struct customButtonLayout: View {
 
 struct customButton_Previews: PreviewProvider {
     static var previews: some View {
-        customButtonLayout(text: "test button")
+        customButtonLayout(size: .small, text: "test button")
     }
 }

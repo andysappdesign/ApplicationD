@@ -50,12 +50,21 @@ struct threePosterRow: View {
         HStack {
             Spacer()
             VStack {
-                MoviePoster(size: self.size, urlString: object1.poster_path)
+                NavigationLink(destination: Indervidual_Information(object: object1)
+                ) {
+                    MoviePoster(size: self.size, urlString: object1.poster_path)
+                }
+                
             }
             Spacer()
             VStack {
                 if object2.title != "" {
-                    MoviePoster(size: self.size, urlString: object2.poster_path)
+                    NavigationLink(destination: Indervidual_Information(object: object2)
+                    ) {
+                        MoviePoster(size: self.size, urlString: object2.poster_path)
+                        
+                    }
+                    
                 }
                 else {
                     blankMoviePosition(size: self.size)
@@ -65,7 +74,10 @@ struct threePosterRow: View {
             Spacer()
             VStack {
                 if object3.title != "" {
-                    MoviePoster(size: self.size, urlString: object3.poster_path)
+                    NavigationLink(destination: Indervidual_Information(object: object3)
+                    ) {
+                        MoviePoster(size: self.size, urlString: object3.poster_path)
+                    }
                 }
                 else {
                     blankMoviePosition(size: self.size)

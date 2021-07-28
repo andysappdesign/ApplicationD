@@ -11,13 +11,18 @@ struct Indervidual_Information: View {
     
     let GUISize = GUISizes()
     let overview: String
-    let movieID: Int = 508943
+    let movieID: Int
+    let movieTitle: String
+    let posterString: String
     let castRowController: CastRowController
     @State var castBoxBool = false
     
-    init(overview: String) {
+    init(object: JSONMovieObject) {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("#31572c"))
-        self.overview = overview
+        self.movieID = object.id
+        self.overview = object.overview
+        self.movieTitle = object.title
+        self.posterString = object.poster_path
         self.castRowController = CastRowController(movieID: self.movieID)
         self.castRowController.populateCastRow()
     }
@@ -27,7 +32,7 @@ struct Indervidual_Information: View {
             Color("#ECF39E")
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
-                Text("Pirates of the Caribean: The Curse of the Black Pearl")
+                Text(self.movieTitle)
                     .font(GUISize.titleFont)
                     .fontWeight(GUISize.titleWeight)
                     .multilineTextAlignment(.center)
@@ -35,7 +40,7 @@ struct Indervidual_Information: View {
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                 HStack {
                     Spacer()
-                    MoviePoster(size: .medium, urlString: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg")
+                    MoviePoster(size: .medium, urlString: self.posterString)
                         .padding(.leading)
                     Spacer()
                     OverViewBox(boxHeight: GUISize.mediumPosterHeight, boxWidth: GUISize.indervidualInformationOverviewBoxWidth, overview: self.overview)
@@ -48,7 +53,7 @@ struct Indervidual_Information: View {
                     .frame(height: 4)
                 HStack{
                     Spacer()
-                    customButtonLayout(text: "Trailer Link")
+                    customButtonLayout(size: .medium, text: "Trailer Link")
                     Spacer()
                     VStack {
                         Text("Released in 2003")
@@ -75,10 +80,22 @@ struct Indervidual_Information: View {
                             .frame(width: GUISize.rowWidth, height:2.5)
                             .foregroundColor(Color("#31572c"))
                 }
+                Spacer()
+                HStack {
+                    VStack{
+                        Spacer()
+                        customButtonLayout(size: .small, text: "30 points")
+                        Spacer()
+                        customButtonLayout(size: .small, text: "Collection")
+                        Spacer()
+                    }
+                    Spacer()
+                    RatingsBox(testing: true, boxWidth: GUISize.indervidualInformationOverviewBoxWidth, boxHeight: GUISize.indervidualInformationRatingsBoxHeight)
+                } .frame(width: GUISize.rowWidth)
                 
                 Spacer()
                 bottomBar()
-            } // end of HStack
+            }
             .frame(width: GUISize.screenWidth)
         } // end of ZStack
         
@@ -94,6 +111,8 @@ struct Indervidual_Information: View {
 
 struct Indervidual_Information_Previews: PreviewProvider {
     static var previews: some View {
-        Indervidual_Information(overview: "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her.")
+        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
+        
+        Indervidual_Information(object: object)
     }
 }

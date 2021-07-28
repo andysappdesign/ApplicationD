@@ -62,6 +62,13 @@ class GUISizes {
         case extraLarge
     }
     
+    // Button Size
+    
+    enum buttonSize {
+        case small
+        case medium
+    }
+    
     // Page Items
     let titleFont: Font = .title
     let titleWeight: Font.Weight = .medium
@@ -74,7 +81,11 @@ class GUISizes {
     
     // Indervidual Information
     let indervidualInformationOverviewBoxWidth: CGFloat
+    let indervidualInformationRatingsBoxWidth: CGFloat
+    let indervidualInformationRatingsBoxHeight: CGFloat
     let castBoxWidth: CGFloat
+    let indervidualInformationButtonWidth: CGFloat
+    let indervidualInformationButtonHeight: CGFloat
     
     // MARK:- init
     
@@ -82,7 +93,7 @@ class GUISizes {
         self.screenSize = UIScreen.main.bounds
         self.screenWidth = self.screenSize.width
         self.screenHeight = self.screenSize.height
-        self.rowWidth = self.screenWidth
+        self.rowWidth = self.screenWidth - 18
         let twoButtonRow_Width = self.rowWidth / 2
         
         self.twoButtonRow_ButtonWidth = twoButtonRow_Width - 30
@@ -94,8 +105,8 @@ class GUISizes {
         self.smallPosterWidth = twoButtonRow_Width / 2
         self.smallPosterHeight = twoButtonRow_Width * 0.75
         
-        self.mediumPosterWidth = twoButtonRow_Width * 0.75
-        self.mediumPosterHeight = self.smallPosterHeight * 1.5
+        self.mediumPosterWidth = twoButtonRow_Width * 0.70
+        self.mediumPosterHeight = self.smallPosterHeight * 1.35
         
         self.largePosterWidth = self.smallPosterWidth * 1.45
         self.largePosterHeight = self.smallPosterHeight * 1.45
@@ -111,7 +122,10 @@ class GUISizes {
         
         self.indervidualInformationOverviewBoxWidth = (((self.screenWidth - self.largePosterWidth) - 10) - 2)
         self.castBoxWidth = self.screenWidth + 4
-        
+        self.indervidualInformationButtonWidth = self.twoButtonRow_ButtonWidth * 0.9
+        self.indervidualInformationButtonHeight = self.twoButtonRow_ButtonHeight
+        self.indervidualInformationRatingsBoxWidth = (self.indervidualInformationButtonWidth - self.rowWidth) - 35
+        self.indervidualInformationRatingsBoxHeight = self.smallPosterHeight
         
     }
     

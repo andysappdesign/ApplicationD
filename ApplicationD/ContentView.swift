@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var name: String
     var nextFilmString: String = "Luca"
-    var nextFilmImageString: String = "piratesMoviePoster"
+    var nextFilmImageString: String = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg"
     
     static var colourString = "#ECF39E"
     
@@ -47,8 +47,8 @@ struct ContentView: View {
                         .frame(height: 30)
                     HStack  {
                         Spacer()
-//                        MoviePoster(size: .large, imageString: self.nextFilmImageString)
-//                            .padding(.leading)
+                        MoviePoster(size: .large, urlString: self.nextFilmImageString)
+                            .padding(.leading)
                         Spacer()
                         VStack {
                             Spacer()
@@ -58,7 +58,7 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: ListView()
                             ) {
-                                customButtonLayout(text: "My Lists")
+                                customButtonLayout(size: .medium, text: "My Lists")
                             }
                         }
                         .padding(.trailing)

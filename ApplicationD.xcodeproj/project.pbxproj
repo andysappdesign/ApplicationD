@@ -18,6 +18,8 @@
 		22255A8A269DC8D600CE6774 /* Button Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A89269DC8D600CE6774 /* Button Row.swift */; };
 		22255A8C269DC8E100CE6774 /* customButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A8B269DC8E100CE6774 /* customButtonLayout.swift */; };
 		22255A8E269DD29700CE6774 /* GUISizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A8D269DD29700CE6774 /* GUISizes.swift */; };
+		22297CEB26AD6A7300886FAD /* RatingsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22297CEA26AD6A7300886FAD /* RatingsBox.swift */; };
+		22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22297CEC26AD702C00886FAD /* RatingSymbolLine.swift */; };
 		22337F932653DF81008089A9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F922653DF81008089A9 /* ListView.swift */; };
 		22337F9A2653E01F008089A9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F952653E01F008089A9 /* ImageCache.swift */; };
 		22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F962653E01F008089A9 /* AsyncImage.swift */; };
@@ -39,7 +41,6 @@
 		22E33F2D2610B1FC0086A5C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E33F2C2610B1FC0086A5C5 /* Preview Assets.xcassets */; };
 		22E33F2F2610B1FC0086A5C5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F2E2610B1FC0086A5C5 /* Persistence.swift */; };
 		22E33F322610B1FC0086A5C5 /* ApplicationD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F302610B1FC0086A5C5 /* ApplicationD.xcdatamodeld */; };
-		22E33F642610B3120086A5C5 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F492610B3120086A5C5 /* TMDBAPI.swift */; };
 		22E33F672610B3120086A5C5 /* AuthenticateWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F4C2610B3120086A5C5 /* AuthenticateWindow.swift */; };
 		22E33F692610B3120086A5C5 /* userCreation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F4F2610B3120086A5C5 /* userCreation2.swift */; };
 		22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F502610B3120086A5C5 /* userCreationHelper.swift */; };
@@ -78,6 +79,8 @@
 		22255A89269DC8D600CE6774 /* Button Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button Row.swift"; sourceTree = "<group>"; };
 		22255A8B269DC8E100CE6774 /* customButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonLayout.swift; sourceTree = "<group>"; };
 		22255A8D269DD29700CE6774 /* GUISizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUISizes.swift; sourceTree = "<group>"; };
+		22297CEA26AD6A7300886FAD /* RatingsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsBox.swift; sourceTree = "<group>"; };
+		22297CEC26AD702C00886FAD /* RatingSymbolLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSymbolLine.swift; sourceTree = "<group>"; };
 		22337F922653DF81008089A9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/Core Files/Lists/ListView.swift"; sourceTree = "<absolute>"; };
 		22337F952653E01F008089A9 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		22337F962653E01F008089A9 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		22E33F2E2610B1FC0086A5C5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		22E33F312610B1FC0086A5C5 /* ApplicationD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ApplicationD.xcdatamodel; sourceTree = "<group>"; };
 		22E33F332610B1FC0086A5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22E33F492610B3120086A5C5 /* TMDBAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 		22E33F4C2610B3120086A5C5 /* AuthenticateWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateWindow.swift; sourceTree = "<group>"; };
 		22E33F4F2610B3120086A5C5 /* userCreation2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreation2.swift; sourceTree = "<group>"; };
 		22E33F502610B3120086A5C5 /* userCreationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreationHelper.swift; sourceTree = "<group>"; };
@@ -180,6 +182,8 @@
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
 				22E019CC269EFEDA00A3C62A /* MoviePoster.swift */,
 				228C3A8026A5A26E00242711 /* OverViewBox.swift */,
+				22297CEA26AD6A7300886FAD /* RatingsBox.swift */,
+				22297CEC26AD702C00886FAD /* RatingSymbolLine.swift */,
 				2205D15826495F1A00F96882 /* ProfilePicture.swift */,
 				2205D15C2649649000F96882 /* TutorialPage.swift */,
 			);
@@ -261,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				22E33F4C2610B3120086A5C5 /* AuthenticateWindow.swift */,
-				22E33F492610B3120086A5C5 /* TMDBAPI.swift */,
 				22E33F522610B3120086A5C5 /* userCreation1.swift */,
 				22E33F4F2610B3120086A5C5 /* userCreation2.swift */,
 				22E33F502610B3120086A5C5 /* userCreationHelper.swift */,
@@ -426,6 +429,7 @@
 				2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */,
 				22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */,
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
+				22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */,
 				22E33F9D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift in Sources */,
 				22255A8A269DC8D600CE6774 /* Button Row.swift in Sources */,
 				22E33F962610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift in Sources */,
@@ -462,11 +466,11 @@
 				228C3A7B26A58CC600242711 /* Indervidual Information.swift in Sources */,
 				22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */,
 				22337F9A2653E01F008089A9 /* ImageCache.swift in Sources */,
+				22297CEB26AD6A7300886FAD /* RatingsBox.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
 				22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */,
 				2205D15026493EF800F96882 /* loadPoints.swift in Sources */,
 				22E33F9E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift in Sources */,
-				22E33F642610B3120086A5C5 /* TMDBAPI.swift in Sources */,
 				22255A8C269DC8E100CE6774 /* customButtonLayout.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,
 				22E019CF269F108200A3C62A /* WatchList.swift in Sources */,

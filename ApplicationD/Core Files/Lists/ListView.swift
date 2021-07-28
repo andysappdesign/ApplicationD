@@ -30,12 +30,12 @@ struct ListView: View {
                         Text("Watch List")
                 })
                 Spacer()
-                NavigationLink(
-                    destination: Indervidual_Information(overview: "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her."),
-                    label: {
-                        Text("Information")
-                    }
-                    )
+//                NavigationLink(
+//                    destination: Indervidual_Information(overview: "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her."),
+//                    label: {
+//                        Text("Information")
+//                    }
+//                    )
             }
             
                 
