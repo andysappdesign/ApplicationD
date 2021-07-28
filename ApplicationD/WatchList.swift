@@ -31,19 +31,26 @@ struct WatchList: View {
     }
 
     var body: some View {
-        List{
-            ForEach(Movie.rowObjectPositions, id: \.self) { array in
-                if array.count == 3 {
-                    threePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
-                } else if array.count == 2 {
-                    threePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie)
-                } else if array.count == 1 {
-                    threePosterRow(object1: array[0], MoviesWatchList: self.Movie)
-                }
-                
-            }
-        } // end of list
-        .frame(width: GUISize.rowWidth)
+        ScrollView {
+            ZStack {
+                Color("#ECF39E")
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: GUISize.screenWidth, height: GUISize.screenHeight * 2)
+                VStack {
+                    ForEach(Movie.rowObjectPositions, id: \.self) {array in
+                        if array.count == 3 {
+                            threePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
+                        } else if array.count == 2 {
+                            threePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie)
+                        } else if array.count == 1 {
+                            threePosterRow(object1: array[0], MoviesWatchList: self.Movie)
+                        }
+                        
+                    }
+                    Spacer()
+                } //end of VStack
+            } // end of ZStack
+        } // end of ScrollView
     } // end of view
 }
 
