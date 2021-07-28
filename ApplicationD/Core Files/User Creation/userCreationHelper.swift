@@ -11,7 +11,7 @@ import CoreData
 import Alamofire
 import SwiftyJSON
 
-public class userCreationHelper: ObservableObject {
+ class userCreationHelper: TMDB, ObservableObject {
     
     // This class is just a backend helper class to help with user creation
 
@@ -19,8 +19,8 @@ public class userCreationHelper: ObservableObject {
     @Published var screencount = 1
     @Published var alertBool = false
     @Published var alertString = ""
-    @Published var requestId = ""
     @Binding var isOnboarding: Bool
+    @Published var requestIDRecived: Bool = false
     
     
     // MARK: -  init
@@ -73,84 +73,32 @@ public class userCreationHelper: ObservableObject {
 //        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     
-    // MARK: - func request
-    
-    func request() {
-        let url = "https://api.themoviedb.org/3/authentication/token/new?api_key=df8304134d840c4d6d11ca3c0055d5c6"
-        var returnValue = ""
-        
-        AF.request(url, method: .get).responseJSON { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-//                print("JSON: \(json)")
-                returnValue = json["request_token"].stringValue
-//                print("returnValue = \(returnValue)")
-                self.requestId = returnValue
-            case .failure(let error):
-                print(error)
-                self.requestId = ""
-            }
-        } // end of request
-    } // end of requestToken
-    
-    // MARK: func finishSetup
+    // MARK:- func finishSetup
     
     func finishSetup() {
-        createSession()
-        self.isOnboarding.toggle() 
-        print("User setup complete")
-    }
-    
-    // MARK: - func createSession
-    
-    private func createSession() {
-        let url = "https://api.themoviedb.org/3/authentication/session/new?api_key=df8304134d840c4d6d11ca3c0055d5c6"
-        let parameter : [String: String] = [
-            "request_token" : requestId
-        ]
-        
-        AF.request(url, method: .post, parameters: parameter).responseJSON { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                let sessionId = json["session_id"].stringValue
-//                print("success, id = \(sessionId)")
-                self.updateSessionId(sessionId)
-                self.getTMDbAccount(sessionId)
-            case .failure(let error):
-                print("Error \(error)")
+        super.createSession() { (responce) in
+            if responce == true {
+                self.isOnboarding.toggle()
+                print("User setup complete")
+            } else {
+                print("User Setup failed")
             }
-        }
-    } // end of createSession
-    
-    // MARK: - func updateSessionId
-    
-    private func updateSessionId(_ id : String) {
-        UserDefaults.standard.setValue(id, forKey: "sessionId")
-        print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
-    }
-    
-    //MARK: - func getTMDbAccount
-    
-    private func getTMDbAccount(_ id: String) {
-        let partUrl = "https://api.themoviedb.org/3/account?api_key=df8304134d840c4d6d11ca3c0055d5c6&session_id="
-        let sessionId = id
-        let url = partUrl + sessionId
         
-        AF.request(url, method: .get).responseJSON { (responce) in
-            switch responce.result {
-            case .success(let value):
-                let json = JSON(value)
-                let accoundId = json["id"].stringValue
-                print("accountId: \(accoundId)")
-                UserDefaults.standard.setValue(accoundId, forKey: "accountId")
-            case .failure(let error):
-                print(error)
-            }
-  
         }
         
-    } // end of getTMDbAccount
+    }
+    
+    // MARK:- request
+    
+    func request() {
+        super.tokenRequest() { (responce) in
+            if responce == true {
+                self.requestIDRecived = true
+            } else {
+                print("request has failed")
+                self.requestIDRecived = false
+            }
+        }
+    }
     
 }

@@ -26,6 +26,7 @@
 		22337F9C2653E01F008089A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F972653E01F008089A9 /* EnvironmentValues+ImageCache.swift */; };
 		22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F982653E01F008089A9 /* ImageLoader.swift */; };
 		2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* blankMoviePosition.swift */; };
+		227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C9F7426B1AA8B00A86858 /* TMDb.swift */; };
 		228C3A7B26A58CC600242711 /* Indervidual Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7A26A58CC600242711 /* Indervidual Information.swift */; };
 		228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* bottomBar.swift */; };
 		228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8026A5A26E00242711 /* OverViewBox.swift */; };
@@ -87,6 +88,7 @@
 		22337F972653E01F008089A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		22337F982653E01F008089A9 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		2268456726A3038800E0F4EB /* blankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankMoviePosition.swift; sourceTree = "<group>"; };
+		227C9F7426B1AA8B00A86858 /* TMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDb.swift; sourceTree = "<group>"; };
 		228C3A7A26A58CC600242711 /* Indervidual Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Indervidual Information.swift"; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/Indervidual Information.swift"; sourceTree = "<absolute>"; };
 		228C3A7C26A58E3400242711 /* bottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomBar.swift; sourceTree = "<group>"; };
 		228C3A8026A5A26E00242711 /* OverViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewBox.swift; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 				228C3A7C26A58E3400242711 /* bottomBar.swift */,
 				22255A89269DC8D600CE6774 /* Button Row.swift */,
 				228C3A8426A5B91D00242711 /* CastRow.swift */,
-				22144C0926A6E7BF00631FD1 /* CastRowController.swift */,
 				22255A8B269DC8E100CE6774 /* customButtonLayout.swift */,
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
 				22E019CC269EFEDA00A3C62A /* MoviePoster.swift */,
@@ -199,6 +200,15 @@
 				22337F982653E01F008089A9 /* ImageLoader.swift */,
 			);
 			path = AsyncImage;
+			sourceTree = "<group>";
+		};
+		227C9F7626B1B33500A86858 /* Background Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22144C0926A6E7BF00631FD1 /* CastRowController.swift */,
+				227C9F7426B1AA8B00A86858 /* TMDb.swift */,
+			);
+			path = "Background Controllers";
 			sourceTree = "<group>";
 		};
 		22E33F192610B1FB0086A5C5 = {
@@ -252,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				22337F942653E007008089A9 /* AsyncImage */,
+				227C9F7626B1B33500A86858 /* Background Controllers */,
 				2205D14C26493E0B00F96882 /* Points System */,
 				2205D151264955DA00F96882 /* GUI Makeup */,
 				22ED09FC263D6AAD0048ABA6 /* Lists */,
@@ -461,6 +472,7 @@
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,
 				22255A8E269DD29700CE6774 /* GUISizes.swift in Sources */,
 				22E33F982610B4400086A5C5 /* WatchedTV+CoreDataClass.swift in Sources */,
+				227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */,
 				22ED09FE263D6AD80048ABA6 /* MovieWatchList.swift in Sources */,
 				22E019D3269F146400A3C62A /* JSONMovieObject.swift in Sources */,
 				228C3A7B26A58CC600242711 /* Indervidual Information.swift in Sources */,

@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftyJSON
 
-class CastRowController: ObservableObject {
+class CastRowController: TMDB, ObservableObject {
     
     let movieID: Int
-    let API = "df8304134d840c4d6d11ca3c0055d5c6"
     var castArray: [JSON] = []
     var objectArray: [castObjects] = []
     let urlFirstHalf = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2"
@@ -43,7 +41,7 @@ class CastRowController: ObservableObject {
     // MARK:- getCast
     
     private func getCast(completionHandler: @escaping () -> Void) {
-        loadList { (responce) in
+        super.getCredits(movieID: self.movieID) { (responce) in
             if responce != JSON() {
                 self.castArray = responce["cast"].arrayValue
                 self.getObjects()
@@ -53,22 +51,6 @@ class CastRowController: ObservableObject {
                 
             } else {
                 print("responce is empty")
-            }
-        }
-    }
-    
-    // MARK: loadList
-    
-    private func loadList(completionHandler: @escaping (JSON) -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/\(self.movieID)/credits?api_key=\(self.API)&language=en-US"
-        
-        AF.request(url, method: .get).responseJSON { (responce) in
-            switch responce.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-            case .failure(let error):
-                print(error)
             }
         }
     }
@@ -96,7 +78,7 @@ class CastRowController: ObservableObject {
     // MARK:- getProfilePic
     
     private func getProfilePic(personID: Int, completionHandler: @escaping (String) -> Void) {
-        getImages(personID: personID) { (responce) in
+        super.getImagesOfPerson(personID: personID) { (responce) in
             if responce != JSON() {
                 let tempArray = responce["profiles"].array!
                 let object = tempArray[0]
@@ -112,21 +94,6 @@ class CastRowController: ObservableObject {
         
     }
     
-    // MARK: getImages
-    
-    private func getImages(personID: Int, completionHandler: @escaping (JSON) -> Void) {
-        let url = "https://api.themoviedb.org/3/person/\(personID)/images?api_key=\(self.API)"
-        
-        AF.request(url, method: .get).responseJSON { (responce) in
-            switch responce.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     
     // MARK: - getNames
     
