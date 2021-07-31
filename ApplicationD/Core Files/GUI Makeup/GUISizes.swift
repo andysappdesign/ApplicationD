@@ -10,22 +10,22 @@ import SwiftUI
 
 class GUISizes {
     
-    // URL Begining
+    // MARK: URL Begining
     let urlFirstHalf = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"
     
-    // Device Information
+    // MARK: Device Information
     let screenSize: CGRect
     let screenWidth: CGFloat
     let screenHeight: CGFloat
     
-    // Row Information
+    // MARK: Row Information
     let rowWidth: CGFloat
     
-    // Two Button Row Information
+    // MARK: Two Button Row Information
     let twoButtonRow_ButtonWidth: CGFloat
     let twoButtonRow_ButtonHeight: CGFloat
     
-    //Movie Poster Sizes
+    // MARK: Movie Poster Sizes
     let extraSmallPosterWidth: CGFloat
     let extraSmallPosterHeight: CGFloat
     let smallPosterWidth: CGFloat
@@ -37,7 +37,7 @@ class GUISizes {
     let extraLargePosterWidth: CGFloat
     let extraLargePosterHeight: CGFloat
     
-    // Movie Poster Aspect Ratio
+    // MARK: Movie Poster Aspect Ratio
     
     let extraSmallPosterAspectRatio = CGSize(width: 2, height: 3)
     let smallPosterAspectRatio = CGSize(width: 11, height: 17)
@@ -45,14 +45,14 @@ class GUISizes {
     let largePosterAspectRatio = CGSize(width: 2, height: 3)
     let extraLargePosterAspectRatio = CGSize(width: 27, height: 40)
     
-    // Bottem Bar Information
+    // MARK: Bottem Bar Information
     let bottomBarHeight: CGFloat
     let bottomBarSpacer: CGFloat
     let bottomBarFontSize: Font
     let bottomBarFontColor: Color
     let buttonSquareSize: CGFloat // same for width and height
     
-    // Sizes
+    // MARK: Sizes
     
     enum Sizes {
         case extraSmall
@@ -62,14 +62,14 @@ class GUISizes {
         case extraLarge
     }
     
-    // Button Size
+    // MARK: Button Size
     
     enum buttonSize {
         case small
         case medium
     }
     
-    // Page Items
+    // MARK: Page Items
     let titleFont: Font = .title
     let titleWeight: Font.Weight = .medium
     let titleColor = Color("#132A13")
@@ -79,13 +79,17 @@ class GUISizes {
     let titleShadowY: CGFloat = 1
     let bodyFontSize: Font = .custom("SFProText", fixedSize: 18)
     
-    // Indervidual Information
+    // MARK: Indervidual Information
     let indervidualInformationOverviewBoxWidth: CGFloat
     let indervidualInformationRatingsBoxWidth: CGFloat
     let indervidualInformationRatingsBoxHeight: CGFloat
     let castBoxWidth: CGFloat
     let indervidualInformationButtonWidth: CGFloat
     let indervidualInformationButtonHeight: CGFloat
+    
+    // MARK: Search Box
+    
+    let searchFormHeight: CGFloat
     
     // MARK:- init
     
@@ -126,6 +130,8 @@ class GUISizes {
         self.indervidualInformationButtonHeight = self.twoButtonRow_ButtonHeight
         self.indervidualInformationRatingsBoxWidth = (self.indervidualInformationButtonWidth - self.rowWidth) - 35
         self.indervidualInformationRatingsBoxHeight = self.smallPosterHeight
+        
+        self.searchFormHeight = self.screenHeight / 4
         
     }
     

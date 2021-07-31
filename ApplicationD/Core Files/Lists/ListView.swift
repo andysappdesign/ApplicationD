@@ -16,7 +16,6 @@ struct ListView: View {
     init() {
         self.watchList = MovieWatchList()
         watchList.loadList {
-           // print("generated list")
         }
     }
     
@@ -36,6 +35,7 @@ struct ListView: View {
 //                        Text("Information")
 //                    }
 //                    )
+                bottomBar()
             }
             
                 

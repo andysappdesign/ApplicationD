@@ -21,7 +21,6 @@ struct userCreationMain: View {
     
     init(managedObjectContext: NSManagedObjectContext, isOnboarding: Binding<Bool>) {
         self.helper = userCreationHelper.init(moc: managedObjectContext, Onboarded: isOnboarding)
-        print("userCreationMain called & opening screen 1")
     }
     
     var body: some View {

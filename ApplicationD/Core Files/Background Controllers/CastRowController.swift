@@ -46,7 +46,6 @@ class CastRowController: TMDB, ObservableObject {
                 self.castArray = responce["cast"].arrayValue
                 self.getObjects()
                 self.sortList()
-                print("getCast completed")
                 completionHandler()
                 
             } else {
@@ -68,9 +67,8 @@ class CastRowController: TMDB, ObservableObject {
     // MARK: sortList
     
     private func sortList() {
-        for i in 1...4 {
+        for i in 0...3 {
             let temp = self.objectArray[i]
-//            print(temp)
             self.fourCastArray.append(temp)
         }
     }
@@ -103,25 +101,21 @@ class CastRowController: TMDB, ObservableObject {
                 let temp = self.fourCastArray[i]
                 self.firstPersonName = temp.name
                 self.firstPersonCharacter = temp.character
-                print("First Person, Name: \(self.firstPersonName), Character: \(self.firstPersonCharacter)")
             }
             if i == 1 {
                 let temp = self.fourCastArray[i]
                 self.secondPersonName = temp.name
                 self.secondPersonCharacter = temp.character
-                print("Second Person, Name: \(self.secondPersonName), Character: \(self.secondPersonCharacter)")
             }
             if i == 2 {
                 let temp = self.fourCastArray[i]
                 self.thirdPersonName = temp.name
                 self.thirdPersonCharacter = temp.character
-                print("Third Person, Name: \(self.thirdPersonName), Character: \(self.thirdPersonCharacter)")
             }
             if i == 3 {
                 let temp = self.fourCastArray[i]
                 self.fourthPersonName = temp.name
                 self.fourthPersonCharacter = temp.character
-                print("Fourth Person, Name: \(self.fourthPersonName), Character: \(self.fourthPersonCharacter)")
             }
         }
     }
@@ -137,7 +131,6 @@ class CastRowController: TMDB, ObservableObject {
                     let id = temp.id
                     self.getProfilePic(personID: id) { (responce) in
                         self.firstPersonURL = self.urlFirstHalf + responce
-                        print("firstPersonURL: \(self.firstPersonURL)")
                         
                     }
                 } // end of first person
@@ -146,7 +139,6 @@ class CastRowController: TMDB, ObservableObject {
                     let id = temp.id
                     self.getProfilePic(personID: id) { (responce) in
                         self.secondPersonURL = self.urlFirstHalf + responce
-                        print("secondPersonURL: \(self.secondPersonURL)")
                         
                     }
                 } // end of second person
@@ -155,7 +147,6 @@ class CastRowController: TMDB, ObservableObject {
                     let id = temp.id
                     self.getProfilePic(personID: id) { (responce) in
                         self.thirdPersonURL = self.urlFirstHalf + responce
-                        print("thirdPersonURL: \(self.thirdPersonURL)")
                         
                     }
                 } // end of third person
@@ -164,7 +155,6 @@ class CastRowController: TMDB, ObservableObject {
                     let id = temp.id
                     self.getProfilePic(personID: id) { (responce) in
                         self.fourthPersonURL = self.urlFirstHalf + responce
-                        print("fourthPersonURL: \(self.fourthPersonURL)")
                         
                     }
                 } // end of fourth person

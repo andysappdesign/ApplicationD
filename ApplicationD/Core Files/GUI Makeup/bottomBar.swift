@@ -20,9 +20,11 @@ struct bottomBar: View {
                 HStack{
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    Image(systemName: "house")
-                        .resizable()
-                        .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    NavigationLink(destination: ContentView()) {
+                        Image(systemName: "house")
+                            .resizable()
+                            .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    }
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
                 }
@@ -32,9 +34,11 @@ struct bottomBar: View {
                 HStack {
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    NavigationLink(destination: Search()) {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    }
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
                 }
@@ -44,9 +48,13 @@ struct bottomBar: View {
                 HStack {
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    Image(systemName: "list.star")
-                        .resizable()
-                        .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    NavigationLink(
+                        destination: ListView()
+                    ) {
+                        Image(systemName: "list.star")
+                            .resizable()
+                            .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    }
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
                 }
@@ -65,7 +73,7 @@ struct bottomBar: View {
                 
             } .frame(width: GUISize.screenWidth, height: GUISize.bottomBarHeight)
             .foregroundColor(Color("#ECF39E"))
-                
+            
             
         }
     }

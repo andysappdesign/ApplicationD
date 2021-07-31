@@ -36,6 +36,27 @@ struct threePosterRow: View {
         self.object3 = JSONMovieObject()
     }
     
+    init(object1: Int, object2: Int, object3: Int, searchController: searchController) {
+        self.object1 = searchController.objectDiscoverArray[object1]
+        self.object2 = searchController.objectDiscoverArray[object2]
+        self.object3 = searchController.objectDiscoverArray[object3]
+    }
+    
+    // Two Objects
+    
+    init(object1: Int, object2: Int, searchController: searchController) {
+        self.object1 = searchController.objectDiscoverArray[object1]
+        self.object2 = searchController.objectDiscoverArray[object2]
+        self.object3 = JSONMovieObject()
+    }
+    
+    // One Object
+    init(object1: Int, searchController: searchController) {
+        self.object1 = searchController.objectDiscoverArray[object1]
+        self.object2 = JSONMovieObject()
+        self.object3 = JSONMovieObject()
+    }
+    
     init(testing: Bool) {
             self.object1 = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
             self.object2 = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "WandaVision", poster_path: "glKDfE6btIRcVB5zrjspRIs4r52.jpg", genre_ids: [])

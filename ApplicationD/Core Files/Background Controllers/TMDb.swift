@@ -19,7 +19,7 @@ class TMDB {
     // MARK:- TokenRequest
     
     func tokenRequest(completionHandler: @escaping (Bool) -> Void) {
-        let url = "https://api.themoviedb.org/3/authentication/token/new?api_key=df8304134d840c4d6d11ca3c0055d5c6"
+        let url = "https://api.themoviedb.org/3/authentication/token/new?api_key=\(self.API)"
         var returnValue = ""
         
         AF.request(url, method: .get).responseJSON { (response) in
@@ -27,9 +27,7 @@ class TMDB {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-//                print("JSON: \(json)")
                 returnValue = json["request_token"].stringValue
-//                print("returnValue = \(returnValue)")
                 self.requestId = returnValue
                 completionHandler(true)
             case .failure(let error):
@@ -44,7 +42,7 @@ class TMDB {
     // MARK: - CreateSession
     
     func createSession(completionHandler: @escaping (Bool) -> Void) {
-        let url = "https://api.themoviedb.org/3/authentication/session/new?api_key=df8304134d840c4d6d11ca3c0055d5c6"
+        let url = "https://api.themoviedb.org/3/authentication/session/new?api_key=\(self.API)"
         let parameter : [String: String] = [
             "request_token" : requestId
         ]
@@ -80,10 +78,8 @@ class TMDB {
     private func updateSessionId(_ id : String, completionHandler: @escaping (Bool) -> Void) {
         UserDefaults.standard.setValue(id, forKey: "sessionId")
         if UserDefaults.standard.string(forKey: "sessionId") == id {
-            print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
             completionHandler(true)
         } else {
-            print("updated user id to \(UserDefaults.standard.string(forKey: "sessionId") ?? ". Error: No ID found")")
             completionHandler(false)
         }
         
@@ -92,7 +88,7 @@ class TMDB {
     //MARK: - GetTMDbAccount
     
    func getTMDbAccount(_ id: String, completionHandler: @escaping (Bool) -> Void) {
-        let partUrl = "https://api.themoviedb.org/3/account?api_key=df8304134d840c4d6d11ca3c0055d5c6&session_id="
+    let partUrl = "https://api.themoviedb.org/3/account?api_key=\(self.API)&session_id="
         let sessionId = id
         let url = partUrl + sessionId
         
@@ -101,7 +97,6 @@ class TMDB {
             case .success(let value):
                 let json = JSON(value)
                 let accoundId = json["id"].stringValue
-                print("accountId: \(accoundId)")
                 UserDefaults.standard.setValue(accoundId, forKey: "accountId")
                 completionHandler(true)
             case .failure(let error):
@@ -151,9 +146,7 @@ class TMDB {
     // MARK:- GetMovieWatchList
     
     func getMovieWatchList(completionHandler: @escaping (JSON) -> Void) {
-        let url = "https://api.themoviedb.org/3/account/\(self.accountId)/watchlist/movies?api_key=df8304134d840c4d6d11ca3c0055d5c6&language=en-GB&session_id=\(self.sessionId)&sort_by=created_at.asc&page=1"
-        
-        //print("sessionid: \(self.sessionId), accountId: \(self.accountId)")
+        let url = "https://api.themoviedb.org/3/account/\(self.accountId)/watchlist/movies?api_key=\(self.API)&language=en-GB&session_id=\(self.sessionId)&sort_by=created_at.asc&page=1"
         
         AF.request(url, method: .get).responseJSON { (responce) in
             switch responce.result {
@@ -168,5 +161,22 @@ class TMDB {
     } // end of getWatchList
     
     
+    // MARK:- Discover - Movies
+    
+    func discoverMovies(completionHandler: @escaping (JSON) -> Void) {
+        let url = "https://api.themoviedb.org/3/discover/movie?api_key=\(self.API)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_providers=Disney%20Plus&watch_region=GB&with_watch_monetization_types=flatrate"
+        
+        AF.request(url, method: .get).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                completionHandler(json)
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+
     
 }

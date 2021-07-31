@@ -51,6 +51,7 @@ struct WatchList: View {
                 } //end of VStack
             } // end of ZStack
         } // end of ScrollView
+        bottomBar()
     } // end of view
 }
 

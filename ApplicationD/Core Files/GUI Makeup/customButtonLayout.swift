@@ -18,12 +18,10 @@ struct customButtonLayout: View {
         if size == .small {
             self.width = GUISize.indervidualInformationButtonWidth
             self.height = GUISize.indervidualInformationButtonHeight
-            print("small")
         }
         if size == .medium {
             self.width = GUISize.twoButtonRow_ButtonWidth
             self.height = GUISize.twoButtonRow_ButtonHeight
-            print("medium")
         }
         self.text = text
     }
