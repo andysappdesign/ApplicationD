@@ -16,10 +16,10 @@ struct Button_Row: View {
     
     var body: some View {
         HStack {
-            customButtonLayout(size: .medium, text: self.button1Text)
+            CustomButtonLayout(size: .medium, text: self.button1Text)
             Spacer()
                 .frame(width: 30)
-            customButtonLayout(size: .medium, text: self.button2Text)
+            CustomButtonLayout(size: .medium, text: self.button2Text)
         } // end of HStack
         .frame(width: GUISize.rowWidth)
     }

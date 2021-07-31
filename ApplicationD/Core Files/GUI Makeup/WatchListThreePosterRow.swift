@@ -1,5 +1,5 @@
 //
-//  threePosterRow.swift
+//  WatchListThreePosterRow.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 14/07/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct threePosterRow: View {
+struct WatchListThreePosterRow: View {
     
     
     let GUISize = GUISizes()
@@ -32,27 +32,6 @@ struct threePosterRow: View {
     // One Object
     init(object1: Int, MoviesWatchList: MovieWatchList) {
         self.object1 = MoviesWatchList.objectArray[object1]
-        self.object2 = JSONMovieObject()
-        self.object3 = JSONMovieObject()
-    }
-    
-    init(object1: Int, object2: Int, object3: Int, searchController: searchController) {
-        self.object1 = searchController.objectDiscoverArray[object1]
-        self.object2 = searchController.objectDiscoverArray[object2]
-        self.object3 = searchController.objectDiscoverArray[object3]
-    }
-    
-    // Two Objects
-    
-    init(object1: Int, object2: Int, searchController: searchController) {
-        self.object1 = searchController.objectDiscoverArray[object1]
-        self.object2 = searchController.objectDiscoverArray[object2]
-        self.object3 = JSONMovieObject()
-    }
-    
-    // One Object
-    init(object1: Int, searchController: searchController) {
-        self.object1 = searchController.objectDiscoverArray[object1]
         self.object2 = JSONMovieObject()
         self.object3 = JSONMovieObject()
     }
@@ -112,8 +91,3 @@ struct threePosterRow: View {
     }
 }
 
-struct threePosterRow_Previews: PreviewProvider {
-    static var previews: some View {
-        threePosterRow(testing: true)
-    }
-}

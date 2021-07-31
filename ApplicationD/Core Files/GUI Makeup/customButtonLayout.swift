@@ -1,5 +1,5 @@
 //
-//  customButtonLayout.swift
+//  CustomButtonLayout.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 13/07/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct customButtonLayout: View {
+struct CustomButtonLayout: View {
     
     let text: String
     let GUISize = GUISizes()
@@ -41,8 +41,8 @@ struct customButtonLayout: View {
     }
 }
 
-struct customButton_Previews: PreviewProvider {
+struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        customButtonLayout(size: .small, text: "test button")
+        CustomButtonLayout(size: .small, text: "test button")
     }
 }

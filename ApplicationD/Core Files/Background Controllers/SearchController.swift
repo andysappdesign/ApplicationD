@@ -12,9 +12,15 @@ class searchController: TMDB, ObservableObject {
     
     @Published var jsonDiscoverArray: [JSON] = []
     @Published var objectDiscoverArray: [JSONMovieObject] = []
-    @Published var rowCount: Int = 0
-    @Published var rowObjectPositions = [[Int]]()
+    @Published var discoverRowCount: Int = 0
+    @Published var discoverRowObjectPositions = [[Int]]()
     let controlledDiscoveryArrayCount = 3
+    
+    @Published var jsonSearchArray: [JSON] = []
+    @Published var objectSearchArray: [JSONMovieObject] = []
+    @Published var searchRowCount: Int = 0
+    @Published var searchRowObjectPositions = [[Int]]()
+    
     
     override init() {
         super.init()
@@ -26,8 +32,44 @@ class searchController: TMDB, ObservableObject {
     // MARK:- Search
     
     func search(title: String) {
-        
+        let query = convertTitle(title: title)
+        super.searchMovies(query: query) { (responce) in
+            if responce != JSON() {
+                self.jsonSearchArray = responce["results"].arrayValue
+                let count = self.jsonSearchArray.count
+                for i in 0..<count {
+                    let temp = self.getSearchObject(positionNumber: i)
+                    self.objectSearchArray.append(temp)
+                }
+                
+            } else {
+                print("search responce empty")
+                // TO DO
+            }
+            
+        }
     }
+    
+    // MARK: Convert Title
+    
+    private func convertTitle(title: String) -> String {
+        return title.replacingOccurrences(of: " ", with: "%20")
+    }
+    
+    // MARK: - GetSearchObject
+
+    private func getSearchObject(positionNumber: Int) -> JSONMovieObject {
+        let object = jsonSearchArray[positionNumber]
+        var newObject = JSONMovieObject()
+        newObject.poster_path = object["poster_path"].string!
+        newObject.overview = object["overview"].string!
+        newObject.release_date = object["release_date"].string!
+        newObject.id = object["id"].int!
+        newObject.popularity = object["popularity"].float!
+        newObject.title = object["title"].string!
+        print("object name: \(newObject.title)")
+        return newObject
+    } // end of getObject
     
     // MARK:- DiscoverMovies
     
@@ -39,12 +81,12 @@ class searchController: TMDB, ObservableObject {
                 var i = 1
                 for (_, _) in self.jsonDiscoverArray.enumerated() {
                     while i != self.controlledDiscoveryArrayCount {
-                        let temp = self.getObject(positionNumber: i - 1)
+                        let temp = self.getDiscoveryObject(positionNumber: Int.random(in: 0..<count))
                         self.objectDiscoverArray.append(temp)
                         i += 1
                     } 
                 }
-                self.calculateRowAmountandObjectPositions(arrayCount: count)
+                self.disoverCalculateRowAmountandObjectPositions(arrayCount: count)
                 completionHander()
             } else {
                 print("responce is empty - discoverMovies failed")
@@ -52,24 +94,24 @@ class searchController: TMDB, ObservableObject {
         }
     }
     
-    // MARK: - GetObject
+    // MARK:  GetDiscoveryObject
 
-    private func getObject(positionNumber: Int) -> JSONMovieObject {
+    private func getDiscoveryObject(positionNumber: Int) -> JSONMovieObject {
         let object = self.jsonDiscoverArray[positionNumber]
         let newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!)
         return newObject
     } // end of getObject
     
-    // MARK:- CalculateRowAmount
+    // MARK:- DiscoverCalculateRowAmountandObjectPositions
     
-    private func calculateRowAmountandObjectPositions(arrayCount: Int) {
+    private func disoverCalculateRowAmountandObjectPositions(arrayCount: Int) {
         //RowAmount
         let row = Double(arrayCount) / 3
         let roundedRow = row.rounded(.up)
         let intRow = Int(roundedRow)
         
         //Object Positions
-        rowObjectPositions = []
+        self.discoverRowObjectPositions = []
         var n = 0
         var rowGroup: [Int] = []
         for _ in 0..<(intRow) {
@@ -81,11 +123,13 @@ class searchController: TMDB, ObservableObject {
                 n += 1
                 print(n)
             } // end of for
-            rowObjectPositions.append(rowGroup)
+            self.discoverRowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
-        print(rowObjectPositions)
+        print(self.discoverRowObjectPositions)
     }
+    
+    
 
     
     

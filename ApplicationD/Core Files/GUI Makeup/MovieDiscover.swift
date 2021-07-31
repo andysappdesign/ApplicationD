@@ -15,13 +15,13 @@ struct MovieDiscover: View {
         ZStack {
             Color("#ECF39E")
             VStack {
-                ForEach(controller.rowObjectPositions, id: \.self) {array in
+                ForEach(controller.discoverRowObjectPositions, id: \.self) {array in
                     if array.count == 3 {
-                        threePosterRow(object1: array[0], object2: array[1], object3: array[2], searchController: self.controller)
+                        DiscoverThreePosterRow(object1: array[0], object2: array[1], object3: array[2], searchController: self.controller)
                     } else if array.count == 2 {
-                        threePosterRow(object1: array[0], object2: array[1], searchController: self.controller)
+                        DiscoverThreePosterRow(object1: array[0], object2: array[1], searchController: self.controller)
                     } else if array.count == 1 {
-                        threePosterRow(object1: array[0], searchController: self.controller)
+                        DiscoverThreePosterRow(object1: array[0], searchController: self.controller)
                     }
                     
                 }

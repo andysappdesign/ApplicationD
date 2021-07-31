@@ -53,7 +53,7 @@ struct Indervidual_Information: View {
                     .frame(height: 4)
                 HStack{
                     Spacer()
-                    customButtonLayout(size: .medium, text: "Trailer Link")
+                    CustomButtonLayout(size: .medium, text: "Trailer Link")
                     Spacer()
                     VStack {
                         Text("Released in 2003")
@@ -84,9 +84,9 @@ struct Indervidual_Information: View {
                 HStack {
                     VStack{
                         Spacer()
-                        customButtonLayout(size: .small, text: "30 points")
+                        CustomButtonLayout(size: .small, text: "30 points")
                         Spacer()
-                        customButtonLayout(size: .small, text: "Collection")
+                        CustomButtonLayout(size: .small, text: "Collection")
                         Spacer()
                     }
                     Spacer()

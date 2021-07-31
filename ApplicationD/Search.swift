@@ -12,6 +12,7 @@ struct Search: View {
     let GUISize = GUISizes()
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""
+    @State var searchResults: Bool = false
     
     init() {
         controlller = searchController()
@@ -29,15 +30,23 @@ struct Search: View {
                     
                 }.frame(height: GUISize.searchFormHeight)
                 Button(action: {
-                        controlller.search(title: self.userSearchText)}) {
-                    customButtonLayout(size: .medium, text: "Submit")
+                        controlller.search(title: self.userSearchText)
+                        self.searchResults = true
+                        print("search")
+                }) {
+                    CustomButtonLayout(size: .medium, text: "Submit")
                 }
                 VStack {
                     ZStack {
                         Rectangle()
                             .foregroundColor(Color("#ECF39E"))
-                        MovieDiscover(controller: self.controlller)
-                        
+                        ScrollView {
+                            if self.searchResults == false {
+                                MovieDiscover(controller: self.controlller)
+                            } else {
+                                SearchResults(controller: self.controlller)
+                            }
+                        }
                     }
                     bottomBar()
                 }

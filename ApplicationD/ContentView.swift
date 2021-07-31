@@ -58,7 +58,7 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: ListView()
                             ) {
-                                customButtonLayout(size: .medium, text: "My Lists")
+                                CustomButtonLayout(size: .medium, text: "My Lists")
                             }
                         }
                         .padding(.trailing)

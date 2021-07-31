@@ -177,6 +177,25 @@ class TMDB {
             
         }
     }
+    
+    // MARK:- SearchMovies
+    
+    func searchMovies(query: String, completionHandler: @escaping (JSON) -> Void) {
+        
+        let url = "https://api.themoviedb.org/3/discover/movie?with_watch_providers=390&with_text_query=\(query)&api_key=\(self.API)"
+        
+        AF.request(url, method: .get).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                completionHandler(json)
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        
+    }
 
     
 }
