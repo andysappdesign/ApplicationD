@@ -18,7 +18,6 @@ struct Search: View {
     init() {
         controlller = searchController()
         controlller.discoverMovies {
-            print("discovered movies")
         }
     }
     
@@ -35,7 +34,6 @@ struct Search: View {
                         controlller.search(title: self.userSearchText)
                         self.searchResults = true
                         self.searchError = false
-                        print("search")
                     } else {
                         self.searchError = true
                     }

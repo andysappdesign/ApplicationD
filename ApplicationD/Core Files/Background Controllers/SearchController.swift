@@ -131,12 +131,10 @@ class searchController: TMDB, ObservableObject {
                     
                 } // end of if
                 n += 1
-                print(n)
             } // end of for
             self.discoverRowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
-        print(self.discoverRowObjectPositions)
     }
     
     

@@ -79,7 +79,6 @@ class MovieWatchList: TMDB, ObservableObject {
             rowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
-        print(rowObjectPositions)
     }
     
 }
