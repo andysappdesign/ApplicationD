@@ -13,6 +13,7 @@ struct Search: View {
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""
     @State var searchResults: Bool = false
+    @State var searchError: Bool = false
     
     init() {
         controlller = searchController()
@@ -30,12 +31,19 @@ struct Search: View {
                     
                 }.frame(height: GUISize.searchFormHeight)
                 Button(action: {
+                    if controlller.searchIsNotEmpty(query: self.userSearchText) == true {
                         controlller.search(title: self.userSearchText)
                         self.searchResults = true
+                        self.searchError = false
                         print("search")
-                }) {
+                    } else {
+                        self.searchError = true
+                    }
+                                        }) {
                     CustomButtonLayout(size: .medium, text: "Submit")
-                }
+                }.alert(isPresented: $searchError, content: {
+                    Alert(title: Text("Search Query is empty"), dismissButton: .default(Text("OK")))
+                })
                 VStack {
                     ZStack {
                         Rectangle()

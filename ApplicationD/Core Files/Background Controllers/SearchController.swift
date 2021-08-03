@@ -71,6 +71,16 @@ class searchController: TMDB, ObservableObject {
         return newObject
     } // end of getObject
     
+    // MARK:- - SearchIsNotEmpty
+    
+     func searchIsNotEmpty(query: String) -> Bool {
+        var bool = false
+        if query != "" {
+            bool = true
+        }
+        return bool
+    }
+    
     // MARK:- DiscoverMovies
     
     func discoverMovies(completionHander: @escaping () -> Void) {
