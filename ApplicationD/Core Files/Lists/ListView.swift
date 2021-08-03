@@ -17,6 +17,7 @@ struct ListView: View {
         self.watchList = MovieWatchList()
         watchList.loadList {
         }
+        print("sessionID = \(UserDefaults.standard.string(forKey: "sessionId") ?? "000000000")")
     }
     
     var body: some View {

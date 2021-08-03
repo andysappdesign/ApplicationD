@@ -22,6 +22,7 @@ class searchController: TMDB, ObservableObject {
     @Published var searchRowObjectPositions = [[Int]]()
     
     
+    
     override init() {
         super.init()
         self.discoverMovies {
@@ -31,7 +32,7 @@ class searchController: TMDB, ObservableObject {
     
     // MARK:- Search
     
-    func search(title: String) {
+    func search(title: String, completionHander: @escaping () -> Void) {
         let query = convertTitle(title: title)
         super.searchMovies(query: query) { (responce) in
             if responce != JSON() {
@@ -41,6 +42,8 @@ class searchController: TMDB, ObservableObject {
                     let temp = self.getSearchObject(positionNumber: i)
                     self.objectSearchArray.append(temp)
                 }
+                self.searchCalculateRowAmountandObjectPositions(arrayCount: count)
+                completionHander()
                 
             } else {
                 print("search responce empty")
@@ -79,6 +82,31 @@ class searchController: TMDB, ObservableObject {
             bool = true
         }
         return bool
+    }
+    
+    // MARK:- SearchCalculateRowAmountandObjectPositions
+    
+    private func searchCalculateRowAmountandObjectPositions(arrayCount: Int) {
+        //RowAmount
+        let row = Double(arrayCount) / 3
+        let roundedRow = row.rounded(.up)
+        let intRow = Int(roundedRow)
+        
+        //Object Positions
+        self.searchRowObjectPositions = []
+        var n = 0
+        var rowGroup: [Int] = []
+        for _ in 0..<(intRow) {
+            for _ in 0...2 {
+                if n != arrayCount {
+                    rowGroup.append(n)
+                    
+                } // end of if
+                n += 1
+            } // end of for
+            self.searchRowObjectPositions.append(rowGroup)
+            rowGroup = []
+        } // end of for
     }
     
     // MARK:- DiscoverMovies

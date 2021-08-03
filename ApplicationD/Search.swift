@@ -31,7 +31,9 @@ struct Search: View {
                 }.frame(height: GUISize.searchFormHeight)
                 Button(action: {
                     if controlller.searchIsNotEmpty(query: self.userSearchText) == true {
-                        controlller.search(title: self.userSearchText)
+                        controlller.search(title: self.userSearchText) {
+                            
+                        }
                         self.searchResults = true
                         self.searchError = false
                     } else {

@@ -108,6 +108,28 @@ class TMDB {
         
     } // end of getTMDbAccount
     
+    // MARK:- Create List
+    
+    func createList(name: String, description: String, completionHandler: @escaping (JSON) -> Void) {
+        let url = "https://api.themoviedb.org/3/list?api_key=\(self.API)&session_id=\(self.sessionId)"
+        let parameter : [String: String] = [
+            "name" : name,
+            "description" : description,
+            "language" : "en"
+        ]
+        
+        AF.request(url, method: .post, parameters: parameter).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                print("sucsess - \(value)")
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
+        }
+        
+    }
+    
     
     
     
