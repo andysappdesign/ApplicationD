@@ -6,11 +6,8 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct CastRow: View {
-    
-    let moc: NSManagedObjectContext
     let GUISize = GUISizes()
     @ObservedObject var controller: CastRowController
     
@@ -19,14 +16,12 @@ struct CastRow: View {
     let characterText: Font = .custom("SFProText", size: 8)
     let characterWeight: Font.Weight = .thin
     
-    init(controller: CastRowController, moc: NSManagedObjectContext) {
+    init(controller: CastRowController) {
         self.controller = controller
-        self.moc = moc
     }
     
-    init(TESTINGid: Int, moc: NSManagedObjectContext) {
-        self.moc = moc
-        self.controller = CastRowController(movieID: TESTINGid, moc: moc)
+    init(TESTINGid: Int) {
+        self.controller = CastRowController(movieID: TESTINGid)
         controller.populateCastRow()
     }
     

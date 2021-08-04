@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct Indervidual_Information: View {
     
-    let moc: NSManagedObjectContext
     let GUISize = GUISizes()
     let overview: String
     let movieID: Int
@@ -19,15 +17,14 @@ struct Indervidual_Information: View {
     let castRowController: CastRowController
     @State var castBoxBool = false
     
-    init(object: JSONMovieObject, moc: NSManagedObjectContext) {
+    init(object: JSONMovieObject) {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("#31572c"))
         self.movieID = object.id
         self.overview = object.overview
         self.movieTitle = object.title
         self.posterString = object.poster_path
-        self.castRowController = CastRowController(movieID: self.movieID, moc: moc)
+        self.castRowController = CastRowController(movieID: self.movieID)
         self.castRowController.populateCastRow()
-        self.moc = moc
     }
     
     var body: some View {
@@ -77,7 +74,7 @@ struct Indervidual_Information: View {
                 Spacer()
                     .frame(height: 10)
                 if self.castBoxBool == true {
-                    CastRow(controller: self.castRowController, moc: self.moc)
+                    CastRow(controller: self.castRowController)
                 } else {
                         Rectangle()
                             .frame(width: GUISize.rowWidth, height:2.5)
@@ -97,7 +94,7 @@ struct Indervidual_Information: View {
                 } .frame(width: GUISize.rowWidth)
                 
                 Spacer()
-                bottomBar(moc: self.moc)
+                bottomBar()
             }
             .frame(width: GUISize.screenWidth)
         } // end of ZStack

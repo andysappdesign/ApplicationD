@@ -8,14 +8,10 @@
 
 import Alamofire
 import SwiftyJSON
-import CoreData
 import SwiftUI
 
 class TMDB {
     
-    
-    
-    var moc: NSManagedObjectContext
     let API = "df8304134d840c4d6d11ca3c0055d5c6"
     let sessionId = UserDefaults.standard.string(forKey: "sessionId") ?? "000000000"
     let accountId = UserDefaults.standard.string(forKey: "accountId") ?? "000000000"
@@ -23,10 +19,6 @@ class TMDB {
     var watchID = 0
     var watchedID = 0
     var suggestionID = 0
-    
-    init(moc: NSManagedObjectContext){
-        self.moc = moc
-    }
     
     // MARK:- TokenRequest
     

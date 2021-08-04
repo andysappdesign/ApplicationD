@@ -16,8 +16,5 @@ extension ListsID {
         return NSFetchRequest<ListsID>(entityName: "ListsID")
     }
 
-    @NSManaged public var watch: Int
-    @NSManaged public var watched: Int
-    @NSManaged public var suggestion: Int
 
 }

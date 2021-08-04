@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import CoreData
+
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) var moc
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
     
     let GUISize = GUISizes()
@@ -56,7 +55,7 @@ struct ContentView: View {
                             Spacer()
                                 .frame(height: 30)
                             NavigationLink(
-                                destination: ListView(moc: self.moc)
+                                destination: ListView()
                             ) {
                                 CustomButtonLayout(size: .medium, text: "My Lists")
                             }
@@ -67,7 +66,7 @@ struct ContentView: View {
                     Spacer()
                     Button_Row(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
-                    bottomBar(moc: self.moc)
+                    bottomBar()
                     
                     
                 } // end of VStack
@@ -75,7 +74,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
         } // end of NavigationView
         .fullScreenCover(isPresented: $isOnboarding, content: {
-            Onboarding(hasCompletedOnboarding: $isOnboarding, managedObjectContext: self.moc)
+            Onboarding(hasCompletedOnboarding: $isOnboarding)
         }) // end of fullScreenCover
     }
 } // end of view

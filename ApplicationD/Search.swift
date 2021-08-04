@@ -6,20 +6,17 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct Search: View {
     
     let GUISize = GUISizes()
-    let moc: NSManagedObjectContext
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""
     @State var searchResults: Bool = false
     @State var searchError: Bool = false
     
-    init(moc: NSManagedObjectContext) {
-        self.moc = moc
-        controlller = searchController(moc: moc)
+    init() {
+        controlller = searchController()
         controlller.discoverMovies {
         }
     }
@@ -53,13 +50,13 @@ struct Search: View {
                             .foregroundColor(Color("#ECF39E"))
                         ScrollView {
                             if self.searchResults == false {
-                                MovieDiscover(moc: self.moc, controller: self.controlller)
+                                MovieDiscover(controller: self.controlller)
                             } else {
-                                SearchResults(moc: self.moc, conroller: self.controlller)
+                                SearchResults(conroller: self.controlller)
                             }
                         }
                     }
-                    bottomBar(moc: self.moc)
+                    bottomBar()
                 }
                 
                 

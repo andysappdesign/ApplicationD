@@ -6,17 +6,14 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct MovieWatchList: View {
     
     let GUISize = GUISizes()
-    let moc: NSManagedObjectContext
-    @ObservedObject var Movie: MovieWatchList
+    let Movie: WatchlistController
     // let TV = TVWatchList()
     
-    init(Movie: MovieWatchList, moc: NSManagedObjectContext) {
-        self.moc = moc
+    init(Movie: WatchlistController) {
         self.Movie = Movie
     }
     
@@ -27,21 +24,20 @@ struct MovieWatchList: View {
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: GUISize.screenWidth, height: GUISize.screenHeight * 2)
                 VStack {
-                    ForEach(Movie.rowObjectPositions, id: \.self) {array in
+                    ForEach(Movie.rowObjectPositions, id: \.self) { array in
                         if array.count == 3 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie, moc: self.moc)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
                         } else if array.count == 2 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie, moc: self.moc)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie)
                         } else if array.count == 1 {
-                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie, moc: self.moc)
+                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie)
                         }
-                        
                     }
                     Spacer()
                 } //end of VStack
             } // end of ZStack
         } // end of ScrollView
-        bottomBar(moc: self.moc)
+        bottomBar()
     } // end of view
 }
 

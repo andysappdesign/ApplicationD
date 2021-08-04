@@ -12,15 +12,11 @@ import CoreData
 
 struct ListView: View {
     
-    @ObservedObject var watchList: MovieWatchList
-    let moc: NSManagedObjectContext
+    @ObservedObject var watchList: WatchlistController
     
     
-    init(moc: NSManagedObjectContext) {
-        self.moc = moc
-        self.watchList = MovieWatchList(moc: moc)
-        watchList.loadList {
-        }
+    init() {
+        self.watchList = WatchlistController()
         
     }
     
@@ -29,12 +25,12 @@ struct ListView: View {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
             VStack {
                 NavigationLink(
-                    destination: WatchList(Movie: self.watchList, moc: self.moc),
+                    destination: MovieWatchList(Movie: self.watchList),
                     label: {
                         Text("Watch List")
                 })
                 Spacer()
-                bottomBar(moc: self.moc)
+                bottomBar()
             }
             
                 

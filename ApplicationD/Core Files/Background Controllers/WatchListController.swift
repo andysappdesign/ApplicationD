@@ -1,5 +1,5 @@
 //
-//  MovieWatchList.swift
+//  WatchListController.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 01/05/2021.
@@ -10,11 +10,9 @@
 
 import SwiftyJSON
 import SwiftUI
-import CoreData
 
-class MovieWatchList: TMDB, ObservableObject {
+class WatchlistController: TMDB, ObservableObject {
     
-    @FetchRequest(entity: ListsID.entity(), sortDescriptors: []) var list: FetchedResults<ListsID>
     @Published var watchListArray: [JSON] = []
     @Published var objectArray: [JSONMovieObject] = []
     @Published var rowCount: Int = 0
@@ -22,8 +20,8 @@ class MovieWatchList: TMDB, ObservableObject {
 
     
     // MARK:- init
-    override init(moc: NSManagedObjectContext) {
-        super.init(moc: moc)
+    override init() {
+        super.init()
         loadList {
 //            print("completed")
         }
@@ -32,29 +30,29 @@ class MovieWatchList: TMDB, ObservableObject {
     // MARK:- loadList
     
     func loadList(completionHander: @escaping () -> Void) {
-        if !self.list.isEmpty {
-            let temp = self.list[0]
-            let int = temp.watch
-            let id = "\(int)"
-            print("id = \(id)")
-            super.getListDetails(id: id) { (responce) in
-                print(responce)
-                if responce != JSON() {
-                    self.watchListArray = responce["items"].arrayValue
-    //                print(self.watchListArray)
-                    let count = self.watchListArray.count
-                    for (index, _) in self.watchListArray.enumerated() {
-                        let temp = self.getObject(positionNumber: index)
-                        self.objectArray.append(temp)
-                    }
-                    self.calculateRowAmountandObjectPositions(arrayCount: count)
-                    completionHander()
-                } else {
-                    print("responce is empty")
-                    // TODO
-                }
-            } // end of getWatchList
-        }
+//        if !self.list.isEmpty {
+//            let temp = self.list[0]
+//            let int = temp.watch
+//            let id = "\(int)"
+//            print("id = \(id)")
+//            super.getListDetails(id: id) { (responce) in
+//                print(responce)
+//                if responce != JSON() {
+//                    self.watchListArray = responce["items"].arrayValue
+//    //                print(self.watchListArray)
+//                    let count = self.watchListArray.count
+//                    for (index, _) in self.watchListArray.enumerated() {
+//                        let temp = self.getObject(positionNumber: index)
+//                        self.objectArray.append(temp)
+//                    }
+//                    self.calculateRowAmountandObjectPositions(arrayCount: count)
+//                    completionHander()
+//                } else {
+//                    print("responce is empty")
+//                    // TODO
+//                }
+//            } // end of getWatchList
+//        }
         
     } // end of loadList
     

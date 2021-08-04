@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct userCreationMain: View {
     
@@ -19,8 +18,8 @@ struct userCreationMain: View {
     
     // MARK: - init
     
-    init(managedObjectContext: NSManagedObjectContext, isOnboarding: Binding<Bool>) {
-        self.helper = userCreationHelper.init(moc: managedObjectContext, Onboarded: isOnboarding)
+    init(isOnboarding: Binding<Bool>) {
+        self.helper = userCreationHelper.init(Onboarded: isOnboarding)
     }
     
     var body: some View {

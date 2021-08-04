@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftyJSON
-import CoreData
 
 class searchController: TMDB, ObservableObject {
     
@@ -24,8 +23,8 @@ class searchController: TMDB, ObservableObject {
     
     
     
-    override init(moc: NSManagedObjectContext) {
-        super.init(moc: moc)
+    override init() {
+        super.init()
         self.discoverMovies {
             
         }

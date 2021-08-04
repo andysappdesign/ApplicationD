@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import CoreData
 import Alamofire
 import SwiftyJSON
 
@@ -22,9 +21,9 @@ import SwiftyJSON
     
     
     // MARK: -  init
-    init(moc: NSManagedObjectContext, Onboarded: Binding<Bool>) {
+    init(Onboarded: Binding<Bool>) {
         self._isOnboarding = Onboarded
-        super.init(moc: moc)
+        super.init()
        
     }
     

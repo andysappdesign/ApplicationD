@@ -34,9 +34,6 @@
 		228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* bottomBar.swift */; };
 		228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8026A5A26E00242711 /* OverViewBox.swift */; };
 		228C3A8526A5B91D00242711 /* CastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8426A5B91D00242711 /* CastRow.swift */; };
-		22A31BA726B98B16009E2B02 /* ListsID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */; };
-		22A31BA826B98B16009E2B02 /* ListsID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */; };
-		22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEA7BB2610CBE0003993FF /* Admin.swift */; };
 		22CBB93426B56A0C00227672 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CBB93326B56A0C00227672 /* SearchResults.swift */; };
 		22D3F69526B5790600B6BCF0 /* DiscoverThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */; };
 		22D3F69726B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F69626B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift */; };
@@ -55,23 +52,7 @@
 		22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F502610B3120086A5C5 /* userCreationHelper.swift */; };
 		22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F512610B3120086A5C5 /* userCreationMain.swift */; };
 		22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F522610B3120086A5C5 /* userCreation1.swift */; };
-		22E33F942610B4400086A5C5 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F842610B4400086A5C5 /* Item+CoreDataClass.swift */; };
-		22E33F952610B4400086A5C5 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F852610B4400086A5C5 /* Item+CoreDataProperties.swift */; };
-		22E33F962610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F862610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift */; };
-		22E33F972610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F872610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift */; };
-		22E33F982610B4400086A5C5 /* WatchedTV+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F882610B4400086A5C5 /* WatchedTV+CoreDataClass.swift */; };
-		22E33F992610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F892610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift */; };
-		22E33F9A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift */; };
-		22E33F9B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift */; };
-		22E33F9C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift */; };
-		22E33F9D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift */; };
-		22E33F9E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift */; };
-		22E33F9F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F8F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift */; };
-		22E33FA02610B4400086A5C5 /* PlannedMovies+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F902610B4400086A5C5 /* PlannedMovies+CoreDataClass.swift */; };
-		22E33FA12610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F912610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift */; };
-		22E33FA22610B4400086A5C5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F922610B4400086A5C5 /* User+CoreDataClass.swift */; };
-		22E33FA32610B4400086A5C5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */; };
-		22ED09FE263D6AD80048ABA6 /* MovieWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */; };
+		22ED09FE263D6AD80048ABA6 /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED09FD263D6AD80048ABA6 /* WatchListController.swift */; };
 		55B4378B1772FB93B77595C5 /* Pods_ApplicationD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,9 +85,6 @@
 		228C3A7C26A58E3400242711 /* bottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomBar.swift; sourceTree = "<group>"; };
 		228C3A8026A5A26E00242711 /* OverViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewBox.swift; sourceTree = "<group>"; };
 		228C3A8426A5B91D00242711 /* CastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRow.swift; sourceTree = "<group>"; };
-		22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ListsID+CoreDataClass.swift"; path = "../ListsID+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ListsID+CoreDataProperties.swift"; path = "../ListsID+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22AEA7BB2610CBE0003993FF /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		22CBB93326B56A0C00227672 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverThreePosterRow.swift; sourceTree = "<group>"; };
 		22D3F69626B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsThreePosterRow.swift; sourceTree = "<group>"; };
@@ -127,23 +105,7 @@
 		22E33F502610B3120086A5C5 /* userCreationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreationHelper.swift; sourceTree = "<group>"; };
 		22E33F512610B3120086A5C5 /* userCreationMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreationMain.swift; sourceTree = "<group>"; };
 		22E33F522610B3120086A5C5 /* userCreation1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreation1.swift; sourceTree = "<group>"; };
-		22E33F842610B4400086A5C5 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F852610B4400086A5C5 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F862610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugesstedMovies+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F872610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugesstedMovies+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F882610B4400086A5C5 /* WatchedTV+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchedTV+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F892610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchedTV+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F8A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugesstedTV+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F8B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugesstedTV+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F8C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedTV+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F8D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedTV+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F8E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchedMovies+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F8F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchedMovies+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F902610B4400086A5C5 /* PlannedMovies+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedMovies+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F912610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedMovies+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22E33F922610B4400086A5C5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWatchList.swift; sourceTree = "<group>"; };
+		22ED09FD263D6AD80048ABA6 /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
 		22ED0A01263D916F0048ABA6 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE52A210C56E98B129C7F859 /* Pods-ApplicationD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationD.release.xcconfig"; path = "Target Support Files/Pods-ApplicationD/Pods-ApplicationD.release.xcconfig"; sourceTree = "<group>"; };
 		B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,8 +190,8 @@
 			children = (
 				22144C0926A6E7BF00631FD1 /* CastRowController.swift */,
 				227C9F7426B1AA8B00A86858 /* TMDb.swift */,
-				22ED09FD263D6AD80048ABA6 /* MovieWatchList.swift */,
 				2289E10526B2C7B3004B8953 /* SearchController.swift */,
+				22ED09FD263D6AD80048ABA6 /* WatchListController.swift */,
 			);
 			path = "Background Controllers";
 			sourceTree = "<group>";
@@ -256,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				22ED0A01263D916F0048ABA6 /* Playground.playground */,
-				22AEA7BB2610CBE0003993FF /* Admin.swift */,
 				22E33F292610B1FC0086A5C5 /* Assets.xcassets */,
 				22E33F252610B1FB0086A5C5 /* ApplicationDApp.swift */,
 				22E33F302610B1FC0086A5C5 /* ApplicationD.xcdatamodeld */,
@@ -287,9 +248,9 @@
 			children = (
 				22337F942653E007008089A9 /* AsyncImage */,
 				227C9F7626B1B33500A86858 /* Background Controllers */,
+				22E33F532610B3120086A5C5 /* JSON Classes */,
 				2205D14C26493E0B00F96882 /* Points System */,
 				2205D151264955DA00F96882 /* GUI Makeup */,
-				22E33F532610B3120086A5C5 /* PersistantStorageFiles */,
 				22E33F4E2610B3120086A5C5 /* User Creation */,
 			);
 			path = "Core Files";
@@ -307,31 +268,13 @@
 			path = "User Creation";
 			sourceTree = "<group>";
 		};
-		22E33F532610B3120086A5C5 /* PersistantStorageFiles */ = {
+		22E33F532610B3120086A5C5 /* JSON Classes */ = {
 			isa = PBXGroup;
 			children = (
-				22E33F842610B4400086A5C5 /* Item+CoreDataClass.swift */,
-				22E33F852610B4400086A5C5 /* Item+CoreDataProperties.swift */,
-				22E33F862610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift */,
-				22E33F872610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift */,
-				22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */,
-				22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */,
-				22E33F882610B4400086A5C5 /* WatchedTV+CoreDataClass.swift */,
-				22E33F892610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift */,
-				22E33F8A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift */,
-				22E33F8B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift */,
-				22E33F8C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift */,
-				22E33F8D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift */,
-				22E33F8E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift */,
-				22E33F8F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift */,
-				22E33F902610B4400086A5C5 /* PlannedMovies+CoreDataClass.swift */,
-				22E33F912610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift */,
-				22E33F922610B4400086A5C5 /* User+CoreDataClass.swift */,
-				22E33F932610B4400086A5C5 /* User+CoreDataProperties.swift */,
 				22E019D2269F146400A3C62A /* JSONMovieObject.swift */,
 				22144C0B26A6EE0000631FD1 /* JSONCastObject.swift */,
 			);
-			path = PersistantStorageFiles;
+			path = "JSON Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,19 +391,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E33F942610B4400086A5C5 /* Item+CoreDataClass.swift in Sources */,
 				22E33F2F2610B1FC0086A5C5 /* Persistence.swift in Sources */,
 				22144C0A26A6E7BF00631FD1 /* CastRowController.swift in Sources */,
 				2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */,
-				22E33FA02610B4400086A5C5 /* PlannedMovies+CoreDataClass.swift in Sources */,
-				22E33F952610B4400086A5C5 /* Item+CoreDataProperties.swift in Sources */,
 				2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */,
 				22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */,
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
 				22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */,
-				22E33F9D2610B4400086A5C5 /* PlannedTV+CoreDataProperties.swift in Sources */,
 				22255A8A269DC8D600CE6774 /* Button Row.swift in Sources */,
-				22E33F962610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift in Sources */,
 				22E33F322610B1FC0086A5C5 /* ApplicationD.xcdatamodeld in Sources */,
 				22337F932653DF81008089A9 /* ListView.swift in Sources */,
 				22337F9C2653E01F008089A9 /* EnvironmentValues+ImageCache.swift in Sources */,
@@ -468,45 +406,31 @@
 				22144C0C26A6EE0000631FD1 /* JSONCastObject.swift in Sources */,
 				22CBB93426B56A0C00227672 /* SearchResults.swift in Sources */,
 				2289E10826B2EF11004B8953 /* MovieDiscover.swift in Sources */,
-				22E33FA32610B4400086A5C5 /* User+CoreDataProperties.swift in Sources */,
-				22E33FA22610B4400086A5C5 /* User+CoreDataClass.swift in Sources */,
-				22E33F992610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift in Sources */,
 				22D3F69726B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift in Sources */,
 				2205D15D2649649000F96882 /* TutorialPage.swift in Sources */,
 				2205D14E26493E3D00F96882 /* PointSystem.swift in Sources */,
-				22A31BA726B98B16009E2B02 /* ListsID+CoreDataProperties.swift in Sources */,
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
-				22E33F9B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift in Sources */,
 				228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */,
-				22E33F9C2610B4400086A5C5 /* PlannedTV+CoreDataClass.swift in Sources */,
-				22E33F972610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift in Sources */,
 				228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */,
 				22E019CD269EFEDA00A3C62A /* MoviePoster.swift in Sources */,
 				22E33F672610B3120086A5C5 /* AuthenticateWindow.swift in Sources */,
 				22E33F692610B3120086A5C5 /* userCreation2.swift in Sources */,
-				22E33F9A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift in Sources */,
 				2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */,
-				22E33FA12610B4400086A5C5 /* PlannedMovies+CoreDataProperties.swift in Sources */,
 				22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */,
 				2205D15B2649627300F96882 /* Onboarding.swift in Sources */,
-				22E33F9F2610B4400086A5C5 /* WatchedMovies+CoreDataProperties.swift in Sources */,
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,
 				22255A8E269DD29700CE6774 /* GUISizes.swift in Sources */,
-				22E33F982610B4400086A5C5 /* WatchedTV+CoreDataClass.swift in Sources */,
 				227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */,
-				22ED09FE263D6AD80048ABA6 /* MovieWatchList.swift in Sources */,
+				22ED09FE263D6AD80048ABA6 /* WatchListController.swift in Sources */,
 				22E019D3269F146400A3C62A /* JSONMovieObject.swift in Sources */,
 				228C3A7B26A58CC600242711 /* Indervidual Information.swift in Sources */,
 				22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */,
 				22337F9A2653E01F008089A9 /* ImageCache.swift in Sources */,
-				22A31BA826B98B16009E2B02 /* ListsID+CoreDataClass.swift in Sources */,
 				22297CEB26AD6A7300886FAD /* RatingsBox.swift in Sources */,
 				22D3F69526B5790600B6BCF0 /* DiscoverThreePosterRow.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
-				22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */,
 				2205D15026493EF800F96882 /* loadPoints.swift in Sources */,
-				22E33F9E2610B4400086A5C5 /* WatchedMovies+CoreDataClass.swift in Sources */,
 				22255A8C269DC8E100CE6774 /* CustomButtonLayout.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,
 				22E019CF269F108200A3C62A /* MovieWatchList.swift in Sources */,

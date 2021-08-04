@@ -6,13 +6,11 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct Onboarding: View {
     
     @Binding var hasCompletedOnboarding: Bool
     @State var hasCompletedPart1 = false
-    var managedObjectContext: NSManagedObjectContext
     
     
     var body: some View {
@@ -32,7 +30,7 @@ struct Onboarding: View {
             }
             .tabViewStyle(PageTabViewStyle())
         } else {
-            userCreationMain(managedObjectContext: self.managedObjectContext, isOnboarding: $hasCompletedOnboarding)
+            userCreationMain(isOnboarding: $hasCompletedOnboarding)
         }
     }
 }
