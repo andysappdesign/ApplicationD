@@ -14,6 +14,7 @@ import CoreData
 
 class MovieWatchList: TMDB, ObservableObject {
     
+    @FetchRequest(entity: ListsID.entity(), sortDescriptors: []) var list: FetchedResults<ListsID>
     @Published var watchListArray: [JSON] = []
     @Published var objectArray: [JSONMovieObject] = []
     @Published var rowCount: Int = 0
@@ -31,8 +32,8 @@ class MovieWatchList: TMDB, ObservableObject {
     // MARK:- loadList
     
     func loadList(completionHander: @escaping () -> Void) {
-        if !super.list.isEmpty {
-            let temp = super.list[0]
+        if !self.list.isEmpty {
+            let temp = self.list[0]
             let int = temp.watch
             let id = "\(int)"
             print("id = \(id)")
@@ -89,6 +90,42 @@ class MovieWatchList: TMDB, ObservableObject {
             rowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
+    }
+    
+    // MARK:- func CreateOrNot
+    
+    func createOrNot() {
+        if UserDefaults.standard.bool(forKey: "listsCreated") == false {
+            print("list empty")
+            super.createList(name: "Movie Watchlist", description: "A watch list", listId: "watch") { (responceA) in
+                if responceA == true {
+                    UserDefaults.standard.set(super.watchID, forKey: "watchID")
+                    super.createList(name: "Watched List", description: "The completed items", listId: "watched") { (responceB) in
+                        if responceB == true {
+                            UserDefaults.standard.set(super.watchedID, forKey: "watchedID")
+                            super.createList(name: "Suggested List", description: "A suggestion list", listId: "sugguested")  { (responceC) in
+                                if responceC == true {
+                                    UserDefaults.standard.set(super.suggestionID, forKey: "suggestionID")
+                                    print("Creating lists sucessful")
+                                    print(UserDefaults.standard.integer(forKey: "watchID"))
+                                    print(UserDefaults.standard.integer(forKey: "watchedID"))
+                                    print(UserDefaults.standard.integer(forKey: "suggestionID"))
+                                    UserDefaults.standard.set(true, forKey: "listsCreated")
+                                } else {
+                                    print("Creating Suggested failed")
+                                }
+                            }
+                        } else {
+                            print("Creating Watched List failed")
+                        }
+                    }
+                } else {
+                    print("Creating Watch List failed")
+                }
+            }
+        } else {
+            print("list not empty")
+        }
     }
     
 }

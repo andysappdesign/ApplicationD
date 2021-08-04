@@ -11,6 +11,10 @@ var objectSearchArray: [JSONMovieObject] = []
 var searchRowCount: Int = 0
 var searchRowObjectPositions = [[Int]]()
 
+var watchID = 0
+var watchedID = 0
+var suggestionID = 0
+
 
 
 func createList(name: String, description: String, listId: String, completionHandler: @escaping (Bool) -> Void) {
@@ -21,15 +25,21 @@ func createList(name: String, description: String, listId: String, completionHan
         "language" : "en"
     ]
     
+    
     AF.request(url, method: .post, parameters: parameter).responseJSON { (responce) in
         switch responce.result {
         case .success(let value):
             print("sucsess - \(value)")
             let json = JSON(value)
-            print(value)
-            let id = json["list_id"].stringValue
-            print(id)
-            UserDefaults.standard.setValue(id, forKey: "\(listId)")
+            if listId == "watch" {
+                watchID = json["list_id"].int!
+            }
+            if listId == "watched" {
+                watchedID = json["list_id"].int!
+            }
+            if listId == "suggestion" {
+                suggestionID = json["list_id"].int!
+            }
             completionHandler(true)
         case .failure(let error):
             print("Error: \(error)")
