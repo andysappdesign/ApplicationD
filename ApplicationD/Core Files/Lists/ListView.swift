@@ -8,16 +8,20 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ListView: View {
     
     @ObservedObject var watchList: MovieWatchList
+    let moc: NSManagedObjectContext
     
-    init() {
-        self.watchList = MovieWatchList()
+    
+    init(moc: NSManagedObjectContext) {
+        self.moc = moc
+        self.watchList = MovieWatchList(moc: moc)
         watchList.loadList {
         }
-        print("sessionID = \(UserDefaults.standard.string(forKey: "sessionId") ?? "000000000")")
+        
     }
     
     var body: some View {
@@ -25,18 +29,12 @@ struct ListView: View {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
             VStack {
                 NavigationLink(
-                    destination: WatchList(Movie: self.watchList),
+                    destination: WatchList(Movie: self.watchList, moc: self.moc),
                     label: {
                         Text("Watch List")
                 })
                 Spacer()
-//                NavigationLink(
-//                    destination: Indervidual_Information(overview: "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her."),
-//                    label: {
-//                        Text("Information")
-//                    }
-//                    )
-                bottomBar()
+                bottomBar(moc: self.moc)
             }
             
                 
@@ -44,8 +42,8 @@ struct ListView: View {
     }
 }
 
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView()
-    }
-}
+//struct ListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListView()
+//    }
+//}

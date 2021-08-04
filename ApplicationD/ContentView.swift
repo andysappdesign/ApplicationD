@@ -56,7 +56,7 @@ struct ContentView: View {
                             Spacer()
                                 .frame(height: 30)
                             NavigationLink(
-                                destination: ListView()
+                                destination: ListView(moc: self.moc)
                             ) {
                                 CustomButtonLayout(size: .medium, text: "My Lists")
                             }
@@ -67,7 +67,7 @@ struct ContentView: View {
                     Spacer()
                     Button_Row(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
-                    bottomBar()
+                    bottomBar(moc: self.moc)
                     
                     
                 } // end of VStack

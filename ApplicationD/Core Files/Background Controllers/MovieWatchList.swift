@@ -10,6 +10,7 @@
 
 import SwiftyJSON
 import SwiftUI
+import CoreData
 
 class MovieWatchList: TMDB, ObservableObject {
     
@@ -20,8 +21,8 @@ class MovieWatchList: TMDB, ObservableObject {
 
     
     // MARK:- init
-    override init() {
-        super.init()
+    override init(moc: NSManagedObjectContext) {
+        super.init(moc: moc)
         loadList {
 //            print("completed")
         }
@@ -30,21 +31,30 @@ class MovieWatchList: TMDB, ObservableObject {
     // MARK:- loadList
     
     func loadList(completionHander: @escaping () -> Void) {
-        super.getMovieWatchList { (responce) in
-            if responce != JSON() {
-                self.watchListArray = responce["results"].arrayValue
-                let count = self.watchListArray.count
-                for (index, _) in self.watchListArray.enumerated() {
-                    let temp = self.getObject(positionNumber: index)
-                    self.objectArray.append(temp)
+        if !super.list.isEmpty {
+            let temp = super.list[0]
+            let int = temp.watch
+            let id = "\(int)"
+            print("id = \(id)")
+            super.getListDetails(id: id) { (responce) in
+                print(responce)
+                if responce != JSON() {
+                    self.watchListArray = responce["items"].arrayValue
+    //                print(self.watchListArray)
+                    let count = self.watchListArray.count
+                    for (index, _) in self.watchListArray.enumerated() {
+                        let temp = self.getObject(positionNumber: index)
+                        self.objectArray.append(temp)
+                    }
+                    self.calculateRowAmountandObjectPositions(arrayCount: count)
+                    completionHander()
+                } else {
+                    print("responce is empty")
+                    // TODO
                 }
-                self.calculateRowAmountandObjectPositions(arrayCount: count)
-                completionHander()
-            } else {
-                print("responce is empty")
-                // TODO
-            }
-        } // end of getWatchList
+            } // end of getWatchList
+        }
+        
     } // end of loadList
     
     // MARK: - func getObject

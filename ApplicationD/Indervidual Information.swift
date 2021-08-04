@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Indervidual_Information: View {
     
+    let moc: NSManagedObjectContext
     let GUISize = GUISizes()
     let overview: String
     let movieID: Int
@@ -17,14 +19,15 @@ struct Indervidual_Information: View {
     let castRowController: CastRowController
     @State var castBoxBool = false
     
-    init(object: JSONMovieObject) {
+    init(object: JSONMovieObject, moc: NSManagedObjectContext) {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("#31572c"))
         self.movieID = object.id
         self.overview = object.overview
         self.movieTitle = object.title
         self.posterString = object.poster_path
-        self.castRowController = CastRowController(movieID: self.movieID)
+        self.castRowController = CastRowController(movieID: self.movieID, moc: moc)
         self.castRowController.populateCastRow()
+        self.moc = moc
     }
     
     var body: some View {
@@ -74,7 +77,7 @@ struct Indervidual_Information: View {
                 Spacer()
                     .frame(height: 10)
                 if self.castBoxBool == true {
-                    CastRow(controller: self.castRowController)
+                    CastRow(controller: self.castRowController, moc: self.moc)
                 } else {
                         Rectangle()
                             .frame(width: GUISize.rowWidth, height:2.5)
@@ -94,7 +97,7 @@ struct Indervidual_Information: View {
                 } .frame(width: GUISize.rowWidth)
                 
                 Spacer()
-                bottomBar()
+                bottomBar(moc: self.moc)
             }
             .frame(width: GUISize.screenWidth)
         } // end of ZStack
@@ -109,10 +112,10 @@ struct Indervidual_Information: View {
     
 }
 
-struct Indervidual_Information_Previews: PreviewProvider {
-    static var previews: some View {
-        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
-        
-        Indervidual_Information(object: object)
-    }
-}
+//struct Indervidual_Information_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
+//
+//        Indervidual_Information(object: object)
+//    }
+//}

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ListsID" representedClassName="ListsID" syncable="YES">
+        <attribute name="suggestion" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="watch" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="watched" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="PlannedMovies" representedClassName="PlannedMovies" syncable="YES">
         <attribute name="title" attributeType="String"/>
@@ -63,7 +65,6 @@
         <relationship name="hasBeenWatched" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasWatchedTV" inverseEntity="User"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
         <element name="PlannedMovies" positionX="-18" positionY="36" width="128" height="74"/>
         <element name="PlannedTV" positionX="-45" positionY="9" width="128" height="104"/>
         <element name="SugesstedMovies" positionX="-27" positionY="27" width="128" height="89"/>
@@ -71,5 +72,6 @@
         <element name="User" positionX="-9" positionY="45" width="128" height="314"/>
         <element name="WatchedMovies" positionX="-9" positionY="45" width="128" height="74"/>
         <element name="WatchedTV" positionX="9" positionY="63" width="128" height="104"/>
+        <element name="ListsID" positionX="-18" positionY="144" width="128" height="74"/>
     </elements>
 </model>

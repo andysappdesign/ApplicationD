@@ -34,6 +34,8 @@
 		228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* bottomBar.swift */; };
 		228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8026A5A26E00242711 /* OverViewBox.swift */; };
 		228C3A8526A5B91D00242711 /* CastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8426A5B91D00242711 /* CastRow.swift */; };
+		22A31BA726B98B16009E2B02 /* ListsID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */; };
+		22A31BA826B98B16009E2B02 /* ListsID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */; };
 		22AEA7BC2610CBE0003993FF /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEA7BB2610CBE0003993FF /* Admin.swift */; };
 		22CBB93426B56A0C00227672 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CBB93326B56A0C00227672 /* SearchResults.swift */; };
 		22D3F69526B5790600B6BCF0 /* DiscoverThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */; };
@@ -102,6 +104,8 @@
 		228C3A7C26A58E3400242711 /* bottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomBar.swift; sourceTree = "<group>"; };
 		228C3A8026A5A26E00242711 /* OverViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewBox.swift; sourceTree = "<group>"; };
 		228C3A8426A5B91D00242711 /* CastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRow.swift; sourceTree = "<group>"; };
+		22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ListsID+CoreDataClass.swift"; path = "../ListsID+CoreDataClass.swift"; sourceTree = "<group>"; };
+		22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ListsID+CoreDataProperties.swift"; path = "../ListsID+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22AEA7BB2610CBE0003993FF /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		22CBB93326B56A0C00227672 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverThreePosterRow.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				22E33F852610B4400086A5C5 /* Item+CoreDataProperties.swift */,
 				22E33F862610B4400086A5C5 /* SugesstedMovies+CoreDataClass.swift */,
 				22E33F872610B4400086A5C5 /* SugesstedMovies+CoreDataProperties.swift */,
+				22A31BA526B98B15009E2B02 /* ListsID+CoreDataClass.swift */,
+				22A31BA626B98B15009E2B02 /* ListsID+CoreDataProperties.swift */,
 				22E33F882610B4400086A5C5 /* WatchedTV+CoreDataClass.swift */,
 				22E33F892610B4400086A5C5 /* WatchedTV+CoreDataProperties.swift */,
 				22E33F8A2610B4400086A5C5 /* SugesstedTV+CoreDataClass.swift */,
@@ -468,6 +474,7 @@
 				22D3F69726B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift in Sources */,
 				2205D15D2649649000F96882 /* TutorialPage.swift in Sources */,
 				2205D14E26493E3D00F96882 /* PointSystem.swift in Sources */,
+				22A31BA726B98B16009E2B02 /* ListsID+CoreDataProperties.swift in Sources */,
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
 				22E33F9B2610B4400086A5C5 /* SugesstedTV+CoreDataProperties.swift in Sources */,
@@ -493,6 +500,7 @@
 				228C3A7B26A58CC600242711 /* Indervidual Information.swift in Sources */,
 				22E33F6A2610B3120086A5C5 /* userCreationHelper.swift in Sources */,
 				22337F9A2653E01F008089A9 /* ImageCache.swift in Sources */,
+				22A31BA826B98B16009E2B02 /* ListsID+CoreDataClass.swift in Sources */,
 				22297CEB26AD6A7300886FAD /* RatingsBox.swift in Sources */,
 				22D3F69526B5790600B6BCF0 /* DiscoverThreePosterRow.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,

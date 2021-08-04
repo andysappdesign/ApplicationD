@@ -14,8 +14,6 @@ import SwiftyJSON
  class userCreationHelper: TMDB, ObservableObject {
     
     // This class is just a backend helper class to help with user creation
-
-    let moc: NSManagedObjectContext
     @Published var screencount = 1
     @Published var alertBool = false
     @Published var alertString = ""
@@ -26,7 +24,7 @@ import SwiftyJSON
     // MARK: -  init
     init(moc: NSManagedObjectContext, Onboarded: Binding<Bool>) {
         self._isOnboarding = Onboarded
-        self.moc = moc
+        super.init(moc: moc)
        
     }
     
@@ -70,6 +68,7 @@ import SwiftyJSON
         UserDefaults.standard.setValue(0, forKey: "totalPoints")
         UserDefaults.standard.setValue(0, forKey: "recentWatchId")
         UserDefaults.standard.setValue(false, forKey: "hasWatchedAnything")
+        UserDefaults.standard.setValue(false, forKey: "listsCreated")
 //        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     

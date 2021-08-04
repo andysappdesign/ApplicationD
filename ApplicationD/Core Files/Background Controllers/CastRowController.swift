@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreData
 
 class CastRowController: TMDB, ObservableObject {
     
@@ -34,8 +35,9 @@ class CastRowController: TMDB, ObservableObject {
     
     // MARK:- init
     
-    init(movieID: Int) {
+    init(movieID: Int, moc: NSManagedObjectContext) {
         self.movieID = movieID
+        super.init(moc: moc)
     }
     
     // MARK:- getCast
