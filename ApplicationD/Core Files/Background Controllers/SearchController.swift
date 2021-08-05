@@ -98,7 +98,7 @@ class searchController: TMDB, ObservableObject {
         var rowGroup: [Int] = []
         for _ in 0..<(intRow) {
             for _ in 0...2 {
-                if n != arrayCount {
+                if n < arrayCount {
                     rowGroup.append(n)
                     
                 } // end of if
@@ -154,7 +154,7 @@ class searchController: TMDB, ObservableObject {
         var rowGroup: [Int] = []
         for _ in 0..<(intRow) {
             for _ in 0...2 {
-                if n != arrayCount {
+                if n < arrayCount {
                     rowGroup.append(n)
                     
                 } // end of if

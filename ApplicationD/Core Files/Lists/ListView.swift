@@ -34,7 +34,9 @@ struct ListView: View {
             }
             
                 
-        }
+        }.onAppear(perform: {
+            watchList.createOrNot()
+        })
     }
 }
 

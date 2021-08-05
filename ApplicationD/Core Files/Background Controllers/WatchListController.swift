@@ -22,37 +22,44 @@ class WatchlistController: TMDB, ObservableObject {
     // MARK:- init
     override init() {
         super.init()
-        loadList {
-//            print("completed")
-        }
     }
  
     // MARK:- loadList
     
-    func loadList(completionHander: @escaping () -> Void) {
-//        if !self.list.isEmpty {
-//            let temp = self.list[0]
-//            let int = temp.watch
-//            let id = "\(int)"
-//            print("id = \(id)")
-//            super.getListDetails(id: id) { (responce) in
+    func loadList(type: String, completionHander: @escaping () -> Void) {
+        if UserDefaults.standard.bool(forKey: "listsCreated") == true {
+            var id = 0
+            if type == "watch" {
+                id = UserDefaults.standard.integer(forKey: "watchID")
+            }
+            if type == "watched" {
+                id = UserDefaults.standard.integer(forKey: "watchedID")
+            }
+            if type == "suggestion" {
+                id = UserDefaults.standard.integer(forKey: "suggestionID")
+            }
+            let idString = String(id)
+            
+            super.getListDetails(id: idString) { (responce) in
 //                print(responce)
-//                if responce != JSON() {
-//                    self.watchListArray = responce["items"].arrayValue
-//    //                print(self.watchListArray)
-//                    let count = self.watchListArray.count
-//                    for (index, _) in self.watchListArray.enumerated() {
-//                        let temp = self.getObject(positionNumber: index)
-//                        self.objectArray.append(temp)
-//                    }
-//                    self.calculateRowAmountandObjectPositions(arrayCount: count)
-//                    completionHander()
-//                } else {
-//                    print("responce is empty")
-//                    // TODO
-//                }
-//            } // end of getWatchList
-//        }
+                if responce != JSON() {
+                    self.watchListArray = responce["items"].arrayValue
+                    //                print(self.watchListArray)
+                    let count = self.watchListArray.count
+                    print("count = \(count)")
+                    for (index, _) in self.watchListArray.enumerated() {
+                        let temp = self.getObject(positionNumber: index)
+                        self.objectArray.append(temp)
+                    }
+                    self.calculateRowAmountandObjectPositions(arrayCount: count)
+                    completionHander()
+                } else {
+                    print("responce is empty")
+                    // TODO
+                }
+        }
+        
+        } // end of getWatchList
         
     } // end of loadList
     
@@ -79,7 +86,7 @@ class WatchlistController: TMDB, ObservableObject {
         var rowGroup: [Int] = []
         for _ in 0..<(intRow) {
             for _ in 0...2 {
-                if n != arrayCount {
+                if n < arrayCount {
                     rowGroup.append(n)
                     
                 } // end of if

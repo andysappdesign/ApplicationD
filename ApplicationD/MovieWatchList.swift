@@ -35,9 +35,16 @@ struct MovieWatchList: View {
                     }
                     Spacer()
                 } //end of VStack
+                .onAppear(perform: {
+                    Movie.loadList(type: "watch"){
+
+                    }
+                })
             } // end of ZStack
+            
         } // end of ScrollView
         bottomBar()
+            
     } // end of view
 }
 
