@@ -251,6 +251,65 @@ class TMDB {
         }
         
     }
+    
+    // MARK:- AddMovieToList
+    
+    func addMovieToList(listID: Int, movieID: Int, completionHandler: @escaping (Bool) -> Void) {
+        
+        let listIDString = String(listID)
+        let url = "https://api.themoviedb.org/3/list/\(listIDString)/add_item?api_key=\(self.API)&session_id=\(self.sessionId)"
+        let parameter : [String: Int] = [
+            "media_id" : movieID
+        ]
+        AF.request(url, method: .post, parameters: parameter).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                if json["status_message"].string! == "The item/record was updated successfully." {
+                    completionHandler(true)
+                } else if json["status_message"].string! == "Duplicate entry: The data you tried to submit already exists." {
+                    completionHandler(true)
+                } else {
+                    print("item not added")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
+        }
+        
+    }
+    
+    // MARK:- RemoveMovieFromList
+    
+    func removeMovieFromList(listID: Int, movieID: Int, completionHandler: @escaping (Bool) -> Void) {
+        
+        let listIDString = String(listID)
+        let url = "https://api.themoviedb.org/3/list/\(listIDString)/remove_item?api_key=\(self.API)&session_id=\(self.sessionId)"
+        let parameter : [String: Int] = [
+            "media_id" : movieID
+        ]
+        
+        AF.request(url, method: .post, parameters: parameter).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                if json["status_message"].string! == "The item/record was deleted successfully." {
+                    completionHandler(true)
+                } else if json["status_message"].string! == "Entry not found: The item you are trying to edit cannot be found." {
+                    completionHandler(true)
+                } else {
+                    print("item not removed")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
+        }
+        
+    }
+    
+    
 
     
 }

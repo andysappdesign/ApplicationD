@@ -79,9 +79,12 @@ class CastRowController: TMDB, ObservableObject {
         super.getImagesOfPerson(personID: personID) { (responce) in
             if responce != JSON() {
                 let tempArray = responce["profiles"].array!
-                let object = tempArray[0]
-                let path = object["file_path"].string!
-                completionHandler(path)
+                if tempArray != [] {
+                    let object = tempArray[0]
+                    let path = object["file_path"].string!
+                    completionHandler(path)
+                }
+                print("profile empty")
                 
             } else {
                 print("responce is empty")

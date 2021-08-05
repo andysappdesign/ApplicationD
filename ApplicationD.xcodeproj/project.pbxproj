@@ -25,6 +25,8 @@
 		22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F962653E01F008089A9 /* AsyncImage.swift */; };
 		22337F9C2653E01F008089A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F972653E01F008089A9 /* EnvironmentValues+ImageCache.swift */; };
 		22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22337F982653E01F008089A9 /* ImageLoader.swift */; };
+		22521BD426BBFD84009E69ED /* IndervidualInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22521BD326BBFD84009E69ED /* IndervidualInformationController.swift */; };
+		22521BD626BC0A1C009E69ED /* StateChangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */; };
 		2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* blankMoviePosition.swift */; };
 		227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C9F7426B1AA8B00A86858 /* TMDb.swift */; };
 		2289E10426B2C7A1004B8953 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10326B2C7A1004B8953 /* Search.swift */; };
@@ -76,6 +78,8 @@
 		22337F962653E01F008089A9 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		22337F972653E01F008089A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		22337F982653E01F008089A9 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		22521BD326BBFD84009E69ED /* IndervidualInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndervidualInformationController.swift; sourceTree = "<group>"; };
+		22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChangeSheet.swift; sourceTree = "<group>"; };
 		2268456726A3038800E0F4EB /* blankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankMoviePosition.swift; sourceTree = "<group>"; };
 		227C9F7426B1AA8B00A86858 /* TMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDb.swift; sourceTree = "<group>"; };
 		2289E10326B2C7A1004B8953 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				22144C0926A6E7BF00631FD1 /* CastRowController.swift */,
+				22521BD326BBFD84009E69ED /* IndervidualInformationController.swift */,
 				227C9F7426B1AA8B00A86858 /* TMDb.swift */,
 				2289E10526B2C7B3004B8953 /* SearchController.swift */,
 				22ED09FD263D6AD80048ABA6 /* WatchListController.swift */,
@@ -224,6 +229,7 @@
 				22E33F272610B1FB0086A5C5 /* ContentView.swift */,
 				22E33F462610B3120086A5C5 /* Core Files */,
 				228C3A7A26A58CC600242711 /* Indervidual Information.swift */,
+				22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */,
 				22337F922653DF81008089A9 /* ListView.swift */,
 				22E019CE269F108200A3C62A /* MovieWatchList.swift */,
 				2205D15A2649627300F96882 /* Onboarding.swift */,
@@ -399,6 +405,7 @@
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
 				22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */,
 				22255A8A269DC8D600CE6774 /* Button Row.swift in Sources */,
+				22521BD626BC0A1C009E69ED /* StateChangeSheet.swift in Sources */,
 				22E33F322610B1FC0086A5C5 /* ApplicationD.xcdatamodeld in Sources */,
 				22337F932653DF81008089A9 /* ListView.swift in Sources */,
 				22337F9C2653E01F008089A9 /* EnvironmentValues+ImageCache.swift in Sources */,
@@ -417,6 +424,7 @@
 				22E33F672610B3120086A5C5 /* AuthenticateWindow.swift in Sources */,
 				22E33F692610B3120086A5C5 /* userCreation2.swift in Sources */,
 				2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */,
+				22521BD426BBFD84009E69ED /* IndervidualInformationController.swift in Sources */,
 				22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */,
 				2205D15B2649627300F96882 /* Onboarding.swift in Sources */,
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,

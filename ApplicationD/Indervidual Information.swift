@@ -15,7 +15,9 @@ struct Indervidual_Information: View {
     let movieTitle: String
     let posterString: String
     let castRowController: CastRowController
+    @ObservedObject var indervidualInformationController: IndervidualInformationController
     @State var castBoxBool = false
+    
     
     init(object: JSONMovieObject) {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("#31572c"))
@@ -25,6 +27,7 @@ struct Indervidual_Information: View {
         self.posterString = object.poster_path
         self.castRowController = CastRowController(movieID: self.movieID)
         self.castRowController.populateCastRow()
+        self.indervidualInformationController = IndervidualInformationController()
     }
     
     var body: some View {
@@ -98,7 +101,15 @@ struct Indervidual_Information: View {
             }
             .frame(width: GUISize.screenWidth)
         } // end of ZStack
-        
+        .navigationBarItems(trailing: Button(action: {
+            indervidualInformationController.changeStateAlert.toggle()
+        }) {
+            Image(systemName: "ticket")
+                .foregroundColor(Color("#ECF39E"))
+        })
+        .sheet(isPresented: $indervidualInformationController.changeStateAlert, content: {
+            StateChangeSheet(movieId: self.movieID, controller: self.indervidualInformationController)
+        })
     } // end of view
     
     // MARK:- toggleCast

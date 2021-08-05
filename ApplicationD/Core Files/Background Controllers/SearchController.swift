@@ -38,7 +38,7 @@ class searchController: TMDB, ObservableObject {
             if responce != JSON() {
                 self.jsonSearchArray = responce["results"].arrayValue
                 let count = self.jsonSearchArray.count
-                for i in 0..<count {
+                for i in 0..<(count - 1) {
                     let temp = self.getSearchObject(positionNumber: i)
                     self.objectSearchArray.append(temp)
                 }
@@ -74,7 +74,7 @@ class searchController: TMDB, ObservableObject {
         return newObject
     } // end of getObject
     
-    // MARK:- - SearchIsNotEmpty
+    // MARK:-  SearchIsNotEmpty
     
      func searchIsNotEmpty(query: String) -> Bool {
         var bool = false
@@ -90,13 +90,19 @@ class searchController: TMDB, ObservableObject {
         //RowAmount
         let row = Double(arrayCount) / 3
         let roundedRow = row.rounded(.up)
-        let intRow = Int(roundedRow)
-        
+        var intRow = 0
+        if roundedRow > 4 {
+            intRow = 4
+        }
+        if roundedRow <= 4 {
+            intRow = Int(roundedRow)
+        }
+        print("intRow = \(intRow)")
         //Object Positions
         self.searchRowObjectPositions = []
         var n = 0
         var rowGroup: [Int] = []
-        for _ in 0..<(intRow) {
+        for _ in 0...(intRow) {
             for _ in 0...2 {
                 if n < arrayCount {
                     rowGroup.append(n)
@@ -107,6 +113,7 @@ class searchController: TMDB, ObservableObject {
             self.searchRowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
+        print(searchRowObjectPositions)
     }
     
     // MARK:- DiscoverMovies

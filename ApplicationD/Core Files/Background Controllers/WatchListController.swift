@@ -24,7 +24,7 @@ class WatchlistController: TMDB, ObservableObject {
         super.init()
     }
  
-    // MARK:- loadList
+    // MARK:- LoadList
     
     func loadList(type: String, completionHander: @escaping () -> Void) {
         if UserDefaults.standard.bool(forKey: "listsCreated") == true {
@@ -63,16 +63,17 @@ class WatchlistController: TMDB, ObservableObject {
         
     } // end of loadList
     
-    // MARK: - func getObject
+    // MARK: - GetObject
 
     private func getObject(positionNumber: Int) -> JSONMovieObject {
         let object = watchListArray[positionNumber]
         let newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!)
+        print("name = \(newObject.title), id = \(newObject.id)")
         return newObject
     } // end of getObject
     
 
-    // MARK:- func calculateRowAmount
+    // MARK:- CalculateRowAmount
     
     func calculateRowAmountandObjectPositions(arrayCount: Int) {
         //RowAmount
@@ -97,7 +98,7 @@ class WatchlistController: TMDB, ObservableObject {
         } // end of for
     }
     
-    // MARK:- func CreateOrNot
+    // MARK:- CreateOrNot
     
     func createOrNot() {
         if UserDefaults.standard.bool(forKey: "listsCreated") == false {
