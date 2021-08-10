@@ -1,5 +1,5 @@
 //
-//  Indervidual Information.swift
+//  IndervidualInformation.swift
 //  
 //
 //  Created by Andrew Cumming on 19/07/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Indervidual_Information: View {
+struct IndervidualInformation: View {
     
     let GUISize = GUISizes()
     let overview: String
@@ -15,6 +15,7 @@ struct Indervidual_Information: View {
     let movieTitle: String
     let posterString: String
     let castRowController: CastRowController
+    let collectionController: CollectionsController
     @ObservedObject var indervidualInformationController: IndervidualInformationController
     @State var castBoxBool = false
     
@@ -26,7 +27,9 @@ struct Indervidual_Information: View {
         self.movieTitle = object.title
         self.posterString = object.poster_path
         self.castRowController = CastRowController(movieID: self.movieID)
-        self.castRowController.populateCastRow()
+        castRowController.populateCastRow()
+        self.collectionController = CollectionsController()
+        collectionController.getMovieCollection(id: self.movieID)
         self.indervidualInformationController = IndervidualInformationController()
     }
     
@@ -89,7 +92,11 @@ struct Indervidual_Information: View {
                         Spacer()
                         CustomButtonLayout(size: .small, text: "30 points")
                         Spacer()
-                        CustomButtonLayout(size: .small, text: "Collection")
+                        if collectionController.inCollection == true {
+                            NavigationLink(destination: CollectionView(id: collectionController.collectionID, name: collectionController.collection.name)) {
+                                CustomButtonLayout(size: .small, text: collectionController.collection.name)
+                            }
+                        }
                         Spacer()
                     }
                     Spacer()
@@ -120,10 +127,10 @@ struct Indervidual_Information: View {
     
 }
 
-//struct Indervidual_Information_Previews: PreviewProvider {
+//struct IndervidualInformation_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
 //
-//        Indervidual_Information(object: object)
+//        IndervidualInformation(object: object)
 //    }
 //}

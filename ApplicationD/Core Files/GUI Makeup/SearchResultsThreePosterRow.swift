@@ -41,7 +41,7 @@ struct SearchResultsThreePosterRow: View {
         HStack {
             Spacer()
             VStack {
-                NavigationLink(destination: Indervidual_Information(object: object1)
+                NavigationLink(destination: IndervidualInformation(object: object1)
                 ) {
                     MoviePoster(size: self.size, urlString: object1.poster_path)
                 }
@@ -50,7 +50,7 @@ struct SearchResultsThreePosterRow: View {
             Spacer()
             VStack {
                 if object2.title != "" {
-                    NavigationLink(destination: Indervidual_Information(object: object2)
+                    NavigationLink(destination: IndervidualInformation(object: object2)
                     ) {
                         MoviePoster(size: self.size, urlString: object2.poster_path)
                         
@@ -65,7 +65,7 @@ struct SearchResultsThreePosterRow: View {
             Spacer()
             VStack {
                 if object3.title != "" {
-                    NavigationLink(destination: Indervidual_Information(object: object3)
+                    NavigationLink(destination: IndervidualInformation(object: object3)
                     ) {
                         MoviePoster(size: self.size, urlString: object3.poster_path)
                     }

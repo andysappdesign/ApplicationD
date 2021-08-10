@@ -91,6 +91,22 @@ class GUISizes {
     
     let searchFormHeight: CGFloat
     
+    // MARK: Points Box
+    
+    let pointsBoxWidth: CGFloat
+    let pointsBoxHeight: CGFloat
+    let pointsBoxViewWidth: CGFloat
+    let pointsBoxViewHeight: CGFloat
+    let pointsBoxCornerRadius: CGFloat
+    let pointsBoxColor = Color("#90a955")
+    let pointsBoxWidthBorder: CGFloat
+    let pointsBoxHeightBorder: CGFloat
+    
+    //MARK: Watch Symbol
+    
+    let watchedMarkWidth: CGFloat
+    let watchedMarkHeight: CGFloat
+
     // MARK:- init
     
     init() {
@@ -132,6 +148,17 @@ class GUISizes {
         self.indervidualInformationRatingsBoxHeight = self.smallPosterHeight
         
         self.searchFormHeight = self.screenHeight / 4
+        
+        self.pointsBoxWidth = self.smallPosterWidth
+        self.pointsBoxHeight = self.smallPosterWidth / 2
+        self.pointsBoxViewWidth = self.pointsBoxWidth + 10
+        self.pointsBoxViewHeight = self.pointsBoxHeight + 10
+        self.pointsBoxCornerRadius = 3
+        self.pointsBoxWidthBorder = self.pointsBoxWidth + 1.3
+        self.pointsBoxHeightBorder = self.pointsBoxHeight + 0.8
+        
+        self.watchedMarkWidth = 28
+        self.watchedMarkHeight = self.watchedMarkWidth
         
     }
     

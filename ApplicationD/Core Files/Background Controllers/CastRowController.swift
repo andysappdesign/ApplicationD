@@ -84,7 +84,7 @@ class CastRowController: TMDB, ObservableObject {
                     let path = object["file_path"].string!
                     completionHandler(path)
                 }
-                print("profile empty")
+//                print("profile empty")
                 
             } else {
                 print("responce is empty")
