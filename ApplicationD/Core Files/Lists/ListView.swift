@@ -13,6 +13,7 @@ import CoreData
 struct ListView: View {
     
     @ObservedObject var watchList: WatchlistController
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     
     init() {
@@ -25,7 +26,7 @@ struct ListView: View {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
             VStack {
                 NavigationLink(
-                    destination: MovieWatchList(Movie: self.watchList),
+                    destination: MovieWatchList(Movie: self.watchList).environment(\.managedObjectContext, self.managedObjectContext),
                     label: {
                         Text("Watch List")
                 })

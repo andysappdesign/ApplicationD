@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StateChangeSheet: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
     let controller: IndervidualInformationController

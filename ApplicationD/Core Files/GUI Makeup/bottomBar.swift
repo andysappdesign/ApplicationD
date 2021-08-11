@@ -10,6 +10,8 @@ import CoreData
 
 struct bottomBar: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     let GUISize = GUISizes()
     
     var body: some View {
@@ -21,7 +23,7 @@ struct bottomBar: View {
                 HStack{
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView().environment(\.managedObjectContext, self.managedObjectContext)) {
                         Image(systemName: "house")
                             .resizable()
                             .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
@@ -35,7 +37,7 @@ struct bottomBar: View {
                 HStack {
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    NavigationLink(destination: Search()) {
+                    NavigationLink(destination: Search().environment(\.managedObjectContext, self.managedObjectContext)) {
                         Image(systemName: "magnifyingglass")
                             .resizable()
                             .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
@@ -50,7 +52,7 @@ struct bottomBar: View {
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
                     NavigationLink(
-                        destination: ListView()
+                        destination: ListView().environment(\.managedObjectContext, self.managedObjectContext)
                     ) {
                         Image(systemName: "list.star")
                             .resizable()

@@ -3,7 +3,7 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="Movie" representedClassName="Movie" syncable="YES" codeGenerationType="class">
+    <entity name="Movie" representedClassName="Movie" syncable="YES">
         <attribute name="adult" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="backgrop_path" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -20,16 +20,17 @@
         <relationship name="hasBeenWatched" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WatchedList" inverseName="hasWatched" inverseEntity="WatchedList"/>
         <relationship name="toBeWatched" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NextUp" inverseName="nextfilm" inverseEntity="NextUp"/>
     </entity>
-    <entity name="NextUp" representedClassName="NextUp" syncable="YES" codeGenerationType="class">
+    <entity name="NextUp" representedClassName="NextUp" syncable="YES">
         <relationship name="nextfilm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="toBeWatched" inverseEntity="Movie"/>
     </entity>
     <entity name="WatchedList" representedClassName="WatchedList" syncable="YES">
+        <attribute name="hasItems" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="hasWatched" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Movie" inverseName="hasBeenWatched" inverseEntity="Movie"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="WatchedList" positionX="-63" positionY="-9" width="128" height="44"/>
         <element name="Movie" positionX="-54" positionY="0" width="128" height="254"/>
         <element name="NextUp" positionX="-45" positionY="126" width="128" height="44"/>
+        <element name="WatchedList" positionX="-63" positionY="-9" width="128" height="59"/>
     </elements>
 </model>

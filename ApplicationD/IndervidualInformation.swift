@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IndervidualInformation: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     let GUISize = GUISizes()
     let overview: String
     let movieID: Int
@@ -50,6 +52,7 @@ struct IndervidualInformation: View {
                         .padding(.leading)
                     Spacer()
                     OverViewBox(boxHeight: GUISize.mediumPosterHeight, boxWidth: GUISize.indervidualInformationOverviewBoxWidth, overview: self.overview)
+
                         .padding(.trailing)
                         
                     Spacer()
@@ -93,7 +96,7 @@ struct IndervidualInformation: View {
                         CustomButtonLayout(size: .small, text: "30 points")
                         Spacer()
                         if collectionController.inCollection == true {
-                            NavigationLink(destination: CollectionView(id: collectionController.collectionID, name: collectionController.collection.name)) {
+                            NavigationLink(destination: CollectionView(id: collectionController.collectionID, name: collectionController.collection.name).environment(\.managedObjectContext, self.managedObjectContext)) {
                                 CustomButtonLayout(size: .small, text: collectionController.collection.name)
                             }
                         }

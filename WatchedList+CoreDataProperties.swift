@@ -16,7 +16,6 @@ extension WatchedList {
         return NSFetchRequest<WatchedList>(entityName: "WatchedList")
     }
 
-    @NSManaged public var hasItems: Bool
     @NSManaged public var hasWatched: NSSet?
 
 }

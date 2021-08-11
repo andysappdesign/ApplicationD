@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MovieWatchList: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     let GUISize = GUISizes()
     let Movie: WatchlistController
     // let TV = TVWatchList()
@@ -26,11 +28,11 @@ struct MovieWatchList: View {
                 VStack {
                     ForEach(Movie.rowObjectPositions, id: \.self) { array in
                         if array.count == 3 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
                         } else if array.count == 2 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
                         } else if array.count == 1 {
-                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie)
+                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
                         }
                     }
                     Spacer()

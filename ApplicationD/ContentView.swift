@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
     
     let GUISize = GUISizes()
@@ -55,7 +57,7 @@ struct ContentView: View {
                             Spacer()
                                 .frame(height: 30)
                             NavigationLink(
-                                destination: ListView()
+                                destination: ListView().environment(\.managedObjectContext, self.managedObjectContext)
                             ) {
                                 CustomButtonLayout(size: .medium, text: "My Lists")
                             }
@@ -66,7 +68,7 @@ struct ContentView: View {
                     Spacer()
                     Button_Row(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
-                    bottomBar()
+                    bottomBar().environment(\.managedObjectContext, self.managedObjectContext)
                     
                     
                 } // end of VStack
