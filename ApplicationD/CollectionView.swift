@@ -34,17 +34,11 @@ struct CollectionView: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
+                    .frame(width: GUISize.screenWidth - 40)
+                    .lineLimit(2)
                 Spacer()
-                ForEach(controller.rowObjectPositions, id: \.self) { array in
-                    if array.count == 3 {
-                        CollectionThreePosterRow(object1: array[0], object2: array[1], object3: array[2], collectionController: self.controller)
-                    } else if array.count == 2 {
-                        CollectionThreePosterRow(object1: array[0], object2: array[1], collectionController: self.controller)
-                    } else if array.count == 1 {
-                        CollectionThreePosterRow(object1: array[0], collectionController: self.controller)
-                    }
-                }
-                Spacer()
+                CollectionsRows(collectionsController: self.controller)
+                CollectionPointsBar(text: "300 Points", completed: false)
                 bottomBar()
                     
             } // end of VStack
@@ -56,7 +50,8 @@ struct CollectionView: View {
 struct CollectionView_Previews: PreviewProvider {
     static var previews: some View {
         let pirates = 295
-        let name = "Pirates of the Carribean"
+        let name = "Pirates of the Carribean Collection"
         CollectionView(id: pirates, name: name)
+            .previewDevice("iPod touch (7th generation)")
     }
 }

@@ -51,7 +51,7 @@ struct CollectionThreePosterRow: View {
                 NavigationLink(destination: IndervidualInformation(object: object1)
                 ) {
                     MoviePoster(size: self.size, urlString: object1.poster_path)
-                        .overlay( WatchedMark(watched: object1.watched))
+                        .overlay( WatchedMark(watched: object1.watched, type: .moviePoster))
                 }
                 PointsBox(text: "30 Points")
                 
@@ -64,7 +64,7 @@ struct CollectionThreePosterRow: View {
                     NavigationLink(destination: IndervidualInformation(object: object2)
                     ) {
                         MoviePoster(size: self.size, urlString: object2.poster_path)
-                            .overlay( WatchedMark(watched: object2.watched))
+                            .overlay( WatchedMark(watched: object2.watched, type: .moviePoster))
                     }
                     PointsBox(text: "30 Points")
                     
@@ -81,7 +81,7 @@ struct CollectionThreePosterRow: View {
                     NavigationLink(destination: IndervidualInformation(object: object3)
                     ) {
                         MoviePoster(size: self.size, urlString: object3.poster_path)
-                            .overlay( WatchedMark(watched: object3.watched))
+                            .overlay( WatchedMark(watched: object3.watched, type: .moviePoster))
                     }
                     PointsBox(text: "30 Points")
                 }

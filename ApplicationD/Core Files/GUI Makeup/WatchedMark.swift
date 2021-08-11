@@ -12,8 +12,25 @@ struct WatchedMark: View {
     let GUISize = GUISizes()
     let watched: Bool
     
-    init(watched: Bool){
+    var paddingTop: CGFloat = 0.0
+    var paddingLeading: CGFloat = 0.0
+    var paddingBottom: CGFloat = 0.0
+    var paddingTrailing: CGFloat = 0.0
+    
+    enum markType {
+        case moviePoster
+        case pointsBar
+    }
+    
+    init(watched: Bool, type: markType){
         self.watched = watched
+        if type == .moviePoster {
+            self.paddingTop = GUISize.smallPosterHeight + 5
+            self.paddingLeading = GUISize.smallPosterWidth
+        } else {
+            self.paddingLeading = GUISize.collectionsPointBarWidth - 10
+            self.paddingBottom = GUISize.collectionsPointBarHeight - 5
+        }
     }
     
     var body: some View {
@@ -21,16 +38,16 @@ struct WatchedMark: View {
             Image(systemName: "checkmark.circle")
                 .resizable()
                 .frame(width: GUISize.watchedMarkWidth, height: GUISize.watchedMarkHeight)
-                .padding(.init(top: GUISize.smallPosterHeight - 5, leading: GUISize.smallPosterWidth, bottom: 0.0, trailing: 0.0))
+                .padding(.init(top: self.paddingTop, leading: self.paddingLeading, bottom: self.paddingBottom, trailing: self.paddingTrailing))
                 .foregroundColor(.black)
-                .shadow(radius: 2)
+                .shadow(color: .white, radius: 2)
         } else {
             Image(systemName: "x.circle")
                 .resizable()
                 .frame(width: GUISize.watchedMarkWidth, height: GUISize.watchedMarkHeight)
-                .padding(.init(top: GUISize.smallPosterHeight - 5, leading: GUISize.smallPosterWidth, bottom: 0.0, trailing: 0.0))
+                .padding(.init(top: self.paddingTop, leading: self.paddingLeading, bottom: self.paddingBottom, trailing: self.paddingTrailing))
                 .foregroundColor(.black)
-                .shadow(radius: 2)
+                .shadow(color: .white, radius: 2)
         }
         
         
@@ -40,8 +57,8 @@ struct WatchedMark: View {
 struct WatchedMark_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WatchedMark(watched: true)
-            WatchedMark(watched: false)
+            WatchedMark(watched: true, type: .moviePoster)
+            WatchedMark(watched: false, type: .pointsBar)
         }
     }
 }

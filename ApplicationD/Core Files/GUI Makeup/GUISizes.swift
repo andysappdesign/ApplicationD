@@ -106,6 +106,11 @@ class GUISizes {
     
     let watchedMarkWidth: CGFloat
     let watchedMarkHeight: CGFloat
+    
+    // MARK: Collection Points Bar
+    
+    let collectionsPointBarWidth: CGFloat
+    let collectionsPointBarHeight: CGFloat
 
     // MARK:- init
     
@@ -159,6 +164,9 @@ class GUISizes {
         
         self.watchedMarkWidth = 28
         self.watchedMarkHeight = self.watchedMarkWidth
+        
+        self.collectionsPointBarWidth = self.screenWidth - 20
+        self.collectionsPointBarHeight = self.bottomBarHeight
         
     }
     
