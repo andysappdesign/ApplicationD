@@ -9,8 +9,6 @@ import SwiftUI
 
 struct Search: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
     let GUISize = GUISizes()
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""
@@ -52,9 +50,9 @@ struct Search: View {
                             .foregroundColor(Color("#ECF39E"))
                         ScrollView {
                             if self.searchResults == false {
-                                MovieDiscover(controller: self.controlller).environment(\.managedObjectContext, self.managedObjectContext)
+                                MovieDiscover(controller: self.controlller)
                             } else {
-                                SearchResults(conroller: self.controlller).environment(\.managedObjectContext, self.managedObjectContext)
+                                SearchResults(conroller: self.controlller)
                             }
                         }
                     }

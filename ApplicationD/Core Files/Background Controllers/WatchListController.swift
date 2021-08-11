@@ -26,18 +26,9 @@ class WatchlistController: TMDB, ObservableObject {
  
     // MARK:- LoadList
     
-    func loadList(type: String, completionHander: @escaping () -> Void) {
+    func loadList(completionHander: @escaping () -> Void) {
         if UserDefaults.standard.bool(forKey: "listsCreated") == true {
-            var id = 0
-            if type == "watch" {
-                id = UserDefaults.standard.integer(forKey: "watchID")
-            }
-            if type == "watched" {
-                id = UserDefaults.standard.integer(forKey: "watchedID")
-            }
-            if type == "suggestion" {
-                id = UserDefaults.standard.integer(forKey: "suggestionID")
-            }
+            let id = UserDefaults.standard.integer(forKey: "watchID")
             let idString = String(id)
             
             super.getListDetails(id: idString) { (responce) in

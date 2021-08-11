@@ -13,7 +13,8 @@ import CoreData
 struct ListView: View {
     
     @ObservedObject var watchList: WatchlistController
-    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    let GUISize = GUISizes()
     
     
     init() {
@@ -25,12 +26,21 @@ struct ListView: View {
         ZStack {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
             VStack {
+                Text("My Lists")
+                    .font(GUISize.titleFont)
+                    .fontWeight(GUISize.titleWeight)
+                    .foregroundColor(GUISize.titleColor)
+                    .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
+                Spacer()
                 NavigationLink(
-                    destination: MovieWatchList(Movie: self.watchList).environment(\.managedObjectContext, self.managedObjectContext),
+                    destination: MovieWatchList(Movie: self.watchList),
                     label: {
-                        Text("Watch List")
+                        Text("My Watch List")
                 })
                 Spacer()
+                NavigationLink(destination: WatchedListView()) {
+                    Text("My Watched List")
+                }
                 bottomBar()
             }
             

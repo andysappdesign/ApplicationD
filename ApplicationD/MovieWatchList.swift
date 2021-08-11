@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MovieWatchList: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
     
     let GUISize = GUISizes()
     let Movie: WatchlistController
@@ -26,19 +25,25 @@ struct MovieWatchList: View {
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: GUISize.screenWidth, height: GUISize.screenHeight * 2)
                 VStack {
+                    Text("My Watch List")
+                        .font(GUISize.titleFont)
+                        .fontWeight(GUISize.titleWeight)
+                        .foregroundColor(GUISize.titleColor)
+                        .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                     ForEach(Movie.rowObjectPositions, id: \.self) { array in
                         if array.count == 3 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], object3: array[2], MoviesWatchList: self.Movie)
                         } else if array.count == 2 {
-                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
+                            WatchListThreePosterRow(object1: array[0], object2: array[1], MoviesWatchList: self.Movie)
                         } else if array.count == 1 {
-                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie).environment(\.managedObjectContext, self.managedObjectContext)
+                            WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie)
                         }
                     }
                     Spacer()
+                    bottomBar()
                 } //end of VStack
                 .onAppear(perform: {
-                    Movie.loadList(type: "watch"){
+                    Movie.loadList(){
 
                     }
                 })

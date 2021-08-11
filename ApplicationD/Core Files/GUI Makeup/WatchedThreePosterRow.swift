@@ -1,42 +1,49 @@
 //
-//  SearchResultsThreePosterRow.swift
+//  WatchedThreePosterRow.swift
 //  ApplicationD
 //
-//  Created by Andrew Cumming on 31/07/2021.
+//  Created by Andrew Cumming on 11/08/2021.
 //
 
 import SwiftUI
 
-struct SearchResultsThreePosterRow: View {
-    
+struct WatchedThreePosterRow: View {
     
     let GUISize = GUISizes()
     var size = GUISizes.Sizes.small
     
-    let object1: JSONMovieObject
-    let object2: JSONMovieObject
-    let object3: JSONMovieObject
+    // Three Objects
     
-    init(object1: Int, object2: Int, object3: Int, searchController: searchController) {
-        self.object1 = searchController.objectSearchArray[object1]
-        self.object2 = searchController.objectSearchArray[object2]
-        self.object3 = searchController.objectSearchArray[object3]
+    init(object1: Int, object2: Int, object3: Int, WatchedListController: WatchedListController) {
+        self.object1 = WatchedListController.objectArray[object1]
+        self.object2 = WatchedListController.objectArray[object2]
+        self.object3 = WatchedListController.objectArray[object3]
     }
     
     // Two Objects
     
-    init(object1: Int, object2: Int, searchController: searchController) {
-        self.object1 = searchController.objectSearchArray[object1]
-        self.object2 = searchController.objectSearchArray[object2]
+    init(object1: Int, object2: Int, WatchedListController: WatchedListController) {
+        self.object1 = WatchedListController.objectArray[object1]
+        self.object2 = WatchedListController.objectArray[object2]
         self.object3 = JSONMovieObject()
     }
     
     // One Object
-    init(object1: Int, searchController: searchController) {
-        self.object1 = searchController.objectSearchArray[object1]
+    init(object1: Int, WatchedListController: WatchedListController) {
+        self.object1 = WatchedListController.objectArray[object1]
         self.object2 = JSONMovieObject()
         self.object3 = JSONMovieObject()
     }
+    
+    init(testing: Bool) {
+        self.object1 = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
+        self.object2 = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "WandaVision", poster_path: "glKDfE6btIRcVB5zrjspRIs4r52.jpg", genre_ids: [])
+        self.object3 = JSONMovieObject()
+    }
+    
+    let object1: JSONMovieObject
+    let object2: JSONMovieObject
+    let object3: JSONMovieObject
     
     var body: some View {
         HStack {
@@ -83,3 +90,8 @@ struct SearchResultsThreePosterRow: View {
     }
 }
 
+//struct WatchedThreePosterRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WatchedThreePosterRow()
+//    }
+//}

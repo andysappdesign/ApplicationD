@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchListThreePosterRow: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
+
     
     let GUISize = GUISizes()
     var size = GUISizes.Sizes.small
@@ -51,7 +51,7 @@ struct WatchListThreePosterRow: View {
         HStack {
             Spacer()
             VStack {
-                NavigationLink(destination: IndervidualInformation(object: object1).environment(\.managedObjectContext, self.managedObjectContext)
+                NavigationLink(destination: IndervidualInformation(object: object1)
                 ) {
                     MoviePoster(size: self.size, urlString: object1.poster_path)
                 }
@@ -60,7 +60,7 @@ struct WatchListThreePosterRow: View {
             Spacer()
             VStack {
                 if object2.title != "" {
-                    NavigationLink(destination: IndervidualInformation(object: object2).environment(\.managedObjectContext, self.managedObjectContext)
+                    NavigationLink(destination: IndervidualInformation(object: object2)
                     ) {
                         MoviePoster(size: self.size, urlString: object2.poster_path)
                         
@@ -75,7 +75,7 @@ struct WatchListThreePosterRow: View {
             Spacer()
             VStack {
                 if object3.title != "" {
-                    NavigationLink(destination: IndervidualInformation(object: object3).environment(\.managedObjectContext, self.managedObjectContext)
+                    NavigationLink(destination: IndervidualInformation(object: object3)
                     ) {
                         MoviePoster(size: self.size, urlString: object3.poster_path)
                     }

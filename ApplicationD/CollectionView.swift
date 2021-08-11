@@ -9,8 +9,6 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
     let GUISize = GUISizes()
     let collectionId: Int
     let controller: CollectionsController
@@ -41,7 +39,7 @@ struct CollectionView: View {
                 Spacer()
                 CollectionsRows(collectionsController: self.controller)
                 CollectionPointsBar(text: "300 Points", completed: false)
-                bottomBar().environment(\.managedObjectContext, self.managedObjectContext)
+                bottomBar()
                     
             } // end of VStack
         }// end of ZStack
