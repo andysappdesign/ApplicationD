@@ -15,8 +15,8 @@ struct userCreation1: View {
     @ObservedObject var helper: userCreationHelper
     
     @State var firstName: String = ""
-    @State var secondName: String = ""
-    @State var email: String = ""
+    @State var secondName: String = "Alien"
+    @State var email: String = "lgm@toystory.com"
     
     var body: some View {
         VStack {
@@ -24,15 +24,6 @@ struct userCreation1: View {
                 Section() {
                     Text("Frist Name:")
                     TextField("Mike", text: $firstName).padding().textFieldStyle(RoundedBorderTextFieldStyle()).multilineTextAlignment(/*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
-                }
-                Section() {
-                    Text("Second Name:")
-                    TextField("Wazowski", text: $secondName).padding().textFieldStyle(RoundedBorderTextFieldStyle()).multilineTextAlignment(/*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
-                }
-                
-                Section() {
-                    Text("Email:")
-                    TextField("mike@appleseed.com", text: $email).padding().textFieldStyle(RoundedBorderTextFieldStyle()).multilineTextAlignment(/*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
                 }
                
             } // end of form

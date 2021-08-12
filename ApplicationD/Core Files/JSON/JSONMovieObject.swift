@@ -24,6 +24,7 @@ struct JSONMovieObject: Identifiable {
     var poster_path: String
     var genre_ids: [Any]
     var watched: Bool
+    var media_type: String
     
     init() {
         self.id = 9999
@@ -41,9 +42,10 @@ struct JSONMovieObject: Identifiable {
         self.poster_path = ""
         self.genre_ids = []
         self.watched = false
+        self.media_type = ""
     }
     
-    init(id: Int, video: Bool, original_language: String, overview: String, backdrop_path: String, adult: Bool, vote_count: Int, vote_average: Int, orginal_title: String, release_date: String, popularity: Float, title: String, poster_path: String, genre_ids: [Any] ) {
+    init(id: Int, video: Bool, original_language: String, overview: String, backdrop_path: String, adult: Bool, vote_count: Int, vote_average: Int, orginal_title: String, release_date: String, popularity: Float, title: String, poster_path: String, genre_ids: [Any], media_type: String ) {
         self.id = id
         self.video = video
         self.original_language = original_language
@@ -59,5 +61,6 @@ struct JSONMovieObject: Identifiable {
         self.poster_path = poster_path
         self.genre_ids = genre_ids
         self.watched = false
+        self.media_type = media_type
     }
 }

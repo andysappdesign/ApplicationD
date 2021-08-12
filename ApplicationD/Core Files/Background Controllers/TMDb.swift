@@ -63,12 +63,10 @@ class TMDB {
                                 completionHandler(true)
                             } else {
                                 print("getTMDBAccount failed")
-                                completionHandler(false)
                             }
                         }
                     } else {
                         print("updateSessionID failed")
-                        completionHandler(false)
                     }
                 }
             case .failure(let error):
@@ -105,7 +103,6 @@ class TMDB {
                 completionHandler(true)
             case .failure(let error):
                 print(error)
-                completionHandler(false)
             }
   
         }
@@ -143,6 +140,22 @@ class TMDB {
             
         }
         
+    }
+    
+    // MARK:- getCreatedLists
+    
+    func getCreatedLists(sessionID: String, accountID: String, completionHandler: @escaping (JSON) -> Void) {
+        let url = "https://api.themoviedb.org/3/account/\(accountId)/lists?api_key=\(self.API)&language=en-US&session_id=\(sessionId)&page=1"
+        
+        AF.request(url, method: .get).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                completionHandler(json)
+            case .failure(let error):
+                print(error)
+            }
+        } // end of AF.request
     }
     
     // MARK:- getListDetails

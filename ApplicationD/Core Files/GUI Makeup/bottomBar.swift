@@ -21,7 +21,7 @@ struct bottomBar: View {
                 HStack{
                     Spacer()
                         .frame(width: GUISize.bottomBarSpacer)
-                    NavigationLink(destination: ContentView() {
+                    NavigationLink(destination: ContentView()) {
                         Image(systemName: "house")
                             .resizable()
                             .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)

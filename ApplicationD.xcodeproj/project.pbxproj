@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2205D14B26493E0000F96882 /* Points_System.json in Resources */ = {isa = PBXBuildFile; fileRef = 2205D14A26493E0000F96882 /* Points_System.json */; };
 		2205D14E26493E3D00F96882 /* PointSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D14D26493E3D00F96882 /* PointSystem.swift */; };
-		2205D15026493EF800F96882 /* loadPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D14F26493EF800F96882 /* loadPoints.swift */; };
 		2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15826495F1A00F96882 /* ProfilePicture.swift */; };
 		2205D15B2649627300F96882 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15A2649627300F96882 /* Onboarding.swift */; };
 		2205D15D2649649000F96882 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15C2649649000F96882 /* TutorialPage.swift */; };
@@ -31,6 +29,7 @@
 		2260759B26C2B9D00013147A /* WatchedMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759A26C2B9D00013147A /* WatchedMark.swift */; };
 		2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759C26C2BBB40013147A /* CollectionPointsBar.swift */; };
 		2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759E26C2BDDF0013147A /* CollectionsRows.swift */; };
+		2266890726C530A700100B02 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266890626C530A700100B02 /* MyProfile.swift */; };
 		2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* blankMoviePosition.swift */; };
 		227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C9F7426B1AA8B00A86858 /* TMDb.swift */; };
 		2289E10426B2C7A1004B8953 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10326B2C7A1004B8953 /* Search.swift */; };
@@ -71,9 +70,7 @@
 
 /* Begin PBXFileReference section */
 		13E8B936A8E4C120BD73BC40 /* Pods-ApplicationD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationD.debug.xcconfig"; path = "Target Support Files/Pods-ApplicationD/Pods-ApplicationD.debug.xcconfig"; sourceTree = "<group>"; };
-		2205D14A26493E0000F96882 /* Points_System.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Points_System.json; path = "ApplicationD/Core Files/Points System/Points_System.json"; sourceTree = SOURCE_ROOT; };
 		2205D14D26493E3D00F96882 /* PointSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystem.swift; sourceTree = "<group>"; };
-		2205D14F26493EF800F96882 /* loadPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadPoints.swift; sourceTree = "<group>"; };
 		2205D15826495F1A00F96882 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		2205D15A2649627300F96882 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		2205D15C2649649000F96882 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
@@ -95,6 +92,7 @@
 		2260759A26C2B9D00013147A /* WatchedMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedMark.swift; sourceTree = "<group>"; };
 		2260759C26C2BBB40013147A /* CollectionPointsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsBar.swift; sourceTree = "<group>"; };
 		2260759E26C2BDDF0013147A /* CollectionsRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRows.swift; sourceTree = "<group>"; };
+		2266890626C530A700100B02 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		2268456726A3038800E0F4EB /* blankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankMoviePosition.swift; sourceTree = "<group>"; };
 		227C9F7426B1AA8B00A86858 /* TMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDb.swift; sourceTree = "<group>"; };
 		2289E10326B2C7A1004B8953 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -169,8 +167,6 @@
 		2205D14C26493E0B00F96882 /* Points System */ = {
 			isa = PBXGroup;
 			children = (
-				2205D14F26493EF800F96882 /* loadPoints.swift */,
-				2205D14A26493E0000F96882 /* Points_System.json */,
 				2205D14D26493E3D00F96882 /* PointSystem.swift */,
 			);
 			path = "Points System";
@@ -273,6 +269,7 @@
 				22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */,
 				22337F922653DF81008089A9 /* ListView.swift */,
 				22E019CE269F108200A3C62A /* MovieWatchList.swift */,
+				2266890626C530A700100B02 /* MyProfile.swift */,
 				22AE70B426C3E0C1006890CC /* WatchedList.swift */,
 				2205D15A2649627300F96882 /* Onboarding.swift */,
 				2289E10326B2C7A1004B8953 /* Search.swift */,
@@ -375,7 +372,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2205D14B26493E0000F96882 /* Points_System.json in Resources */,
 				22E33F2D2610B1FC0086A5C5 /* Preview Assets.xcassets in Resources */,
 				22E33F2A2610B1FC0086A5C5 /* Assets.xcassets in Resources */,
 			);
@@ -455,6 +451,7 @@
 				22D3F69726B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift in Sources */,
 				2205D15D2649649000F96882 /* TutorialPage.swift in Sources */,
 				2205D14E26493E3D00F96882 /* PointSystem.swift in Sources */,
+				2266890726C530A700100B02 /* MyProfile.swift in Sources */,
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
 				228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */,
@@ -481,7 +478,6 @@
 				2260759B26C2B9D00013147A /* WatchedMark.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
 				2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */,
-				2205D15026493EF800F96882 /* loadPoints.swift in Sources */,
 				22255A8C269DC8E100CE6774 /* CustomButtonLayout.swift in Sources */,
 				22CC62F526BFFCFB007B76AC /* CollectionsController.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,

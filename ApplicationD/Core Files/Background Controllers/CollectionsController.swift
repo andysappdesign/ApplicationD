@@ -15,6 +15,8 @@ class CollectionsController: TMDB, ObservableObject {
     var collectionID: Int
     var collectionTitle = ""
     
+    let watchedListController = WatchedListController()
+    
     @Published var jsonArray: [JSON] = []
     @Published var objectArray: [JSONMovieObject] = []
     @Published var rowCount: Int = 0
@@ -61,7 +63,7 @@ class CollectionsController: TMDB, ObservableObject {
                 self.objectArray = []
                 self.jsonArray = response["parts"].arrayValue
                 for (index, _) in self.jsonArray.enumerated() {
-                    print(index)
+//                    print(index)
                    self.getObject(positionNumber: index) { response in
                    print(response)
                     if response.release_date != "" {
@@ -87,8 +89,13 @@ class CollectionsController: TMDB, ObservableObject {
 
     private func getObject(positionNumber: Int, completionHandler: @escaping (JSONMovieObject) -> Void){
         let object = jsonArray[positionNumber]
-        let newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string ?? "", adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string ?? "", popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string ?? "", genre_ids: object["genre_ids"].arrayObject!)
+        var newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string ?? "", adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string ?? "", popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string ?? "", genre_ids: object["genre_ids"].arrayObject!, media_type: object["media_type"].string ?? "unknown")
         if newObject.release_date != "" {
+            if watchedListController.isFilmInWatchedList(queryID: newObject.id) {
+                newObject.watched = true
+            } else {
+                newObject.watched = false
+            }
             completionHandler(newObject)
         }
     } // end of getObject
