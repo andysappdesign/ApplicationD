@@ -13,12 +13,14 @@ import CoreData
 struct ListView: View {
     
     @ObservedObject var watchList: WatchlistController
+    @ObservedObject var watchedList: WatchedListController
     
     let GUISize = GUISizes()
     
     
     init() {
         self.watchList = WatchlistController()
+        self.watchedList = WatchedListController()
         
     }
     
@@ -46,7 +48,20 @@ struct ListView: View {
             
                 
         }.onAppear(perform: {
-            watchList.createOrNot()
+            watchList.loadLists { responce in
+                if responce == true {
+                    watchList.loadList {
+                        
+                    }
+                    watchedList.loadList {
+                        
+                    }
+                }
+                
+            }
+        })
+        .alert(isPresented: $watchList.restartBool, content: {
+            Alert(title: Text("Please resart the app for changes to take affect"))
         })
     }
 }

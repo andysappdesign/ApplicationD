@@ -17,6 +17,7 @@ class WatchlistController: TMDB, ObservableObject {
     @Published var objectArray: [JSONMovieObject] = []
     @Published var rowCount: Int = 0
     @Published var rowObjectPositions = [[Int]]()
+    @Published var restartBool = false
 
     
     // MARK:- init
@@ -89,11 +90,65 @@ class WatchlistController: TMDB, ObservableObject {
         } // end of for
     }
     
-    // MARK:- CreateOrNot
+    // MARK:- LoadLists
     
-    func createOrNot() {
+    func loadLists(completionHandler: @escaping (Bool) -> Void) {
         if UserDefaults.standard.bool(forKey: "listsCreated") == false {
-            print("list empty")
+            print("Lists need to be created")
+            self.checkForPreExistingLists() { responce in
+                if responce == true {
+                    print("Existing lists where found and assigned")
+                    UserDefaults.standard.setValue(true, forKey: "listsCreated")
+                    self.restartBool.toggle()
+                    completionHandler(true)
+                } else {
+                    self.createLists() { responce in
+                        if responce == true {
+                            print("LoadLists complete")
+                            UserDefaults.standard.setValue(true, forKey: "listsCreated")
+                            self.restartBool.toggle()
+                            completionHandler(true)
+                        } else {
+                            print("LoadLists failed")
+                        }
+                    }
+                }
+            }
+        } else {
+            print("Lists are already assinged")
+            completionHandler(true)
+        }
+        
+    }
+    
+    
+    // MARK: CheckForPreExistingLists
+    
+    private func checkForPreExistingLists(completionHandler: @escaping (Bool) -> Void) {
+        super.getCreatedLists() { responce in
+            if responce != JSON() {
+                let listArray = responce["results"].arrayValue
+                for i in listArray {
+                    let name = i["name"].string
+                    let id = i["id"].int
+                    if name == "Movie Watchlist" {
+                        UserDefaults.standard.setValue(id, forKey: "watchID")
+                    }
+                    if name == "Watched List" {
+                        UserDefaults.standard.setValue(id, forKey: "watchedID")
+                    }
+                    if name == "Suggested List" {
+                        UserDefaults.standard.setValue(id, forKey: "suggestionID")
+                    }
+                }
+                completionHandler(true)
+            }
+        }
+    }
+    
+    // MARK: CreateLists
+    private func createLists(completionHandler: @escaping (Bool) -> Void) {
+            print("creating new lists")
             super.createList(name: "Movie Watchlist", description: "A watch list", listId: "watch") { (responceA) in
                 if responceA == true {
                     UserDefaults.standard.set(super.watchID, forKey: "watchID")
@@ -108,6 +163,8 @@ class WatchlistController: TMDB, ObservableObject {
                                     print(UserDefaults.standard.integer(forKey: "watchedID"))
                                     print(UserDefaults.standard.integer(forKey: "suggestionID"))
                                     UserDefaults.standard.set(true, forKey: "listsCreated")
+                                    self.restartBool.toggle()
+                                    completionHandler(true)
                                 } else {
                                     print("Creating Suggested failed")
                                 }
@@ -120,9 +177,7 @@ class WatchlistController: TMDB, ObservableObject {
                     print("Creating Watch List failed")
                 }
             }
-        } else {
-            print("list not empty")
-        }
+        
     }
     
 }

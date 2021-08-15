@@ -16,6 +16,8 @@ import SwiftyJSON
     @Published var screencount = 1
     @Published var alertBool = false
     @Published var alertString = ""
+    @Published var restartBool = false
+    @Published var restartString = "Please resart the app for changed to take affect"
     @Binding var isOnboarding: Bool
     @Published var requestIDRecived: Bool = false
     
@@ -79,6 +81,7 @@ import SwiftyJSON
     func finishSetup() {
         super.createSession() { (responce) in
             if responce == true {
+                self.restartBool.toggle()
                 self.isOnboarding.toggle()
                 print("User setup complete")
             } else {

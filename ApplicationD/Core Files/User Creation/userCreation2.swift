@@ -34,7 +34,10 @@ struct userCreation2: View {
                     helper.finishSetup()
                 }) {
                     Text("Create Session")
-                }
+                }.alert(isPresented: $helper.restartBool, content: {
+                            Alert(title: Text("Please resart the app for the changes to take affect"))
+                    
+                })
             }
             
         }

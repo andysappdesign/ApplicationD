@@ -144,8 +144,8 @@ class TMDB {
     
     // MARK:- getCreatedLists
     
-    func getCreatedLists(sessionID: String, accountID: String, completionHandler: @escaping (JSON) -> Void) {
-        let url = "https://api.themoviedb.org/3/account/\(accountId)/lists?api_key=\(self.API)&language=en-US&session_id=\(sessionId)&page=1"
+    func getCreatedLists(completionHandler: @escaping (JSON) -> Void) {
+        let url = "https://api.themoviedb.org/3/account/\(self.accountId)/lists?api_key=\(self.API)&language=en-US&session_id=\(self.sessionId)&page=1"
         
         AF.request(url, method: .get).responseJSON { (responce) in
             switch responce.result {
