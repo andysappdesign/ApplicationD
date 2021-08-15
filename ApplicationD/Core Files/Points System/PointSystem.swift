@@ -100,13 +100,40 @@ class PointSystem {
     
     // MARK:- AddPoints
     
-    private func addPoints(existingPoints: Int) -> Int {
-        return existingPoints + self.point_value
+    private func addPoints(existingPoints: Int) {
+        let new = existingPoints + self.point_value
+        print("point value is \(self.point_value)")
+        UserDefaults.standard.setValue(new, forKey: "totalPoints")
+        print("new total poimts is \(new)")
     }
     
-    // MARK:- CalculateAndAddPoints
+    // MARK: CheckIfAlreadyApplied
     
-    func calculateAndAddPoints(mediaString: String, existingPoints: Int) -> Int {
+    private func checkIfAlreadyApplied(id: Int) -> Bool {
+        let array: [Int] = UserDefaults.standard.object(forKey: "watchedList") as! [Int]
+        
+        if array.contains(id) {
+            print("\(id) is already in the watched list")
+            return true
+        } else {
+            print ("\(id) is not in the watched list")
+            return false
+        }
+    }
+    
+    // MARK: AddToUserDefaultsWatchedList
+    
+    private func addToUserDefaultsWatchedList(id: Int) {
+        var array: [Int] = UserDefaults.standard.object(forKey: "watchedList") as! [Int]
+        array.append(id)
+        UserDefaults.standard.setValue(array, forKey: "watchedList")
+        print ("\(id) added to watched list")
+
+    }
+    
+    // MARK: ConvertStringToMediaType
+    
+    private func convertStringToMediaType(mediaString: String) -> MediaType {
         var media: MediaType = .unknown
         if mediaString == "movie" {
             media = .movieSingle
@@ -125,9 +152,21 @@ class PointSystem {
         }
         else if mediaString == "largeMovieCollection" {
         }
-        calculatePoints(media: media)
-        return addPoints(existingPoints: existingPoints)
+        return media
     }
+    
+    
+    // MARK:- CalculateAndAddPoints
+    
+    func calculateAndAddPoints(id: Int, mediaString: String, existingPoints: Int) {
+        if checkIfAlreadyApplied(id: id) == false {
+            let media = convertStringToMediaType(mediaString: mediaString)
+            calculatePoints(media: media)
+            addPoints(existingPoints: existingPoints)
+            addToUserDefaultsWatchedList(id: id)
+        }
+    }
+    
     
     
     

@@ -61,6 +61,7 @@ import SwiftyJSON
     
     private func submitDetails(first: String, last: String, email: String) {
         let userId = "\(UUID())"
+        let array: [Int] = []
         UserDefaults.standard.setValue(first, forKey: "firstName")
         UserDefaults.standard.setValue(last, forKey: "lastName")
         UserDefaults.standard.setValue(email, forKey: "email")
@@ -73,6 +74,7 @@ import SwiftyJSON
         UserDefaults.standard.setValue(0, forKey: "watchID")
         UserDefaults.standard.setValue(0, forKey: "watchedID")
         UserDefaults.standard.setValue(0, forKey: "suggestionID")
+        UserDefaults.standard.setValue(array, forKey: "watchedList")
 //        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     

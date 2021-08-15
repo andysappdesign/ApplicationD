@@ -50,8 +50,7 @@ class WatchedListController: TMDB, ObservableObject {
                         self.objectArray.append(temp)
                         watchedList.append(temp.id)
                         let existingPoints = UserDefaults.standard.integer(forKey: "totalPoints")
-                        let newPoints = self.points.calculateAndAddPoints(mediaString: temp.media_type, existingPoints: existingPoints)
-                        UserDefaults.standard.setValue(newPoints, forKey: "totalPoints")
+                        self.points.calculateAndAddPoints(id: temp.id, mediaString: temp.media_type, existingPoints: existingPoints)
                     }
                     self.calculateRowAmountandObjectPositions(arrayCount: count)
                     UserDefaults.standard.setValue(watchedList, forKey: "watchedList")
