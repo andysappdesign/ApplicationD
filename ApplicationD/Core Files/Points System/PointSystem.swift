@@ -131,6 +131,11 @@ class PointSystem {
 
     }
     
+    func addRecent(title: String, points: Int) {
+        UserDefaults.standard.setValue(title, forKey: "recentTitle")
+        UserDefaults.standard.setValue(points, forKey: "recentPoints")
+    }
+    
     // MARK: ConvertStringToMediaType
     
     private func convertStringToMediaType(mediaString: String) -> MediaType {

@@ -267,9 +267,25 @@ class TMDB {
     
     // MARK:- GetMovieDetails
     
+    func getMovieDetails(id: Int, completionHandler: @escaping (JSON) -> Void) {
+        let url = "https://api.themoviedb.org/3/movie/\(id)?api_key=\(self.API)&language=en-US"
+        
+        AF.request(url, method: .get).responseJSON { (responce) in
+            switch responce.result {
+            case .success(let value):
+                let json = JSON(value)
+                completionHandler(json)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    // MARK:- GetMovieDetailsCollection
+    
     // the function serves the purpose to collect a movies collection, if one is avaliable
     
-    func getMovieDetails(id: Int, completionHandler: @escaping (Any) -> Void) {
+    func getMovieDetailsCollection(id: Int, completionHandler: @escaping (Any) -> Void) {
         let url = "https://api.themoviedb.org/3/movie/\(id)?api_key=\(self.API)&language=en-US"
         
         AF.request(url, method: .get).responseJSON { (responce) in

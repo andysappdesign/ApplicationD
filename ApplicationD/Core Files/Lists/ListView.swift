@@ -16,11 +16,13 @@ struct ListView: View {
     @ObservedObject var watchedList: WatchedListController
     
     let GUISize = GUISizes()
+    var buttonSpacerSize: CGFloat
     
     
     init() {
         self.watchList = WatchlistController()
         self.watchedList = WatchedListController()
+        self.buttonSpacerSize = GUISize.screenHeight / 15
         
     }
     
@@ -34,15 +36,22 @@ struct ListView: View {
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                 Spacer()
+                    .frame(height: self.buttonSpacerSize * 2)
                 NavigationLink(
                     destination: MovieWatchList(Movie: self.watchList),
                     label: {
-                        Text("My Watch List")
+                        CustomButtonLayout(size: .large, text: "My Watch List")
                 })
                 Spacer()
+                    .frame(height: self.buttonSpacerSize)
                 NavigationLink(destination: WatchedListView()) {
-                    Text("My Watched List")
+                    CustomButtonLayout(size: .large, text: "My Watched List")
                 }
+                Spacer()
+                    .frame(height: self.buttonSpacerSize)
+                // Suggested List link would go here
+                CustomButtonLayout(size: .large, text: "My Suggested List", inActive: true)
+                Spacer()
                 bottomBar()
             }
             
@@ -66,8 +75,8 @@ struct ListView: View {
     }
 }
 
-//struct ListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListView()
-//    }
-//}
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListView()
+    }
+}

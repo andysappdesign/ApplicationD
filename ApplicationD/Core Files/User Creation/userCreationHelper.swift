@@ -75,6 +75,8 @@ import SwiftyJSON
         UserDefaults.standard.setValue(0, forKey: "watchedID")
         UserDefaults.standard.setValue(0, forKey: "suggestionID")
         UserDefaults.standard.setValue(array, forKey: "watchedList")
+        UserDefaults.standard.setValue("No item watched", forKey: "recentTitle")
+        UserDefaults.standard.setValue(0, forKey: "recentPoints")
 //        print("user \(UserDefaults.standard.string(forKey: "userId")) created, firstName = \(UserDefaults.standard.string(forKey: "firstName")), lastName = \(UserDefaults.standard.string(forKey: "lastName")), email = \(UserDefaults.standard.string(forKey: "email"))")
     }
     

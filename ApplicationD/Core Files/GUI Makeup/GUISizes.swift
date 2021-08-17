@@ -24,6 +24,8 @@ class GUISizes {
     // MARK: Two Button Row Information
     let twoButtonRow_ButtonWidth: CGFloat
     let twoButtonRow_ButtonHeight: CGFloat
+    let twoButtonRow_LargeButtonWidth: CGFloat
+    let twoButtonRow_LargeButtonHeight: CGFloat
     
     // MARK: Movie Poster Sizes
     let extraSmallPosterWidth: CGFloat
@@ -65,8 +67,10 @@ class GUISizes {
     // MARK: Button Size
     
     enum buttonSize {
+        case extraSmall
         case small
         case medium
+        case large
     }
     
     // MARK: Page Items
@@ -101,6 +105,8 @@ class GUISizes {
     let pointsBoxColor = Color("#90a955")
     let pointsBoxWidthBorder: CGFloat
     let pointsBoxHeightBorder: CGFloat
+    let pointsBoxSmallWidth: CGFloat
+    let pointsBoxSmallHeight: CGFloat
     
     //MARK: Watch Symbol
     
@@ -111,6 +117,12 @@ class GUISizes {
     
     let collectionsPointBarWidth: CGFloat
     let collectionsPointBarHeight: CGFloat
+    
+    // MARK: My Profile
+    
+    let myProfile_profileFrame: CGFloat
+    let myProfile_pointsBoxHeight: CGFloat
+    let myProfile_pointsBoxWidth: CGFloat
 
     // MARK:- init
     
@@ -123,6 +135,8 @@ class GUISizes {
         
         self.twoButtonRow_ButtonWidth = twoButtonRow_Width - 30
         self.twoButtonRow_ButtonHeight = (twoButtonRow_Width / 3) * 0.9
+        self.twoButtonRow_LargeButtonWidth = twoButtonRow_ButtonWidth * 1.5
+        self.twoButtonRow_LargeButtonHeight = twoButtonRow_ButtonHeight
         
         self.extraSmallPosterWidth = twoButtonRow_Width / 3
         self.extraSmallPosterHeight = twoButtonRow_Width / 2
@@ -161,12 +175,18 @@ class GUISizes {
         self.pointsBoxCornerRadius = 3
         self.pointsBoxWidthBorder = self.pointsBoxWidth + 1.3
         self.pointsBoxHeightBorder = self.pointsBoxHeight + 0.8
+        self.pointsBoxSmallWidth = self.pointsBoxWidth * 1.35
+        self.pointsBoxSmallHeight = self.pointsBoxHeight * 2.5
         
         self.watchedMarkWidth = 28
         self.watchedMarkHeight = self.watchedMarkWidth
         
         self.collectionsPointBarWidth = self.screenWidth - 20
         self.collectionsPointBarHeight = self.bottomBarHeight
+        
+        self.myProfile_profileFrame = screenHeight * 0.2
+        self.myProfile_pointsBoxWidth = myProfile_profileFrame * 1.6
+        self.myProfile_pointsBoxHeight = myProfile_profileFrame * 1.7
         
     }
     

@@ -40,7 +40,7 @@ class CollectionsController: TMDB, ObservableObject {
     // MARK:- GetMovieCollection
     
     func getMovieCollection(id: Int) {     
-        getMovieDetails(id: id) { (response) in
+        getMovieDetailsCollection(id: id) { (response) in
             let object = JSON(response)
             let collectionObject = JSONCollection(backdrop_path: object["backdrop_path"].string ?? "", id: object["id"].int ?? 0, poster_path: object["poster_path"].string ?? "", name: object["name"].string ?? "")
             if collectionObject.name != "" {

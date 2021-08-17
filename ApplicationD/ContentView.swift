@@ -66,9 +66,9 @@ struct ContentView: View {
                         .frame(height: GUISize.largePosterHeight)
                     }
                     Spacer()
-                    Button_Row(button1Text: "My Wall", button2Text: "My Profile")
+                    ButtonRowOneInactive(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
-                    bottomBar().environment(\.managedObjectContext, self.managedObjectContext)
+                    bottomBar()
                     
                     
                 } // end of VStack

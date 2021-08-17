@@ -13,8 +13,13 @@ struct CustomButtonLayout: View {
     let GUISize = GUISizes()
     var width: CGFloat = 0
     var height: CGFloat = 0
+    var inActive: Bool = false
     
     init(size: GUISizes.buttonSize, text: String){
+        if size == .extraSmall {
+            self.width = GUISize.indervidualInformationButtonWidth / 1.5
+            self.height = GUISize.indervidualInformationButtonHeight / 1.5
+        }
         if size == .small {
             self.width = GUISize.indervidualInformationButtonWidth
             self.height = GUISize.indervidualInformationButtonHeight
@@ -23,6 +28,27 @@ struct CustomButtonLayout: View {
             self.width = GUISize.twoButtonRow_ButtonWidth
             self.height = GUISize.twoButtonRow_ButtonHeight
         }
+        if size == .large {
+            self.width = GUISize.twoButtonRow_LargeButtonWidth
+            self.height = GUISize.twoButtonRow_LargeButtonHeight
+        }
+        self.text = text
+    }
+    
+    init(size: GUISizes.buttonSize, text: String, inActive: Bool){
+        if size == .small {
+            self.width = GUISize.indervidualInformationButtonWidth
+            self.height = GUISize.indervidualInformationButtonHeight
+        }
+        if size == .medium {
+            self.width = GUISize.twoButtonRow_ButtonWidth
+            self.height = GUISize.twoButtonRow_ButtonHeight
+        }
+        if size == .large {
+            self.width = GUISize.twoButtonRow_LargeButtonWidth
+            self.height = GUISize.twoButtonRow_LargeButtonHeight
+        }
+        self.inActive = inActive
         self.text = text
     }
     
@@ -37,12 +63,18 @@ struct CustomButtonLayout: View {
                     .font(.body)
                     .foregroundColor(Color("#ECF39E"))
                     .multilineTextAlignment(.center)
+                if self.inActive == true {
+                    RoundedRectangle(cornerRadius: 3)
+                        .frame(width: self.width, height: self.height)
+                        .foregroundColor(Color(.gray))
+                        .opacity(0.6)
+                }
             } // end of ZStack
     }
 }
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButtonLayout(size: .small, text: "test button")
+        CustomButtonLayout(size: .extraSmall, text: "test button")
     }
 }

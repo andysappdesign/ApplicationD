@@ -9,17 +9,13 @@ import SwiftUI
 
 struct ProfilePicture: View {
     
-    // This is kept commented out until a further time
-    // when this view will be called with the right
-    // parmaters
-    
 //    var image: String
-    
+    var GUISize = GUISizes()
     
     var body: some View {
         Image("jackSparrow")
             .resizable()
-            .frame(width: 400, height: 200, alignment: .center)
+            .frame(width: GUISize.myProfile_profileFrame * 2, height: GUISize.myProfile_profileFrame, alignment: .center)
             .scaledToFit()
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 2))
