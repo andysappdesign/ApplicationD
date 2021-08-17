@@ -12,6 +12,9 @@ struct IndervidualInformation: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     let GUISize = GUISizes()
+    let generator = FriendsAndPointsGenerator()
+    var genratedFriends: [String] = []
+    var genratedScores: [Double] = []
     let overview: String
     let movieID: Int
     let movieTitle: String
@@ -33,6 +36,8 @@ struct IndervidualInformation: View {
         self.collectionController = CollectionsController()
         collectionController.getMovieCollection(id: self.movieID)
         self.indervidualInformationController = IndervidualInformationController()
+        self.genratedFriends = generator.generateFriends(howMany: 2)
+        self.genratedScores = generator.generateReviewScore()
     }
     
     var body: some View {
@@ -103,7 +108,7 @@ struct IndervidualInformation: View {
                         Spacer()
                     }
                     Spacer()
-                    RatingsBox(testing: true, boxWidth: GUISize.indervidualInformationOverviewBoxWidth, boxHeight: GUISize.indervidualInformationRatingsBoxHeight)
+                    RatingsBox(firstFriendName: self.genratedFriends[0], firstFriendRating: self.genratedScores[0], secondFriendName: self.genratedFriends[1], secondFriendRating: self.genratedScores[1])
                 } .frame(width: GUISize.rowWidth)
                 
                 Spacer()
@@ -130,10 +135,10 @@ struct IndervidualInformation: View {
     
 }
 
-//struct IndervidualInformation_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [])
-//
-//        IndervidualInformation(object: object)
-//    }
-//}
+struct IndervidualInformation_Previews: PreviewProvider {
+    static var previews: some View {
+        let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [], media_type: "movie")
+
+        IndervidualInformation(object: object)
+    }
+}

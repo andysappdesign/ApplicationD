@@ -135,8 +135,8 @@ class GUISizes {
         
         self.twoButtonRow_ButtonWidth = twoButtonRow_Width - 30
         self.twoButtonRow_ButtonHeight = (twoButtonRow_Width / 3) * 0.9
-        self.twoButtonRow_LargeButtonWidth = twoButtonRow_ButtonWidth * 1.5
-        self.twoButtonRow_LargeButtonHeight = twoButtonRow_ButtonHeight
+        self.twoButtonRow_LargeButtonWidth = self.twoButtonRow_ButtonWidth * 1.5
+        self.twoButtonRow_LargeButtonHeight = self.twoButtonRow_ButtonHeight
         
         self.extraSmallPosterWidth = twoButtonRow_Width / 3
         self.extraSmallPosterHeight = twoButtonRow_Width / 2
@@ -163,8 +163,8 @@ class GUISizes {
         self.castBoxWidth = self.screenWidth + 4
         self.indervidualInformationButtonWidth = self.twoButtonRow_ButtonWidth * 0.9
         self.indervidualInformationButtonHeight = self.twoButtonRow_ButtonHeight
-        self.indervidualInformationRatingsBoxWidth = (self.indervidualInformationButtonWidth - self.rowWidth) - 35
-        self.indervidualInformationRatingsBoxHeight = self.smallPosterHeight
+        self.indervidualInformationRatingsBoxWidth = self.rowWidth / 2
+        self.indervidualInformationRatingsBoxHeight = self.screenHeight / 4
         
         self.searchFormHeight = self.screenHeight / 4
         

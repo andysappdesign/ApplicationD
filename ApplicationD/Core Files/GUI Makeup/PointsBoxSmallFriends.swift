@@ -22,7 +22,6 @@ struct PointsBoxSmallFriends: View {
         self.friendOneName = friendOneName
         self.friendTwoName = friendTwoName
         self.friendThreeName = friendThreeName
-        
     }
     
     
@@ -35,30 +34,22 @@ struct PointsBoxSmallFriends: View {
                 .background(Color("#ECF39E"))
                 .opacity(0.63)
                 .border(GUISize.titleShadowColor, width: 0.3)
-              
-            ScrollView {
-                VStack {
-                    Spacer()
-                    Text("Friends with:")
-                        .font(.footnote)
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        VStack(alignment: .leading) {
-                            Text(self.friendOneName)
-                            Text(self.friendTwoName)
-                            Text(self.friendThreeName)
-                        }
-                        .font(.caption2)
-                        Spacer()
-                    }
-                    
-                    
+            VStack {
+                Text("Friends with:")
+                    .font(.footnote)
+                    .padding(.top, 3.0)
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text(self.friendOneName)
+                    Text(self.friendTwoName)
+                    Text(self.friendThreeName)
                 }
+                .font(.caption2)
+                Spacer()
                 
-                    
+                
             }
-                .padding(.all, 3.0)
+            .padding(.all, 3.0)
         }
         .frame(width: self.boxWidth, height: self.boxHeight)
     }

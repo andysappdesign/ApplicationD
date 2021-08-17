@@ -10,7 +10,8 @@ import SwiftUI
 struct PointsProfileBox: View {
     
     var GUISize = GUISizes()
-    
+    let generator = FriendsAndPointsGenerator()
+    var friendList: [String] = []
     let boxWidth: CGFloat
     let boxHeight: CGFloat
     let total: Int
@@ -19,6 +20,7 @@ struct PointsProfileBox: View {
         self.boxWidth = boxWidth
         self.boxHeight = boxHeight
         self.total = totalPoints
+        self.friendList = generator.generateFriends(howMany: 3)
     }
     
     var body: some View {
@@ -30,41 +32,41 @@ struct PointsProfileBox: View {
                 .foregroundColor(.white)
                 .background(Color("#90a955"))
                 .border(GUISize.titleShadowColor, width: 1)
-              
-            ScrollView {
-                VStack {
-                    HStack {
-                        Text("Points")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
+            
+            
+            VStack {
+                HStack {
+                    Text("Points")
+                        .font(.title)
+                        .fontWeight(.bold)
                     Spacer()
-                    HStack {
-                        Spacer()
-                        Text("Total = \(self.total)")
-                            .font(.footnote)
-                        Spacer()
-                        Spacer()
-                    }
-                    Spacer()
-                    HStack {
-                        Text("Leaderboard Ranking")
-                            .font(.caption)
-                        Spacer()
-                    }
-                    Spacer()
-                    HStack {
-                        PointsBoxSmallFriends(boxHeight: GUISize.pointsBoxSmallHeight, boxWidth: GUISize.pointsBoxSmallWidth, friendOneName: "Robin", friendTwoName: "Beaker", friendThreeName: "Flynn")
-                        
-                        PointsBoxSmallRecent(boxWidth: GUISize.pointsBoxSmallWidth, boxHeight: GUISize.pointsBoxSmallHeight)
-                    }
-                    .padding([.leading, .bottom, .trailing], 7.0)
                 }
+                Spacer()
+                HStack {
+                    Spacer()
+                    Text("Total = \(self.total)")
+                        .font(.footnote)
+                    Spacer()
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    Text("Leaderboard Ranking")
+                        .font(.caption)
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    PointsBoxSmallFriends(boxHeight: GUISize.pointsBoxSmallHeight, boxWidth: GUISize.pointsBoxSmallWidth, friendOneName: self.friendList[0], friendTwoName: self.friendList[1], friendThreeName: self.friendList[2])
                     
-                    
-                    
+                    PointsBoxSmallRecent(boxWidth: GUISize.pointsBoxSmallWidth, boxHeight: GUISize.pointsBoxSmallHeight)
+                }
+                .padding([.leading, .bottom, .trailing], 7.0)
             }
+            
+            
+            
+            
             .padding(.all, 3.0)
             
         }

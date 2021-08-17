@@ -32,26 +32,22 @@ struct PointsBoxSmallRecent: View {
                 .background(Color("#ECF39E"))
                 .opacity(0.63)
                 .border(GUISize.titleShadowColor, width: 0.3)
-              
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Text("Recent Watch:")
-                        .font(.footnote)
-                    Spacer()
-                    Text(self.recentWatchTitle)
-                        .font(.caption2)
-                        .padding(.leading, 2.0)
-                    Spacer()
-                    Text("Recent Points:")
-                        .font(.footnote)
-                    Spacer()
-                    Text(String(self.recentWatchPoints))
-                        .font(.caption2)
-                        .padding(.leading, 2.0)
-                }
-                    
+            VStack(alignment: .leading) {
+                Text("Recent Watch:")
+                    .font(.footnote)
+                Spacer()
+                Text(self.recentWatchTitle)
+                    .font(.caption2)
+                    .padding(.leading, 2.0)
+                Spacer()
+                Text("Recent Points:")
+                    .font(.footnote)
+                Spacer()
+                Text(String(self.recentWatchPoints))
+                    .font(.caption2)
+                    .padding(.leading, 2.0)
             }
-                .padding(.all, 3.0)
+            .padding(.all, 3.0)
         }
         .frame(width: self.boxWidth, height: self.boxHeight)
     }
