@@ -40,7 +40,7 @@ struct MovieWatchList: View {
                         }
                     }
                     Spacer()
-                    bottomBar()
+                    BottomBar()
                 } //end of VStack
                 .onAppear(perform: {
                     Movie.loadList(){
@@ -50,7 +50,7 @@ struct MovieWatchList: View {
             } // end of ZStack
             
         } // end of ScrollView
-        bottomBar()
+        BottomBar()
             
     } // end of view
 }

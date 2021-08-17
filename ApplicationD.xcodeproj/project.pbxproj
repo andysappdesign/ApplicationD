@@ -34,13 +34,13 @@
 		2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759C26C2BBB40013147A /* CollectionPointsBar.swift */; };
 		2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759E26C2BDDF0013147A /* CollectionsRows.swift */; };
 		2266890726C530A700100B02 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266890626C530A700100B02 /* MyProfile.swift */; };
-		2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* blankMoviePosition.swift */; };
+		2268456826A3038800E0F4EB /* BlankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* BlankMoviePosition.swift */; };
 		227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C9F7426B1AA8B00A86858 /* TMDb.swift */; };
 		2289E10426B2C7A1004B8953 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10326B2C7A1004B8953 /* Search.swift */; };
 		2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10526B2C7B3004B8953 /* SearchController.swift */; };
 		2289E10826B2EF11004B8953 /* MovieDiscover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10726B2EF11004B8953 /* MovieDiscover.swift */; };
 		228C3A7B26A58CC600242711 /* IndervidualInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7A26A58CC600242711 /* IndervidualInformation.swift */; };
-		228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* bottomBar.swift */; };
+		228C3A7D26A58E3400242711 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* BottomBar.swift */; };
 		228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8026A5A26E00242711 /* OverViewBox.swift */; };
 		228C3A8526A5B91D00242711 /* CastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8426A5B91D00242711 /* CastRow.swift */; };
 		22AE70B526C3E0C1006890CC /* WatchedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE70B426C3E0C1006890CC /* WatchedList.swift */; };
@@ -101,13 +101,13 @@
 		2260759C26C2BBB40013147A /* CollectionPointsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsBar.swift; sourceTree = "<group>"; };
 		2260759E26C2BDDF0013147A /* CollectionsRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRows.swift; sourceTree = "<group>"; };
 		2266890626C530A700100B02 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
-		2268456726A3038800E0F4EB /* blankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankMoviePosition.swift; sourceTree = "<group>"; };
+		2268456726A3038800E0F4EB /* BlankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankMoviePosition.swift; sourceTree = "<group>"; };
 		227C9F7426B1AA8B00A86858 /* TMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDb.swift; sourceTree = "<group>"; };
 		2289E10326B2C7A1004B8953 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		2289E10526B2C7B3004B8953 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		2289E10726B2EF11004B8953 /* MovieDiscover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDiscover.swift; sourceTree = "<group>"; };
 		228C3A7A26A58CC600242711 /* IndervidualInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IndervidualInformation.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/IndervidualInformation.swift"; sourceTree = "<absolute>"; };
-		228C3A7C26A58E3400242711 /* bottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomBar.swift; sourceTree = "<group>"; };
+		228C3A7C26A58E3400242711 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		228C3A8026A5A26E00242711 /* OverViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewBox.swift; sourceTree = "<group>"; };
 		228C3A8426A5B91D00242711 /* CastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRow.swift; sourceTree = "<group>"; };
 		22AE70B426C3E0C1006890CC /* WatchedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedList.swift; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 		2205D151264955DA00F96882 /* GUI Makeup */ = {
 			isa = PBXGroup;
 			children = (
-				2268456726A3038800E0F4EB /* blankMoviePosition.swift */,
-				228C3A7C26A58E3400242711 /* bottomBar.swift */,
+				2268456726A3038800E0F4EB /* BlankMoviePosition.swift */,
+				228C3A7C26A58E3400242711 /* BottomBar.swift */,
 				22255A89269DC8D600CE6774 /* ButtonRowOneInactive.swift */,
 				2245532A26C94E0900444917 /* ButtonRow.swift */,
 				228C3A8426A5B91D00242711 /* CastRow.swift */,
@@ -444,7 +444,7 @@
 				2260759926C2A3C60013147A /* PointsBox.swift in Sources */,
 				2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */,
 				2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */,
-				2268456826A3038800E0F4EB /* blankMoviePosition.swift in Sources */,
+				2268456826A3038800E0F4EB /* BlankMoviePosition.swift in Sources */,
 				22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */,
 				22AE70B526C3E0C1006890CC /* WatchedList.swift in Sources */,
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
@@ -466,7 +466,7 @@
 				2266890726C530A700100B02 /* MyProfile.swift in Sources */,
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
-				228C3A7D26A58E3400242711 /* bottomBar.swift in Sources */,
+				228C3A7D26A58E3400242711 /* BottomBar.swift in Sources */,
 				2247B7F726C93D4F0040364C /* PointsProfileBox.swift in Sources */,
 				228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */,
 				22E019CD269EFEDA00A3C62A /* MoviePoster.swift in Sources */,

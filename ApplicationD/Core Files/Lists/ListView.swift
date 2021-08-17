@@ -52,7 +52,7 @@ struct ListView: View {
                 // Suggested List link would go here
                 CustomButtonLayout(size: .large, text: "My Suggested List", inActive: true)
                 Spacer()
-                bottomBar()
+                BottomBar()
             }
             
                 

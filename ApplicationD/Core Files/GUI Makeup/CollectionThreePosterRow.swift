@@ -70,7 +70,7 @@ struct CollectionThreePosterRow: View {
                     
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
                 
             }
@@ -86,7 +86,7 @@ struct CollectionThreePosterRow: View {
                     PointsBox(text: "30 Points")
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
             }
             Spacer()

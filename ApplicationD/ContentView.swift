@@ -68,7 +68,7 @@ struct ContentView: View {
                     Spacer()
                     ButtonRowOneInactive(button1Text: "My Wall", button2Text: "My Profile")
                     Spacer()
-                    bottomBar()
+                    BottomBar()
                     
                     
                 } // end of VStack

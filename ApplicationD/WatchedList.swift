@@ -36,7 +36,7 @@ struct WatchedListView: View {
                     }
                 }
                 Spacer()
-                bottomBar()
+                BottomBar()
                 
             }
         }

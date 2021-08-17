@@ -59,7 +59,7 @@ struct DiscoverThreePosterRow: View {
                     
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
                 
             }
@@ -72,7 +72,7 @@ struct DiscoverThreePosterRow: View {
                     }
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
             }
             Spacer()

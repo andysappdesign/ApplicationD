@@ -107,7 +107,7 @@ struct IndervidualInformation: View {
                 } .frame(width: GUISize.rowWidth)
                 
                 Spacer()
-                bottomBar()
+                BottomBar()
             }
             .frame(width: GUISize.screenWidth)
         } // end of ZStack

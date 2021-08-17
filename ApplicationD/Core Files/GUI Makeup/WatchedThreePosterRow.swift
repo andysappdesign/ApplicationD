@@ -66,7 +66,7 @@ struct WatchedThreePosterRow: View {
                     
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
                 
             }
@@ -79,7 +79,7 @@ struct WatchedThreePosterRow: View {
                     }
                 }
                 else {
-                    blankMoviePosition(size: self.size)
+                    BlankMoviePosition(size: self.size)
                 }
             }
             Spacer()

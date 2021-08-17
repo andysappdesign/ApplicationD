@@ -39,7 +39,7 @@ struct CollectionView: View {
                 Spacer()
                 CollectionsRows(collectionsController: self.controller)
                 CollectionPointsBar(text: "300 Points", completed: false)
-                bottomBar()
+                BottomBar()
                     
             } // end of VStack
         }// end of ZStack

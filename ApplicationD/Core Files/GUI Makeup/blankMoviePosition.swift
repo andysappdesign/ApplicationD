@@ -1,5 +1,5 @@
 //
-//  blankMoviePosition.swift
+//  BlankMoviePosition.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 17/07/2021.
@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct blankMoviePosition: View {
+struct BlankMoviePosition: View {
     
     let GUISize = GUISizes()
     var width: CGFloat
@@ -44,13 +44,13 @@ struct blankMoviePosition: View {
     }
 }
 
-struct blankMoviePosition_Previews: PreviewProvider {
+struct BlankMoviePosition_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            blankMoviePosition(size: .small)
-            blankMoviePosition(size: .medium)
-            blankMoviePosition(size: .large)
-            blankMoviePosition(size: .extraLarge)
+            BlankMoviePosition(size: .small)
+            BlankMoviePosition(size: .medium)
+            BlankMoviePosition(size: .large)
+            BlankMoviePosition(size: .extraLarge)
         }
     }
 }

@@ -56,7 +56,7 @@ struct Search: View {
                             }
                         }
                     }
-                    bottomBar()
+                    BottomBar()
                 }
                 
                 

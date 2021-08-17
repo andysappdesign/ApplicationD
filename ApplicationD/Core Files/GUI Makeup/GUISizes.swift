@@ -48,10 +48,10 @@ class GUISizes {
     let extraLargePosterAspectRatio = CGSize(width: 27, height: 40)
     
     // MARK: Bottem Bar Information
-    let bottomBarHeight: CGFloat
-    let bottomBarSpacer: CGFloat
-    let bottomBarFontSize: Font
-    let bottomBarFontColor: Color
+    let BottomBarHeight: CGFloat
+    let BottomBarSpacer: CGFloat
+    let BottomBarFontSize: Font
+    let BottomBarFontColor: Color
     let buttonSquareSize: CGFloat // same for width and height
     
     // MARK: Sizes
@@ -153,11 +153,11 @@ class GUISizes {
         self.extraLargePosterWidth = self.mediumPosterWidth * 1.82
         self.extraLargePosterHeight = self.mediumPosterHeight * 1.8
         
-        self.bottomBarHeight = twoButtonRow_ButtonHeight * 0.9
-        self.bottomBarSpacer = 20.0
-        self.bottomBarFontSize = .largeTitle
-        self.bottomBarFontColor = Color("#90a955")
-        self.buttonSquareSize = self.bottomBarHeight * 0.7
+        self.BottomBarHeight = twoButtonRow_ButtonHeight * 0.9
+        self.BottomBarSpacer = 20.0
+        self.BottomBarFontSize = .largeTitle
+        self.BottomBarFontColor = Color("#90a955")
+        self.buttonSquareSize = self.BottomBarHeight * 0.7
         
         self.indervidualInformationOverviewBoxWidth = (((self.screenWidth - self.largePosterWidth) - 10) - 2)
         self.castBoxWidth = self.screenWidth + 4
@@ -182,7 +182,7 @@ class GUISizes {
         self.watchedMarkHeight = self.watchedMarkWidth
         
         self.collectionsPointBarWidth = self.screenWidth - 20
-        self.collectionsPointBarHeight = self.bottomBarHeight
+        self.collectionsPointBarHeight = self.BottomBarHeight
         
         self.myProfile_profileFrame = screenHeight * 0.2
         self.myProfile_pointsBoxWidth = myProfile_profileFrame * 1.6
