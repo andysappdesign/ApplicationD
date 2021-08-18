@@ -17,12 +17,12 @@ struct CustomButtonLayout: View {
     
     init(size: GUISizes.buttonSize, text: String){
         if size == .extraSmall {
-            self.width = GUISize.indervidualInformationButtonWidth / 1.5
-            self.height = GUISize.indervidualInformationButtonHeight / 1.5
+            self.width = GUISize.indervidualInformation_ButtonWidth / 1.5
+            self.height = GUISize.indervidualInformation_ButtonHeight / 1.5
         }
         if size == .small {
-            self.width = GUISize.indervidualInformationButtonWidth
-            self.height = GUISize.indervidualInformationButtonHeight
+            self.width = GUISize.indervidualInformation_ButtonWidth
+            self.height = GUISize.indervidualInformation_ButtonHeight
         }
         if size == .medium {
             self.width = GUISize.twoButtonRow_ButtonWidth
@@ -37,8 +37,8 @@ struct CustomButtonLayout: View {
     
     init(size: GUISizes.buttonSize, text: String, inActive: Bool){
         if size == .small {
-            self.width = GUISize.indervidualInformationButtonWidth
-            self.height = GUISize.indervidualInformationButtonHeight
+            self.width = GUISize.indervidualInformation_ButtonWidth
+            self.height = GUISize.indervidualInformation_ButtonHeight
         }
         if size == .medium {
             self.width = GUISize.twoButtonRow_ButtonWidth

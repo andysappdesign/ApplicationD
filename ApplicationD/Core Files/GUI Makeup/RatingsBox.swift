@@ -46,7 +46,7 @@ struct RatingsBox: View {
                 }
                 Spacer()
             })
-            .frame(width: GUISize.indervidualInformationRatingsBoxWidth, height: GUISize.indervidualInformationRatingsBoxHeight)
+            .frame(width: GUISize.indervidualInformation_RatingsBoxWidth, height: GUISize.indervidualInformation_RatingsBoxHeight)
         
     }
 }

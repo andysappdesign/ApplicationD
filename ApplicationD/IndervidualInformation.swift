@@ -56,7 +56,7 @@ struct IndervidualInformation: View {
                     MoviePoster(size: .medium, urlString: self.posterString)
                         .padding(.leading)
                     Spacer()
-                    OverViewBox(boxHeight: GUISize.mediumPosterHeight, boxWidth: GUISize.indervidualInformationOverviewBoxWidth, overview: self.overview)
+                    OverViewBox(boxHeight: GUISize.mediumPosterHeight, boxWidth: GUISize.indervidualInformation_OverviewBoxWidth, overview: self.overview)
 
                         .padding(.trailing)
                         

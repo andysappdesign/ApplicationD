@@ -33,7 +33,7 @@ struct MyProfile: View {
                     Spacer()
                         .frame(width: GUISize.screenWidth * 0.1)
                     VStack {
-                        ProfilePicture()
+                        ProfilePicture(imageString: "NaveenPP")
                         CustomButtonLayout(size: .extraSmall, text: "Change", inActive: true)
                     }
                     .frame(width: GUISize.screenWidth * 0.3)

@@ -21,9 +21,9 @@ struct ButtonRow: View {
             }
             Spacer()
                 .frame(width: 30)
-            NavigationLink(destination: MyProfile()) {
+            NavigationLink(destination: MyWall()) {
                 CustomButtonLayout(size: .medium, text: self.button2Text)
-
+            }
   
         } // end of HStack
         .frame(width: GUISize.rowWidth)

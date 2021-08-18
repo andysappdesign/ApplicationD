@@ -55,6 +55,9 @@
 		22D3F69526B5790600B6BCF0 /* DiscoverThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */; };
 		22D3F69726B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F69626B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift */; };
 		22D6149026CBD4B200D233F7 /* FriendsAndPointsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6148F26CBD4B200D233F7 /* FriendsAndPointsGenerator.swift */; };
+		22E0041B26CBE2BA00E5B1EA /* MyWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0041A26CBE2BA00E5B1EA /* MyWall.swift */; };
+		22E0041D26CBE47A00E5B1EA /* MyWallStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0041C26CBE47A00E5B1EA /* MyWallStatus.swift */; };
+		22E0042026CBE7C800E5B1EA /* MyWallPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0041F26CBE7C700E5B1EA /* MyWallPP.swift */; };
 		22E019CD269EFEDA00A3C62A /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E019CC269EFEDA00A3C62A /* MoviePoster.swift */; };
 		22E019CF269F108200A3C62A /* MovieWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E019CE269F108200A3C62A /* MovieWatchList.swift */; };
 		22E019D1269F13F400A3C62A /* WatchListThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E019D0269F13F400A3C62A /* WatchListThreePosterRow.swift */; };
@@ -123,6 +126,9 @@
 		22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverThreePosterRow.swift; sourceTree = "<group>"; };
 		22D3F69626B5796B00B6BCF0 /* SearchResultsThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsThreePosterRow.swift; sourceTree = "<group>"; };
 		22D6148F26CBD4B200D233F7 /* FriendsAndPointsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAndPointsGenerator.swift; sourceTree = "<group>"; };
+		22E0041A26CBE2BA00E5B1EA /* MyWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWall.swift; sourceTree = "<group>"; };
+		22E0041C26CBE47A00E5B1EA /* MyWallStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallStatus.swift; sourceTree = "<group>"; };
+		22E0041F26CBE7C700E5B1EA /* MyWallPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallPP.swift; sourceTree = "<group>"; };
 		22E019CC269EFEDA00A3C62A /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		22E019CE269F108200A3C62A /* MovieWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWatchList.swift; sourceTree = "<group>"; };
 		22E019D0269F13F400A3C62A /* WatchListThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListThreePosterRow.swift; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
 				2289E10726B2EF11004B8953 /* MovieDiscover.swift */,
 				22E019CC269EFEDA00A3C62A /* MoviePoster.swift */,
+				22E0041A26CBE2BA00E5B1EA /* MyWall.swift */,
+				22E0041E26CBE47E00E5B1EA /* MyWallObject */,
 				228C3A8026A5A26E00242711 /* OverViewBox.swift */,
 				2260759826C2A3C60013147A /* PointsBox.swift */,
 				2247B7F626C93D4F0040364C /* PointsProfileBox.swift */,
@@ -250,6 +258,15 @@
 				22AE70BF26C3F4D5006890CC /* JSONCollection.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		22E0041E26CBE47E00E5B1EA /* MyWallObject */ = {
+			isa = PBXGroup;
+			children = (
+				22E0041C26CBE47A00E5B1EA /* MyWallStatus.swift */,
+				22E0041F26CBE7C700E5B1EA /* MyWallPP.swift */,
+			);
+			path = MyWallObject;
 			sourceTree = "<group>";
 		};
 		22E33F192610B1FB0086A5C5 = {
@@ -447,12 +464,14 @@
 				2260759926C2A3C60013147A /* PointsBox.swift in Sources */,
 				2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */,
 				2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */,
+				22E0041B26CBE2BA00E5B1EA /* MyWall.swift in Sources */,
 				2268456826A3038800E0F4EB /* BlankMoviePosition.swift in Sources */,
 				22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */,
 				22AE70B526C3E0C1006890CC /* WatchedList.swift in Sources */,
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
 				22CC62F726C003CA007B76AC /* CollectionView.swift in Sources */,
 				22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */,
+				22E0041D26CBE47A00E5B1EA /* MyWallStatus.swift in Sources */,
 				22255A8A269DC8D600CE6774 /* ButtonRowOneInactive.swift in Sources */,
 				22AE70BE26C3F4AF006890CC /* JSONCastObject.swift in Sources */,
 				22521BD626BC0A1C009E69ED /* StateChangeSheet.swift in Sources */,
@@ -470,6 +489,7 @@
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
 				228C3A7D26A58E3400242711 /* BottomBar.swift in Sources */,
+				22E0042026CBE7C800E5B1EA /* MyWallPP.swift in Sources */,
 				2247B7F726C93D4F0040364C /* PointsProfileBox.swift in Sources */,
 				228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */,
 				22E019CD269EFEDA00A3C62A /* MoviePoster.swift in Sources */,

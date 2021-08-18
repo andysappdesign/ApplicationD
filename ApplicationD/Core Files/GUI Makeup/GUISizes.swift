@@ -84,12 +84,12 @@ class GUISizes {
     let bodyFontSize: Font = .custom("SFProText", fixedSize: 18)
     
     // MARK: Indervidual Information
-    let indervidualInformationOverviewBoxWidth: CGFloat
-    let indervidualInformationRatingsBoxWidth: CGFloat
-    let indervidualInformationRatingsBoxHeight: CGFloat
+    let indervidualInformation_OverviewBoxWidth: CGFloat
+    let indervidualInformation_RatingsBoxWidth: CGFloat
+    let indervidualInformation_RatingsBoxHeight: CGFloat
     let castBoxWidth: CGFloat
-    let indervidualInformationButtonWidth: CGFloat
-    let indervidualInformationButtonHeight: CGFloat
+    let indervidualInformation_ButtonWidth: CGFloat
+    let indervidualInformation_ButtonHeight: CGFloat
     
     // MARK: Search Box
     
@@ -115,14 +115,22 @@ class GUISizes {
     
     // MARK: Collection Points Bar
     
-    let collectionsPointBarWidth: CGFloat
-    let collectionsPointBarHeight: CGFloat
+    let collections_PointBarWidth: CGFloat
+    let collections_PointBarHeight: CGFloat
     
     // MARK: My Profile
     
     let myProfile_profileFrame: CGFloat
     let myProfile_pointsBoxHeight: CGFloat
     let myProfile_pointsBoxWidth: CGFloat
+    
+    // MARK: My Wall
+    
+    let myWall_profilePictureWidthHeight: CGFloat
+    let myWall_BoxColor = Color("#ECF39E")
+    let myWall_StatusBoxWidth: CGFloat
+    let myWall_StatusBoxHeight: CGFloat
+    let myWall_rowWidth: CGFloat
 
     // MARK:- init
     
@@ -159,12 +167,12 @@ class GUISizes {
         self.BottomBarFontColor = Color("#90a955")
         self.buttonSquareSize = self.BottomBarHeight * 0.7
         
-        self.indervidualInformationOverviewBoxWidth = (((self.screenWidth - self.largePosterWidth) - 10) - 2)
+        self.indervidualInformation_OverviewBoxWidth = (((self.screenWidth - self.largePosterWidth) - 10) - 2)
         self.castBoxWidth = self.screenWidth + 4
-        self.indervidualInformationButtonWidth = self.twoButtonRow_ButtonWidth * 0.9
-        self.indervidualInformationButtonHeight = self.twoButtonRow_ButtonHeight
-        self.indervidualInformationRatingsBoxWidth = self.rowWidth / 2
-        self.indervidualInformationRatingsBoxHeight = self.screenHeight / 4
+        self.indervidualInformation_ButtonWidth = self.twoButtonRow_ButtonWidth * 0.9
+        self.indervidualInformation_ButtonHeight = self.twoButtonRow_ButtonHeight
+        self.indervidualInformation_RatingsBoxWidth = self.rowWidth / 2
+        self.indervidualInformation_RatingsBoxHeight = self.screenHeight / 4
         
         self.searchFormHeight = self.screenHeight / 4
         
@@ -181,12 +189,17 @@ class GUISizes {
         self.watchedMarkWidth = 28
         self.watchedMarkHeight = self.watchedMarkWidth
         
-        self.collectionsPointBarWidth = self.screenWidth - 20
-        self.collectionsPointBarHeight = self.BottomBarHeight
+        self.collections_PointBarWidth = self.screenWidth - 20
+        self.collections_PointBarHeight = self.BottomBarHeight
         
         self.myProfile_profileFrame = screenHeight * 0.2
         self.myProfile_pointsBoxWidth = myProfile_profileFrame * 1.6
         self.myProfile_pointsBoxHeight = myProfile_profileFrame * 1.7
+        
+        self.myWall_profilePictureWidthHeight = 40
+        self.myWall_StatusBoxWidth = self.indervidualInformation_RatingsBoxWidth * 1.4
+        self.myWall_StatusBoxHeight = self.pointsBoxHeight * 2.5
+        self.myWall_rowWidth = self.rowWidth * 0.9
         
     }
     

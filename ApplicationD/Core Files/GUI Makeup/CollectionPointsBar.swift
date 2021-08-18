@@ -16,7 +16,7 @@ struct CollectionPointsBar: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: GUISize.pointsBoxCornerRadius)
-                .frame(width: GUISize.collectionsPointBarWidth, height: GUISize.collectionsPointBarHeight)
+                .frame(width: GUISize.collections_PointBarWidth, height: GUISize.collections_PointBarHeight)
                 .foregroundColor(GUISize.pointsBoxColor)
                 .shadow(radius: GUISize.titleShadowRadius)
                 .overlay(Text(self.text)

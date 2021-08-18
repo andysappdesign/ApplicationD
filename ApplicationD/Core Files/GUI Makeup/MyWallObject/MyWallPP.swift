@@ -1,13 +1,13 @@
 //
-//  ProfilePicture.swift
+//  MyWallPP.swift
 //  ApplicationD
 //
-//  Created by Andrew Cumming on 10/05/2021.
+//  Created by Andrew Cumming on 17/08/2021.
 //
 
 import SwiftUI
 
-struct ProfilePicture: View {
+struct MyWallPP: View {
     
 //    var image: String
     var GUISize = GUISizes()
@@ -16,15 +16,15 @@ struct ProfilePicture: View {
     var body: some View {
         Image(imageString)
             .resizable()
-            .frame(width: GUISize.myProfile_profileFrame * 2, height: GUISize.myProfile_profileFrame, alignment: .center)
+            .frame(width: GUISize.myWall_profilePictureWidthHeight * 2, height: GUISize.myWall_profilePictureWidthHeight, alignment: .center)
             .scaledToFit()
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 2))
             .shadow(radius: 4)
     }}
 
-struct ProfilePicture_Previews: PreviewProvider {
+struct MyWallPP_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePicture(imageString: "MantisPP")
+        MyWallPP(imageString: "MantisPP")
     }
 }

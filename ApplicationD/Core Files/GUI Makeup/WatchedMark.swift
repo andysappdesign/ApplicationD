@@ -28,8 +28,8 @@ struct WatchedMark: View {
             self.paddingTop = GUISize.smallPosterHeight + 5
             self.paddingLeading = GUISize.smallPosterWidth
         } else {
-            self.paddingLeading = GUISize.collectionsPointBarWidth - 10
-            self.paddingBottom = GUISize.collectionsPointBarHeight - 5
+            self.paddingLeading = GUISize.collections_PointBarWidth - 10
+            self.paddingBottom = GUISize.collections_PointBarHeight - 5
         }
     }
     
