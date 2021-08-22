@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomButtonLayout: View {
     
     let text: String
-    let GUISize = GUISizes()
+    
     var width: CGFloat = 0
     var height: CGFloat = 0
     var inActive: Bool = false

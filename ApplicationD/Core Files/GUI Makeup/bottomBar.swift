@@ -10,7 +10,7 @@ import CoreData
 
 struct BottomBar: View {
     
-    let GUISize = GUISizes()
+    
     
     var body: some View {
         ZStack {

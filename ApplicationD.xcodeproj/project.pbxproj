@@ -75,6 +75,8 @@
 		22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F512610B3120086A5C5 /* userCreationMain.swift */; };
 		22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E33F522610B3120086A5C5 /* userCreation1.swift */; };
 		22ED09FE263D6AD80048ABA6 /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED09FD263D6AD80048ABA6 /* WatchListController.swift */; };
+		22EFC87526D26C9400885AB3 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFC87326D26C9400885AB3 /* BottomBar.swift */; };
+		22EFC87626D26C9400885AB3 /* CustomButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFC87426D26C9400885AB3 /* CustomButtonLayout.swift */; };
 		55B4378B1772FB93B77595C5 /* Pods_ApplicationD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,8 @@
 		22E33F522610B3120086A5C5 /* userCreation1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCreation1.swift; sourceTree = "<group>"; };
 		22ED09FD263D6AD80048ABA6 /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
 		22ED0A01263D916F0048ABA6 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		22EFC87326D26C9400885AB3 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		22EFC87426D26C9400885AB3 /* CustomButtonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonLayout.swift; sourceTree = "<group>"; };
 		AE52A210C56E98B129C7F859 /* Pods-ApplicationD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationD.release.xcconfig"; path = "Target Support Files/Pods-ApplicationD/Pods-ApplicationD.release.xcconfig"; sourceTree = "<group>"; };
 		B0BD5A7453BA3ED0FD4CF238 /* Pods_ApplicationD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,12 +200,14 @@
 			isa = PBXGroup;
 			children = (
 				2268456726A3038800E0F4EB /* BlankMoviePosition.swift */,
+				22EFC87326D26C9400885AB3 /* BottomBar.swift */,
 				22255A89269DC8D600CE6774 /* ButtonRowHome.swift */,
 				2245532A26C94E0900444917 /* ButtonRowProfile.swift */,
 				228C3A8426A5B91D00242711 /* CastRow.swift */,
 				2260759C26C2BBB40013147A /* CollectionPointsBar.swift */,
 				2260759626C292790013147A /* CollectionThreePosterRow.swift */,
 				2260759E26C2BDDF0013147A /* CollectionsRows.swift */,
+				22EFC87426D26C9400885AB3 /* CustomButtonLayout.swift */,
 				22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */,
 				22D6148F26CBD4B200D233F7 /* FriendsAndPointsGenerator.swift */,
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
@@ -525,8 +531,10 @@
 				2247B7F926C941320040364C /* PointsBoxSmallFriends.swift in Sources */,
 				2260759B26C2B9D00013147A /* WatchedMark.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
+				22EFC87526D26C9400885AB3 /* BottomBar.swift in Sources */,
 				2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */,
 				22CC62F526BFFCFB007B76AC /* CollectionsController.swift in Sources */,
+				22EFC87626D26C9400885AB3 /* CustomButtonLayout.swift in Sources */,
 				227053B326CD447500692592 /* MyWallReview.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,
 				22E019CF269F108200A3C62A /* MovieWatchList.swift in Sources */,
