@@ -27,6 +27,8 @@
 		2247B7FB26C941C80040364C /* PointsBoxSmallRecent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247B7FA26C941C80040364C /* PointsBoxSmallRecent.swift */; };
 		22521BD426BBFD84009E69ED /* StateChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22521BD326BBFD84009E69ED /* StateChangeController.swift */; };
 		22521BD626BC0A1C009E69ED /* StateChangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */; };
+		225E77F626D27A4E004698CE /* CustomButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225E77F426D27A4E004698CE /* CustomButtonLayout.swift */; };
+		225E77F726D27A4E004698CE /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225E77F526D27A4E004698CE /* BottomBar.swift */; };
 		2260759726C292790013147A /* CollectionThreePosterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759626C292790013147A /* CollectionThreePosterRow.swift */; };
 		2260759926C2A3C60013147A /* PointsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759826C2A3C60013147A /* PointsBox.swift */; };
 		2260759B26C2B9D00013147A /* WatchedMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759A26C2B9D00013147A /* WatchedMark.swift */; };
@@ -100,6 +102,8 @@
 		2247B7FA26C941C80040364C /* PointsBoxSmallRecent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsBoxSmallRecent.swift; sourceTree = "<group>"; };
 		22521BD326BBFD84009E69ED /* StateChangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChangeController.swift; sourceTree = "<group>"; };
 		22521BD526BC0A1C009E69ED /* StateChangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChangeSheet.swift; sourceTree = "<group>"; };
+		225E77F426D27A4E004698CE /* CustomButtonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonLayout.swift; sourceTree = "<group>"; };
+		225E77F526D27A4E004698CE /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		2260759626C292790013147A /* CollectionThreePosterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionThreePosterRow.swift; sourceTree = "<group>"; };
 		2260759826C2A3C60013147A /* PointsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsBox.swift; sourceTree = "<group>"; };
 		2260759A26C2B9D00013147A /* WatchedMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedMark.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 		2205D151264955DA00F96882 /* GUI Makeup */ = {
 			isa = PBXGroup;
 			children = (
+				225E77F526D27A4E004698CE /* BottomBar.swift */,
+				225E77F426D27A4E004698CE /* CustomButtonLayout.swift */,
 				2268456726A3038800E0F4EB /* BlankMoviePosition.swift */,
 				22255A89269DC8D600CE6774 /* ButtonRowHome.swift */,
 				2245532A26C94E0900444917 /* ButtonRowProfile.swift */,
@@ -472,6 +478,7 @@
 				2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */,
 				22E0041B26CBE2BA00E5B1EA /* MyWall.swift in Sources */,
 				2268456826A3038800E0F4EB /* BlankMoviePosition.swift in Sources */,
+				225E77F726D27A4E004698CE /* BottomBar.swift in Sources */,
 				22E33F6C2610B3120086A5C5 /* userCreation1.swift in Sources */,
 				22AE70B526C3E0C1006890CC /* WatchedList.swift in Sources */,
 				22337F9B2653E01F008089A9 /* AsyncImage.swift in Sources */,
@@ -485,6 +492,7 @@
 				22337F932653DF81008089A9 /* ListView.swift in Sources */,
 				22337F9C2653E01F008089A9 /* EnvironmentValues+ImageCache.swift in Sources */,
 				22E019D1269F13F400A3C62A /* WatchListThreePosterRow.swift in Sources */,
+				225E77F626D27A4E004698CE /* CustomButtonLayout.swift in Sources */,
 				22CBB93426B56A0C00227672 /* SearchResults.swift in Sources */,
 				2289E10826B2EF11004B8953 /* MovieDiscover.swift in Sources */,
 				22AE70C026C3F4D5006890CC /* JSONCollection.swift in Sources */,
