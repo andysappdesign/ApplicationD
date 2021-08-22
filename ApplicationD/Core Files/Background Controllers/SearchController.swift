@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 29/07/2021.
 //
+//  This is soley a background code that aids the SearchController View display the correct information, this controller allows the searhcing of a title, and also allows the dynamic discovery of movies that is hosted on the Search View before the user has started to type.
 
 import SwiftUI
 import SwiftyJSON
@@ -60,7 +61,7 @@ class searchController: TMDB, ObservableObject {
     }
     
     // MARK: - GetSearchObject
-
+    
     private func getSearchObject(positionNumber: Int) -> JSONMovieObject {
         let object = jsonSearchArray[positionNumber]
         var newObject = JSONMovieObject()
@@ -76,7 +77,7 @@ class searchController: TMDB, ObservableObject {
     
     // MARK:-  SearchIsNotEmpty
     
-     func searchIsNotEmpty(query: String) -> Bool {
+    func searchIsNotEmpty(query: String) -> Bool {
         var bool = false
         if query != "" {
             bool = true
@@ -140,7 +141,7 @@ class searchController: TMDB, ObservableObject {
     }
     
     // MARK:  GetDiscoveryObject
-
+    
     private func getDiscoveryObject(positionNumber: Int) -> JSONMovieObject {
         let object = self.jsonDiscoverArray[positionNumber]
         let newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!, media_type: object["media_type"].string ?? "Uknown")
@@ -173,7 +174,7 @@ class searchController: TMDB, ObservableObject {
     }
     
     
-
+    
     
     
 }

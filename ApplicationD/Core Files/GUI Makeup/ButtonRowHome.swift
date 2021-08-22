@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 13/07/2021.
 //
+//  This sub-View creates two Buttons in a row layout
 
 import SwiftUI
 

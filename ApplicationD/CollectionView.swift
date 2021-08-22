@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 08/08/2021.
 //
+//  This view dispays collections of films like the 'Pirates of the Carribbean Collection', this works with the Collections Controller
 
 import SwiftUI
 
@@ -39,7 +40,7 @@ struct CollectionView: View {
                 CollectionsRows(collectionsController: self.controller)
                 CollectionPointsBar(text: "300 Points", completed: false)
                 BottomBar()
-                    
+                
             } // end of VStack
         }// end of ZStack
         

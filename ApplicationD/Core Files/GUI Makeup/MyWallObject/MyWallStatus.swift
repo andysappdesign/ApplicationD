@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 17/08/2021.
 //
+//  This sub-View creates Status Objects for My Wall
 
 import SwiftUI
 
@@ -24,8 +25,8 @@ struct MyWallStatus: View {
                 .foregroundColor(GUISize.myWall_BoxColor)
                 .frame(width: GUISize.myWall_StatusBoxWidth, height: GUISize.myWall_StatusBoxHeight)
                 .overlay(Text(status))
-                
-                
+            
+            
         }
         .frame(width: GUISize.myWall_rowWidth)
     }

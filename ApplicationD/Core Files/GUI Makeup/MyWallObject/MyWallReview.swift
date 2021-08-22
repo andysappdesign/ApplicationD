@@ -4,12 +4,12 @@
 //
 //  Created by Andrew Cumming on 18/08/2021.
 //
+//  This sub-View creates Review Objects for My Wall
 
 import SwiftUI
 
 struct MyWallReview: View {
-    
-    
+       
     let reviewTitle: String
     let reviewRating: Double
     let reviewBody: String

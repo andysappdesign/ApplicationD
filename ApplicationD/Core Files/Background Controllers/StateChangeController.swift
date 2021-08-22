@@ -1,13 +1,14 @@
 //
-//  IndervidualInformationController.swift
+//  StateChangeController.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 05/08/2021.
 //
+//
 
 import Foundation
 
-class IndervidualInformationController: TMDB, ObservableObject {
+class StateChangeController: TMDB, ObservableObject {
     
     @Published var changeStateAlert = false
     
@@ -72,23 +73,4 @@ class IndervidualInformationController: TMDB, ObservableObject {
             
         }
     }
-    
-    // MARK: AddToWatch
-    
-    private func addToWatchList() {
-        
-    }
-    
-    // MARK: RemoveFromWatch
-    
-    private func removeFromWatchList() {
-        
-    }
-    
-    // MARK: MarkAsWatched
-    
-    private func markAsWatched() {
-        
-    }
-    
 }

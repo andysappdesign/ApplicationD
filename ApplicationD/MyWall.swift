@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 17/08/2021.
 //
+//  This view displayes the faked social media type wall in the app
 
 import SwiftUI
 

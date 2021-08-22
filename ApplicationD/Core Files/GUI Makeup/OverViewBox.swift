@@ -4,11 +4,11 @@
 //
 //  Created by Andrew Cumming on 19/07/2021.
 //
+//  This sub-View creates a Movie Poster Object for the app
 
 import SwiftUI
 
 struct OverViewBox: View {
-    
     
     let boxHeight: CGFloat
     let boxWidth: CGFloat
@@ -24,13 +24,13 @@ struct OverViewBox: View {
                 .foregroundColor(.white)
                 .background(Color.white)
                 .border(GUISize.titleShadowColor, width: 0.3)
-              
+            
             ScrollView {
                 Text(self.overview)
                     .font(GUISize.bodyFontSize)
-                    
+                
             }
-                .padding(.all, 3.0)
+            .padding(.all, 3.0)
         }
         .frame(width: self.boxWidth, height: self.boxHeight)
     }

@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 11/08/2021.
 //
+//  This is soley a background code that aids the WatchedList View display the correct information, this can load the Watched List, get indervidual Objects and covert them to redable objects
 
 import SwiftUI
 import CoreData

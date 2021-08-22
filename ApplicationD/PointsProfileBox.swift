@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 15/08/2021.
 //
+//  This sub-View creates a Points Box speciafily for My Profile, this view then houses PointsBoxSmallFriend and PointsBoxSmallRecent
 
 import SwiftUI
 

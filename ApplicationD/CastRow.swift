@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 19/07/2021.
 //
+//  This View creates the Cast Row, this works with the Cast Row Controller 
 
 import SwiftUI
 
@@ -35,7 +36,7 @@ struct CastRow: View {
                 .background(Color.white)
                 .border(Color("#31572c"), width: 2)
                 .frame(width: GUISize.castBoxWidth)
-
+            
             HStack {
                 Spacer()
                 VStack{
@@ -94,9 +95,3 @@ struct CastRow: View {
         .frame(width: GUISize.rowWidth, height: GUISize.smallPosterHeight + 20)
     }
 }
-
-//struct CastRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CastRow(TESTINGid: 508943)
-//    }
-//}

@@ -4,13 +4,12 @@
 //
 //  Created by Andrew Cumming on 14/07/2021.
 //
+//  This sub-View creates a Movie Poster Object for the app
 
 import SwiftUI
 
 struct MoviePoster: View {
     
-    
-  
     var urlString: String
     var posterSize: GUISizes.Sizes
     var rawPoster: String = ""
@@ -18,7 +17,7 @@ struct MoviePoster: View {
     var height: CGFloat = 0
     var aspectRatio: CGSize = CGSize(width: 11, height: 17)
     
-  
+    
     
     init(size: GUISizes.Sizes, urlString: String) {
         self.posterSize = size
@@ -51,28 +50,28 @@ struct MoviePoster: View {
             height = GUISize.extraLargePosterHeight
             aspectRatio = GUISize.extraLargePosterAspectRatio
         }
-
+        
     }
     
     
     var body: some View {
         VStack {
-//            Text(rawPoster)
+            //            Text(rawPoster)
             ZStack {
                 AsyncImage(url: URL(string: self.urlString)!,
                            placeholder: { Text("Loading...") },
                            image: {Image(uiImage: $0).resizable()}
-                    )
-                    .frame(width: self.width, height: self.height)
-                    .aspectRatio(self.aspectRatio, contentMode: .fill)
-                    .border(Color("#132A13"), width: 0.3)
-                    .shadow(color: .gray, radius: 12, x: 0, y: 2)
-                    
+                )
+                .frame(width: self.width, height: self.height)
+                .aspectRatio(self.aspectRatio, contentMode: .fill)
+                .border(Color("#132A13"), width: 0.3)
+                .shadow(color: .gray, radius: 12, x: 0, y: 2)
+                
             }
         }
     } // end of body
-
-
+    
+    
 }
 
 struct MoviePoster_Previews: PreviewProvider {

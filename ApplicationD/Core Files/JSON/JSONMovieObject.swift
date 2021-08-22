@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 14/07/2021.
 //
+//  This JSON Object can hold a Movie's information
 
 import SwiftUI
 

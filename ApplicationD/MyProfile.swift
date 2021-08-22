@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 12/08/2021.
 //
+// This View displays the User's Profile page, where they can see information like Friends and their own points
 
 import SwiftUI
 

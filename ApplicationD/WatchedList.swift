@@ -4,18 +4,15 @@
 //
 //  Created by Andrew Cumming on 11/08/2021.
 //
+// This View creates the Watched List in the app
 
 import SwiftUI
-import CoreData
 
 struct WatchedListView: View {
     
-    
     @ObservedObject var controller = WatchedListController()
     var GUISize = GUISizes()
-    
-    
-    
+ 
     var body: some View {
         ZStack {
             Color("#ECF39E")

@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 05/08/2021.
 //
+//  This creates a sheet that can change the state of a Movie object, this works with the Indervidual Information Controller
 
 import SwiftUI
 
@@ -11,10 +12,10 @@ struct StateChangeSheet: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    let controller: IndervidualInformationController
+    let controller: StateChangeController
     let movieId: Int
     
-    init(movieId: Int, controller: IndervidualInformationController) {
+    init(movieId: Int, controller: StateChangeController) {
         self.movieId = movieId
         self.controller = controller
     }
@@ -65,6 +66,6 @@ struct StateChangeSheet: View {
 
 struct StateChangeSheet_Previews: PreviewProvider {
     static var previews: some View {
-        StateChangeSheet(movieId: 17979, controller: IndervidualInformationController())
+        StateChangeSheet(movieId: 17979, controller: StateChangeController())
     }
 }

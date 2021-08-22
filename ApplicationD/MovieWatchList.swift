@@ -4,12 +4,11 @@
 //
 //  Created by Andrew Cumming on 14/07/2021.
 //
+//  This view creats the Watch List for Movies, using the WatchListController
 
 import SwiftUI
 
 struct MovieWatchList: View {
-    
-    
     
     let Movie: WatchlistController
     // let TV = TVWatchList()
@@ -44,14 +43,14 @@ struct MovieWatchList: View {
                 } //end of VStack
                 .onAppear(perform: {
                     Movie.loadList(){
-
+                        
                     }
                 })
             } // end of ZStack
             
         } // end of ScrollView
         BottomBar()
-            
+        
     } // end of view
 }
 

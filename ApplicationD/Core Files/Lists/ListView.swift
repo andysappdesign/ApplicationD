@@ -4,7 +4,7 @@
 //
 //  Created by Andrew Cumming on 01/05/2021.
 //
-// This View acts as a template for the Lists
+//  This View acts as a a navigation two of the three avaible lists
 //
 
 import SwiftUI
@@ -15,9 +15,7 @@ struct ListView: View {
     @ObservedObject var watchList: WatchlistController
     @ObservedObject var watchedList: WatchedListController
     
-    
     var buttonSpacerSize: CGFloat
-    
     
     init() {
         self.watchList = WatchlistController()
@@ -41,7 +39,7 @@ struct ListView: View {
                     destination: MovieWatchList(Movie: self.watchList),
                     label: {
                         CustomButtonLayout(size: .large, text: "My Watch List")
-                })
+                    })
                 Spacer()
                     .frame(height: self.buttonSpacerSize)
                 NavigationLink(destination: WatchedListView()) {
@@ -55,7 +53,7 @@ struct ListView: View {
                 BottomBar()
             }
             
-                
+            
         }.onAppear(perform: {
             watchList.loadLists { responce in
                 if responce == true {

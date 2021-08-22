@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 29/07/2021.
 //
+//  This sub-View helps form the rows of Movie Posters in the Discover View
 
 import SwiftUI
 import CoreData

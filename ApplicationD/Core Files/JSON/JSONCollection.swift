@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 08/08/2021.
 //
+//  This JSON Object can hold a Collection's information
 
 import SwiftUI
 

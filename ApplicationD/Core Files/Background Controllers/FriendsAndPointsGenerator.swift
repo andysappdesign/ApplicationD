@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 17/08/2021.
 //
+//  This class can create fake Friend Names and ratings from a pre-defined dictoionairy 
 
 import Foundation
 

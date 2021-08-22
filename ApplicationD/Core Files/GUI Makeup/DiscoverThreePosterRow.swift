@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 31/07/2021.
 //
+//  This sub-View creates the a row of three Movie Posters for the Discover View
 
 import SwiftUI
 

@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 16/03/2021.
 //
+//  This view is the main view of the app and is displayed first when the app is opened
 
 import SwiftUI
 import CoreData
@@ -21,11 +22,11 @@ struct ContentView: View {
     
     static var colourString = "#ECF39E"
     
-
+    
     init() {
         name = UserDefaults.standard.string(forKey: "firstName") ?? "User"
     }
-
+    
     
     var body: some View {
         
@@ -102,13 +103,13 @@ extension UINavigationController {
         
     } // End of viewDidLoad
 }
-    
+
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-            ContentView()
-                .previewDevice("iPod touch (7th generation)")
+        ContentView()
+            .previewDevice("iPod touch (7th generation)")
         
     }
 }

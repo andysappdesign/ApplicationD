@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 20/07/2021.
 //
+//  This is soley a background code that aids the CastRow View display the correct information,this provoide the functions to getCast, and change the results into redable Cast memember Objects
 
 import Foundation
 import SwiftyJSON

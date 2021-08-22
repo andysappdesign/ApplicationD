@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 10/08/2021.
 //
+//  This sub-View creates the a row of three Movie Posters for the Collections View
 
 import SwiftUI
 

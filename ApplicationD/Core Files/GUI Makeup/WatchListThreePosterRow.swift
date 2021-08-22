@@ -4,13 +4,11 @@
 //
 //  Created by Andrew Cumming on 14/07/2021.
 //
+//  This sub-View creates the a row of three Movie Posters for the Watch List View
 
 import SwiftUI
 
 struct WatchListThreePosterRow: View {
-    
-
-    
     
     var size = GUISizes.Sizes.small
     

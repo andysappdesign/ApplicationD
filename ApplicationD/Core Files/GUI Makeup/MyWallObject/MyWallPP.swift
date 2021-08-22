@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 17/08/2021.
 //
+//  This sub-View creates Profile Pictures for My Wall
 
 import SwiftUI
 

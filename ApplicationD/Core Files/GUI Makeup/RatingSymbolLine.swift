@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 25/07/2021.
 //
+//  This sub-View creates a row of Mickey Mouse heads as a Ratings line of */5
 
 import SwiftUI
 

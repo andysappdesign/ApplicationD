@@ -4,12 +4,11 @@
 //
 //  Created by Andrew Cumming on 15/08/2021.
 //
+//  This sub-View creates two Buttons in a row layout
 
 import SwiftUI
 
 struct ButtonRowProfile: View {
-    
-    
     
     var body: some View {
         HStack {
@@ -21,7 +20,7 @@ struct ButtonRowProfile: View {
             NavigationLink(destination: MyWall()) {
                 CustomButtonLayout(size: .medium, text: "My Wall")
             }
-  
+            
         } // end of HStack
         .frame(width: GUISize.rowWidth)
     }

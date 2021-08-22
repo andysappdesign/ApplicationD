@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 25/07/2021.
 //
+//  This sub-View creates a Ratings Box that holds two Friends ratings and names
 
 import SwiftUI
 

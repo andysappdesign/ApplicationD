@@ -4,11 +4,11 @@
 //
 //  Created by Andrew Cumming on 29/07/2021.
 //
+//  This creates the Search view, this view works with the Search Contoller 
 
 import SwiftUI
 
 struct Search: View {
-    
     
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""

@@ -4,11 +4,11 @@
 //
 //  Created by Andrew Cumming on 18/08/2021.
 //
+//  This sub-View creates Comments Boxes for the My Wall View
 
 import SwiftUI
 
 struct MyWallComment: View {
-    
     
     let status: String
     let imageString: String

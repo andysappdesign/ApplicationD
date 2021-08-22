@@ -4,11 +4,11 @@
 //
 //  Created by Andrew Cumming on 15/08/2021.
 //
+//  This sub-View creates a box to house recent watch title and points, this box is to be housed in PointsProfileBox
 
 import SwiftUI
 
 struct PointsBoxSmallRecent: View {
-    
     
     let boxHeight: CGFloat
     let boxWidth: CGFloat

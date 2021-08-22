@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 08/08/2021.
 //
+//  This is soley a background code that aids the Collections View display the correct information, this provoide the functions to getMovieCollections, and change the results into redable Movie Objects
 
 import SwiftUI
 import SwiftyJSON
@@ -63,12 +64,12 @@ class CollectionsController: TMDB, ObservableObject {
                 self.objectArray = []
                 self.jsonArray = response["parts"].arrayValue
                 for (index, _) in self.jsonArray.enumerated() {
-//                    print(index)
-                   self.getObject(positionNumber: index) { response in
-                   print(response)
-                    if response.release_date != "" {
-                        self.objectArray.append(response)
-                    }
+                    //                    print(index)
+                    self.getObject(positionNumber: index) { response in
+                        print(response)
+                        if response.release_date != "" {
+                            self.objectArray.append(response)
+                        }
                     }
                 }
                 let count = self.objectArray.count
@@ -86,7 +87,7 @@ class CollectionsController: TMDB, ObservableObject {
     }
     
     // MARK: - GetObject
-
+    
     private func getObject(positionNumber: Int, completionHandler: @escaping (JSONMovieObject) -> Void){
         let object = jsonArray[positionNumber]
         var newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string ?? "", adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string ?? "", popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string ?? "", genre_ids: object["genre_ids"].arrayObject!, media_type: object["media_type"].string ?? "unknown")

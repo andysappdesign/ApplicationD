@@ -4,10 +4,9 @@
 //
 //  Created by Andrew Cumming on 17/07/2021.
 //
+//  This sub-View creates a Blank Movie Position
 
 import SwiftUI
-
-
 
 struct BlankMoviePosition: View {
     

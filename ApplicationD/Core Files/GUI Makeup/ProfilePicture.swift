@@ -4,12 +4,13 @@
 //
 //  Created by Andrew Cumming on 10/05/2021.
 //
+//  This sub-View creates a Profile Picture
 
 import SwiftUI
 
 struct ProfilePicture: View {
     
-//    var image: String
+    //    var image: String
     var GUISize = GUISizes()
     var imageString: String
     

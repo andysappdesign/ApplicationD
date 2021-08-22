@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 18/08/2021.
 //
+//  This sub-View creates Watching Objects for My Wall
 
 import SwiftUI
 
@@ -46,7 +47,7 @@ struct MyWallWatching: View {
                 
             }
             .padding(.leading, -5.0)
-                
+            
         }
         .frame(width: GUISize.myWall_rowWidth)
     }

@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 10/08/2021.
 //
+//  This sub-View creates a tick or an X if a object has been watched
 
 import SwiftUI
 

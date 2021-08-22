@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 31/07/2021.
 //
+//  This sub-View helps form the rows of Movie Posters in the Search Results View
 
 import SwiftUI
 

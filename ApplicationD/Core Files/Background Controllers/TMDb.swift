@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 28/07/2021.
 //
+//  This is soley a super class to the majority of the Controller classes and gives them all access to the TMDb API, this provides functions to load Lists, get Objects, get Movie Details, get Cast Details and create a User Account
 
 
 import Alamofire
@@ -38,7 +39,7 @@ class TMDB {
                 print(error)
                 self.requestId = ""
                 completionHandler(false)
-            
+                
             }
         } // end of request
     } // end of requestToken
@@ -89,8 +90,8 @@ class TMDB {
     
     //MARK: - GetTMDbAccount
     
-   func getTMDbAccount(_ id: String, completionHandler: @escaping (Bool) -> Void) {
-    let partUrl = "https://api.themoviedb.org/3/account?api_key=\(self.API)&session_id="
+    func getTMDbAccount(_ id: String, completionHandler: @escaping (Bool) -> Void) {
+        let partUrl = "https://api.themoviedb.org/3/account?api_key=\(self.API)&session_id="
         let sessionId = id
         let url = partUrl + sessionId
         
@@ -104,7 +105,7 @@ class TMDB {
             case .failure(let error):
                 print(error)
             }
-  
+            
         }
         
     } // end of getTMDbAccount
@@ -173,11 +174,6 @@ class TMDB {
             }
         } // end of AF.request
     }
-    
-    
-    
-    
-    
     
     // MARK:- GetCredits
     
@@ -375,6 +371,6 @@ class TMDB {
     }
     
     
-
+    
     
 }

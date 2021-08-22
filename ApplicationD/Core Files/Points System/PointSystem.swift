@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 10/05/2021.
 //
+//  This file holds the information and function to help controll the points system of the app
 
 import Foundation
 
@@ -23,54 +24,6 @@ class PointSystem {
         case largeMovieCollection
         case unknown
     }
-    
-
-    
-    // MARK:- calculateMinimum
-    
-//    private func calculateMinimum() {
-//        var minimum = 0
-//        switch media {
-//        case .movieSingle:
-//            minimum = 1
-//        case .tvProgram:
-//            minimum = 1
-//        case .tvSeason:
-//            minimum = 1
-//        case .tvSeasonCollection:
-//            minimum = 2
-//        case .smallMovieCollection:
-//            minimum = 2
-//        case .mediumMovieCollection:
-//            minimum = 4
-//        case .largeMovieCollection:
-//            minimum = 10
-//        }
-//        self.how_many_min = minimum
-//    }
-//
-//    // MARK:- calculateMaximum
-//
-//    private func calculateMaximum() {
-//        var maximum = 0
-//        switch media {
-//        case .movieSingle:
-//            maximum = 1
-//        case .tvProgram:
-//            maximum = 1
-//        case .tvSeason:
-//            maximum = 1
-//        case .tvSeasonCollection:
-//            maximum = 4
-//        case .smallMovieCollection:
-//            maximum = 4
-//        case .mediumMovieCollection:
-//            maximum = 9
-//        case .largeMovieCollection:
-//            maximum = 99999
-//        }
-//        self.how_many_max = maximum
-//    }
     
     // MARK:- calculatePoints
     
@@ -128,7 +81,7 @@ class PointSystem {
         array.append(id)
         UserDefaults.standard.setValue(array, forKey: "watchedList")
         print ("\(id) added to watched list")
-
+        
     }
     
     func addRecent(title: String, points: Int) {

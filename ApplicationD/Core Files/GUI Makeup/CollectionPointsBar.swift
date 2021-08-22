@@ -4,11 +4,11 @@
 //
 //  Created by Andrew Cumming on 10/08/2021.
 //
+//  This sub-View creates the Points Bar on the Collections Page
 
 import SwiftUI
 
 struct CollectionPointsBar: View {
-    
     
     let text: String
     let completed: Bool

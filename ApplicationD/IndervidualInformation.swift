@@ -4,13 +4,11 @@
 //
 //  Created by Andrew Cumming on 19/07/2021.
 //
+//  This view displays the Indervidual Information of a Movie Object
 
 import SwiftUI
 
 struct IndervidualInformation: View {
-    
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
     
     let generator = FriendsAndPointsGenerator()
     var genratedFriends: [String] = []
@@ -21,9 +19,8 @@ struct IndervidualInformation: View {
     let posterString: String
     let castRowController: CastRowController
     let collectionController: CollectionsController
-    @ObservedObject var indervidualInformationController: IndervidualInformationController
+    @ObservedObject var indervidualInformationController: StateChangeController
     @State var castBoxBool = false
-    
     
     init(object: JSONMovieObject) {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("#31572c"))
@@ -35,7 +32,7 @@ struct IndervidualInformation: View {
         castRowController.populateCastRow()
         self.collectionController = CollectionsController()
         collectionController.getMovieCollection(id: self.movieID)
-        self.indervidualInformationController = IndervidualInformationController()
+        self.indervidualInformationController = StateChangeController()
         self.genratedFriends = generator.generateFriends(howMany: 2)
         self.genratedScores = generator.generateReviewScore()
     }
@@ -57,12 +54,12 @@ struct IndervidualInformation: View {
                         .padding(.leading)
                     Spacer()
                     OverViewBox(boxHeight: GUISize.mediumPosterHeight, boxWidth: GUISize.indervidualInformation_OverviewBoxWidth, overview: self.overview)
-
-                        .padding(.trailing)
                         
+                        .padding(.trailing)
+                    
                     Spacer()
                 }
-                    .frame(width: GUISize.screenWidth)
+                .frame(width: GUISize.screenWidth)
                 Spacer()
                     .frame(height: 4)
                 HStack{
@@ -90,9 +87,9 @@ struct IndervidualInformation: View {
                 if self.castBoxBool == true {
                     CastRow(controller: self.castRowController)
                 } else {
-                        Rectangle()
-                            .frame(width: GUISize.rowWidth, height:2.5)
-                            .foregroundColor(Color("#31572c"))
+                    Rectangle()
+                        .frame(width: GUISize.rowWidth, height:2.5)
+                        .foregroundColor(Color("#31572c"))
                 }
                 Spacer()
                 HStack {
@@ -101,7 +98,7 @@ struct IndervidualInformation: View {
                         CustomButtonLayout(size: .small, text: "30 points")
                         Spacer()
                         if collectionController.inCollection == true {
-                            NavigationLink(destination: CollectionView(id: collectionController.collectionID, name: collectionController.collection.name).environment(\.managedObjectContext, self.managedObjectContext)) {
+                            NavigationLink(destination: CollectionView(id: collectionController.collectionID, name: collectionController.collection.name)) {
                                 CustomButtonLayout(size: .small, text: collectionController.collection.name)
                             }
                         }
@@ -138,7 +135,7 @@ struct IndervidualInformation: View {
 struct IndervidualInformation_Previews: PreviewProvider {
     static var previews: some View {
         let object = JSONMovieObject(id: 1, video: true, original_language: "", overview: "", backdrop_path: "", adult: false, vote_count: 1, vote_average: 1, orginal_title: "", release_date: "", popularity: 0.00, title: "Monsters at Work", poster_path: "2gxgwhcuSmI5xtexb0t9zGj43FS.jpg", genre_ids: [], media_type: "movie")
-
+        
         IndervidualInformation(object: object)
     }
 }

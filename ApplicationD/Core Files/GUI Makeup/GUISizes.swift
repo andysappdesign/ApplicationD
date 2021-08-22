@@ -4,6 +4,7 @@
 //
 //  Created by Andrew Cumming on 13/07/2021.
 //
+//  This class holds the key information for the majority of the GUI feature, defining their sizes
 
 import Foundation
 import SwiftUI

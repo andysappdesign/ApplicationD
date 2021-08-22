@@ -4,6 +4,8 @@
 //
 //  Created by Andrew Cumming on 18/08/2021.
 //
+//  This sub-View creates Profile Pictures for Comments
+
 
 import SwiftUI
 
