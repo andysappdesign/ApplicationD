@@ -54,7 +54,7 @@ struct MyProfile: View {
                 Spacer()
                 PointsProfileBox(boxWidth: GUISize.myProfile_pointsBoxWidth, boxHeight: GUISize.myProfile_pointsBoxHeight, totalPoints: UserDefaults.standard.integer(forKey: "totalPoints"))
                 Spacer()
-                ButtonRow(button1Text: "Watched List", button2Text: "My Wall")
+                ButtonRowProfile()
                 BottomBar()
             }
             .frame(height: GUISize.screenWidth)

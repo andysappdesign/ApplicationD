@@ -1,5 +1,5 @@
 //
-//  ButtonRow.swift
+//  ButtonRowProfile.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 15/08/2021.
@@ -7,22 +7,19 @@
 
 import SwiftUI
 
-struct ButtonRow: View {
-    
-    let button1Text: String
-    let button2Text: String
+struct ButtonRowProfile: View {
     
     let GUISize = GUISizes()
     
     var body: some View {
         HStack {
             NavigationLink(destination: ListView()) {
-                CustomButtonLayout(size: .medium, text: self.button1Text)
+                CustomButtonLayout(size: .medium, text: "My Lists")
             }
             Spacer()
                 .frame(width: 30)
             NavigationLink(destination: MyWall()) {
-                CustomButtonLayout(size: .medium, text: self.button2Text)
+                CustomButtonLayout(size: .medium, text: "My Wall")
             }
   
         } // end of HStack
@@ -32,6 +29,6 @@ struct ButtonRow: View {
 
 struct ButtonRow_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonRow(button1Text: "button 1", button2Text: "button 2")
+        ButtonRowProfile()
     }
 }

@@ -66,7 +66,7 @@ struct ContentView: View {
                         .frame(height: GUISize.largePosterHeight)
                     }
                     Spacer()
-                    ButtonRowOneInactive(button1Text: "My Wall", button2Text: "My Profile")
+                    ButtonRowHome()
                     Spacer()
                     BottomBar()
                     

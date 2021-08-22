@@ -1,5 +1,5 @@
 //
-//  ButtonRowOneInactive.swift
+//  ButtonRowHome.swift
 //  ApplicationD
 //
 //  Created by Andrew Cumming on 13/07/2021.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct ButtonRowOneInactive: View {
+struct ButtonRowHome: View {
     
-    let button1Text: String
-    let button2Text: String
     
     let GUISize = GUISizes()
     
     var body: some View {
         HStack {
-            CustomButtonLayout(size: .medium, text: self.button1Text, inActive: true)
+            NavigationLink(destination: MyWall()) {
+                CustomButtonLayout(size: .medium, text: "My Wall")
+            }
             Spacer()
                 .frame(width: 30)
             NavigationLink(destination: MyProfile()) {
-                CustomButtonLayout(size: .medium, text: self.button2Text)
+                CustomButtonLayout(size: .medium, text: "My Profile")
             }
   
         } // end of HStack
@@ -30,6 +30,6 @@ struct ButtonRowOneInactive: View {
 
 struct Button_Row_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonRowOneInactive(button1Text: "button 1", button2Text: "button 2")
+        ButtonRowHome()
     }
 }
