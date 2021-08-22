@@ -35,6 +35,10 @@
 		2260759F26C2BDDF0013147A /* CollectionsRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260759E26C2BDDF0013147A /* CollectionsRows.swift */; };
 		2266890726C530A700100B02 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266890626C530A700100B02 /* MyProfile.swift */; };
 		2268456826A3038800E0F4EB /* BlankMoviePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268456726A3038800E0F4EB /* BlankMoviePosition.swift */; };
+		227053AD26CD37A400692592 /* MyWallWatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227053AC26CD37A400692592 /* MyWallWatching.swift */; };
+		227053AF26CD3CD400692592 /* MyWallComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227053AE26CD3CD400692592 /* MyWallComment.swift */; };
+		227053B126CD3E7600692592 /* MyWallCommentPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227053B026CD3E7600692592 /* MyWallCommentPP.swift */; };
+		227053B326CD447500692592 /* MyWallReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227053B226CD447500692592 /* MyWallReview.swift */; };
 		227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C9F7426B1AA8B00A86858 /* TMDb.swift */; };
 		2289E10426B2C7A1004B8953 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10326B2C7A1004B8953 /* Search.swift */; };
 		2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10526B2C7B3004B8953 /* SearchController.swift */; };
@@ -106,6 +110,10 @@
 		2260759E26C2BDDF0013147A /* CollectionsRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRows.swift; sourceTree = "<group>"; };
 		2266890626C530A700100B02 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		2268456726A3038800E0F4EB /* BlankMoviePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankMoviePosition.swift; sourceTree = "<group>"; };
+		227053AC26CD37A400692592 /* MyWallWatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallWatching.swift; sourceTree = "<group>"; };
+		227053AE26CD3CD400692592 /* MyWallComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallComment.swift; sourceTree = "<group>"; };
+		227053B026CD3E7600692592 /* MyWallCommentPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallCommentPP.swift; sourceTree = "<group>"; };
+		227053B226CD447500692592 /* MyWallReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallReview.swift; sourceTree = "<group>"; };
 		227C9F7426B1AA8B00A86858 /* TMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDb.swift; sourceTree = "<group>"; };
 		2289E10326B2C7A1004B8953 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		2289E10526B2C7B3004B8953 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -263,8 +271,12 @@
 		22E0041E26CBE47E00E5B1EA /* MyWallObject */ = {
 			isa = PBXGroup;
 			children = (
-				22E0041C26CBE47A00E5B1EA /* MyWallStatus.swift */,
+				227053AE26CD3CD400692592 /* MyWallComment.swift */,
+				227053B026CD3E7600692592 /* MyWallCommentPP.swift */,
 				22E0041F26CBE7C700E5B1EA /* MyWallPP.swift */,
+				227053B226CD447500692592 /* MyWallReview.swift */,
+				22E0041C26CBE47A00E5B1EA /* MyWallStatus.swift */,
+				227053AC26CD37A400692592 /* MyWallWatching.swift */,
 			);
 			path = MyWallObject;
 			sourceTree = "<group>";
@@ -495,15 +507,18 @@
 				22E019CD269EFEDA00A3C62A /* MoviePoster.swift in Sources */,
 				22E33F672610B3120086A5C5 /* AuthenticateWindow.swift in Sources */,
 				22E33F692610B3120086A5C5 /* userCreation2.swift in Sources */,
+				227053B126CD3E7600692592 /* MyWallCommentPP.swift in Sources */,
 				2245532B26C94E0900444917 /* ButtonRow.swift in Sources */,
 				2205D15926495F1A00F96882 /* ProfilePicture.swift in Sources */,
 				22D6149026CBD4B200D233F7 /* FriendsAndPointsGenerator.swift in Sources */,
+				227053AD26CD37A400692592 /* MyWallWatching.swift in Sources */,
 				22AE70BB26C3F475006890CC /* JSONMovieObject.swift in Sources */,
 				22521BD426BBFD84009E69ED /* IndervidualInformationController.swift in Sources */,
 				22E33F6B2610B3120086A5C5 /* userCreationMain.swift in Sources */,
 				2205D15B2649627300F96882 /* Onboarding.swift in Sources */,
 				22E33F282610B1FB0086A5C5 /* ContentView.swift in Sources */,
 				22255A8E269DD29700CE6774 /* GUISizes.swift in Sources */,
+				227053AF26CD3CD400692592 /* MyWallComment.swift in Sources */,
 				227C9F7526B1AA8B00A86858 /* TMDb.swift in Sources */,
 				22AE70B926C3E9FF006890CC /* WatchedThreePosterRow.swift in Sources */,
 				22ED09FE263D6AD80048ABA6 /* WatchListController.swift in Sources */,
@@ -520,6 +535,7 @@
 				2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */,
 				22255A8C269DC8E100CE6774 /* CustomButtonLayout.swift in Sources */,
 				22CC62F526BFFCFB007B76AC /* CollectionsController.swift in Sources */,
+				227053B326CD447500692592 /* MyWallReview.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,
 				22E019CF269F108200A3C62A /* MovieWatchList.swift in Sources */,
 			);

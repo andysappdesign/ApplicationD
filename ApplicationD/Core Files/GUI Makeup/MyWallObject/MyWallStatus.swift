@@ -12,10 +12,11 @@ struct MyWallStatus: View {
     let GUISize = GUISizes()
     
     let status: String
+    let userImage: String
     
     var body: some View {
         HStack(alignment: .top) {
-            MyWallPP(imageString: "RobinPP")
+            MyWallPP(imageString: self.userImage)
                 .padding(2.0)
                 .frame(width: GUISize.myWall_profilePictureWidthHeight)
             RoundedRectangle(cornerRadius: 30)
@@ -32,6 +33,6 @@ struct MyWallStatus: View {
 
 struct MyWallStatus_Previews: PreviewProvider {
     static var previews: some View {
-        MyWallStatus(status: "Testing Status, Testing Status, Testing Status, Testing Status, Testing Status, Testing Status")
+        MyWallStatus(status: "Testing Status, Testing Status, Testing Status, Testing Status, Testing Status, Testing Status", userImage: "RobinPP")
     }
 }

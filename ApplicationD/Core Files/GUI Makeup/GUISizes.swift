@@ -131,6 +131,13 @@ class GUISizes {
     let myWall_StatusBoxWidth: CGFloat
     let myWall_StatusBoxHeight: CGFloat
     let myWall_rowWidth: CGFloat
+    let myWall_watchingBoxWidth: CGFloat
+    let myWall_watchingBoxHeight: CGFloat
+    let myWall_commentBoxHeight: CGFloat
+    let myWall_commentWidth: CGFloat
+    let myWall_commentHeight: CGFloat
+    let myWall_commentPPWidthHeight: CGFloat
+    let myWall_reviewBoxHeight: CGFloat
 
     // MARK:- init
     
@@ -200,7 +207,13 @@ class GUISizes {
         self.myWall_StatusBoxWidth = self.indervidualInformation_RatingsBoxWidth * 1.4
         self.myWall_StatusBoxHeight = self.pointsBoxHeight * 2.5
         self.myWall_rowWidth = self.rowWidth * 0.9
-        
+        self.myWall_watchingBoxWidth = self.myWall_StatusBoxWidth
+        self.myWall_watchingBoxHeight = self.myWall_StatusBoxHeight * 2
+        self.myWall_commentBoxHeight = self.myWall_StatusBoxHeight
+        self.myWall_commentWidth = (self.myWall_watchingBoxWidth / 3) * 2
+        self.myWall_commentHeight = (self.myWall_commentBoxHeight / 3) * 2
+        self.myWall_commentPPWidthHeight = (myWall_profilePictureWidthHeight / 3) * 2
+        self.myWall_reviewBoxHeight = self.myWall_watchingBoxHeight * 2
     }
     
 }
