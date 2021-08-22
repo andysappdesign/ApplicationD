@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    let GUISize = GUISizes()
     let collectionId: Int
     let controller: CollectionsController
     let collectionName: String

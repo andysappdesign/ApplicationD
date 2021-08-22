@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PointsBoxSmallRecent: View {
     
-    let GUISize = GUISizes()
+    
     let boxHeight: CGFloat
     let boxWidth: CGFloat
     
@@ -55,7 +55,7 @@ struct PointsBoxSmallRecent: View {
 
 struct PointsBoxSmallRecent_Previews: PreviewProvider {
     static var previews: some View {
-        let GUISize = GUISizes()
+        
         PointsBoxSmallRecent(boxWidth: GUISize.pointsBoxSmallWidth, boxHeight: GUISize.pointsBoxSmallHeight)
     }
 }

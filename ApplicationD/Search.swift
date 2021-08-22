@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Search: View {
     
-    let GUISize = GUISizes()
+    
     @ObservedObject var controlller: searchController
     @State var userSearchText: String = ""
     @State var searchResults: Bool = false

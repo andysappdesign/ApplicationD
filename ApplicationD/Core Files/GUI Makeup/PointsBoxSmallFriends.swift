@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PointsBoxSmallFriends: View {
     
-    let GUISize = GUISizes()
+    
     let boxHeight: CGFloat
     let boxWidth: CGFloat
     let friendOneName: String
@@ -57,7 +57,7 @@ struct PointsBoxSmallFriends: View {
 
 struct PointsBoxSmall_Previews: PreviewProvider {
     static var previews: some View {
-        let GUISize = GUISizes()
+        
         PointsBoxSmallFriends(boxHeight: GUISize.pointsBoxSmallHeight, boxWidth: GUISize.pointsBoxSmallWidth, friendOneName: "Robin", friendTwoName: "Beaker", friendThreeName: "Flynn")
     }
 }

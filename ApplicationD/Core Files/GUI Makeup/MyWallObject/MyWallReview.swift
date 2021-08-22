@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyWallReview: View {
-    let GUISize = GUISizes()
+    
     
     let reviewTitle: String
     let reviewRating: Double

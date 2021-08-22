@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MyWall: View {
     
-    let GUISize = GUISizes()
-    
     let statusUserString1 = "RobinPP"
     let status1 = "I really liked Jungle Cruise! You should see it too!"
     let watching1 = "Star Wars: Episode 1 - The Phantom Menace"
@@ -31,7 +29,9 @@ struct MyWall: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("My Wall")
-                    .font(GUISize.titleFont)
+                    .font(
+                        
+                        GUISize.titleFont)
                     .fontWeight(GUISize.titleWeight)
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)

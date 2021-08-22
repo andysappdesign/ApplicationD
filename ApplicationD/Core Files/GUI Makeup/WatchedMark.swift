@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchedMark: View {
     
-    let GUISize = GUISizes()
+    
     let watched: Bool
     
     var paddingTop: CGFloat = 0.0

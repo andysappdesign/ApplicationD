@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchResultsThreePosterRow: View {
     
     
-    let GUISize = GUISizes()
+    
     var size = GUISizes.Sizes.small
     
     let object1: JSONMovieObject

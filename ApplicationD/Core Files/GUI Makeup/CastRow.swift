@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CastRow: View {
-    let GUISize = GUISizes()
+    
     @ObservedObject var controller: CastRowController
     
     let actorText: Font = .custom("SFProText", size: 10)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyWallWatching: View {
-    let GUISize = GUISizes()
+    
     let userString: String
     let totalString: String
     let imageString: String

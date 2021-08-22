@@ -8,13 +8,12 @@
 import SwiftUI
 import CoreData
 
+let GUISize = GUISizes()
 
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
-    
-    let GUISize = GUISizes()
     
     var name: String
     var nextFilmString: String = "Luca"

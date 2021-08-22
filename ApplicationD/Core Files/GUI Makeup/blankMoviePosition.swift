@@ -11,7 +11,7 @@ import SwiftUI
 
 struct BlankMoviePosition: View {
     
-    let GUISize = GUISizes()
+    
     var width: CGFloat
     var height: CGFloat
     

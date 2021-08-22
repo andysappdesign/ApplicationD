@@ -15,7 +15,7 @@ struct ListView: View {
     @ObservedObject var watchList: WatchlistController
     @ObservedObject var watchedList: WatchedListController
     
-    let GUISize = GUISizes()
+    
     var buttonSpacerSize: CGFloat
     
     

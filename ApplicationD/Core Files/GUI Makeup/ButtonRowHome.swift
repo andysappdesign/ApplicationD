@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ButtonRowHome: View {
     
-    
-    let GUISize = GUISizes()
-    
     var body: some View {
         HStack {
             NavigationLink(destination: MyWall()) {

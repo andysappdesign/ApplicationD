@@ -13,7 +13,6 @@
 		2205D15D2649649000F96882 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D15C2649649000F96882 /* TutorialPage.swift */; };
 		22144C0A26A6E7BF00631FD1 /* CastRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22144C0926A6E7BF00631FD1 /* CastRowController.swift */; };
 		22255A8A269DC8D600CE6774 /* ButtonRowHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A89269DC8D600CE6774 /* ButtonRowHome.swift */; };
-		22255A8C269DC8E100CE6774 /* CustomButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A8B269DC8E100CE6774 /* CustomButtonLayout.swift */; };
 		22255A8E269DD29700CE6774 /* GUISizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22255A8D269DD29700CE6774 /* GUISizes.swift */; };
 		22297CEB26AD6A7300886FAD /* RatingsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22297CEA26AD6A7300886FAD /* RatingsBox.swift */; };
 		22297CED26AD702C00886FAD /* RatingSymbolLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22297CEC26AD702C00886FAD /* RatingSymbolLine.swift */; };
@@ -44,7 +43,6 @@
 		2289E10626B2C7B3004B8953 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10526B2C7B3004B8953 /* SearchController.swift */; };
 		2289E10826B2EF11004B8953 /* MovieDiscover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289E10726B2EF11004B8953 /* MovieDiscover.swift */; };
 		228C3A7B26A58CC600242711 /* IndervidualInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7A26A58CC600242711 /* IndervidualInformation.swift */; };
-		228C3A7D26A58E3400242711 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A7C26A58E3400242711 /* BottomBar.swift */; };
 		228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8026A5A26E00242711 /* OverViewBox.swift */; };
 		228C3A8526A5B91D00242711 /* CastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C3A8426A5B91D00242711 /* CastRow.swift */; };
 		22AE70B526C3E0C1006890CC /* WatchedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE70B426C3E0C1006890CC /* WatchedList.swift */; };
@@ -88,7 +86,6 @@
 		2205D15C2649649000F96882 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 		22144C0926A6E7BF00631FD1 /* CastRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRowController.swift; sourceTree = "<group>"; };
 		22255A89269DC8D600CE6774 /* ButtonRowHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowHome.swift; sourceTree = "<group>"; };
-		22255A8B269DC8E100CE6774 /* CustomButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonLayout.swift; sourceTree = "<group>"; };
 		22255A8D269DD29700CE6774 /* GUISizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUISizes.swift; sourceTree = "<group>"; };
 		22297CEA26AD6A7300886FAD /* RatingsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsBox.swift; sourceTree = "<group>"; };
 		22297CEC26AD702C00886FAD /* RatingSymbolLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSymbolLine.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 		2289E10526B2C7B3004B8953 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		2289E10726B2EF11004B8953 /* MovieDiscover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDiscover.swift; sourceTree = "<group>"; };
 		228C3A7A26A58CC600242711 /* IndervidualInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IndervidualInformation.swift; path = "/Users/andrewcumming/Documents/University/Modules Year 5/TM470/Xcode/ApplicationD/ApplicationD/IndervidualInformation.swift"; sourceTree = "<absolute>"; };
-		228C3A7C26A58E3400242711 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		228C3A8026A5A26E00242711 /* OverViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewBox.swift; sourceTree = "<group>"; };
 		228C3A8426A5B91D00242711 /* CastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRow.swift; sourceTree = "<group>"; };
 		22AE70B426C3E0C1006890CC /* WatchedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedList.swift; sourceTree = "<group>"; };
@@ -200,14 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				2268456726A3038800E0F4EB /* BlankMoviePosition.swift */,
-				228C3A7C26A58E3400242711 /* BottomBar.swift */,
 				22255A89269DC8D600CE6774 /* ButtonRowHome.swift */,
 				2245532A26C94E0900444917 /* ButtonRowProfile.swift */,
 				228C3A8426A5B91D00242711 /* CastRow.swift */,
 				2260759C26C2BBB40013147A /* CollectionPointsBar.swift */,
 				2260759626C292790013147A /* CollectionThreePosterRow.swift */,
 				2260759E26C2BDDF0013147A /* CollectionsRows.swift */,
-				22255A8B269DC8E100CE6774 /* CustomButtonLayout.swift */,
 				22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */,
 				22D6148F26CBD4B200D233F7 /* FriendsAndPointsGenerator.swift */,
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
@@ -500,7 +494,6 @@
 				2266890726C530A700100B02 /* MyProfile.swift in Sources */,
 				2289E10426B2C7A1004B8953 /* Search.swift in Sources */,
 				228C3A8526A5B91D00242711 /* CastRow.swift in Sources */,
-				228C3A7D26A58E3400242711 /* BottomBar.swift in Sources */,
 				22E0042026CBE7C800E5B1EA /* MyWallPP.swift in Sources */,
 				2247B7F726C93D4F0040364C /* PointsProfileBox.swift in Sources */,
 				228C3A8126A5A26E00242711 /* OverViewBox.swift in Sources */,
@@ -533,7 +526,6 @@
 				2260759B26C2B9D00013147A /* WatchedMark.swift in Sources */,
 				22E33F262610B1FB0086A5C5 /* ApplicationDApp.swift in Sources */,
 				2260759D26C2BBB40013147A /* CollectionPointsBar.swift in Sources */,
-				22255A8C269DC8E100CE6774 /* CustomButtonLayout.swift in Sources */,
 				22CC62F526BFFCFB007B76AC /* CollectionsController.swift in Sources */,
 				227053B326CD447500692592 /* MyWallReview.swift in Sources */,
 				22337F9D2653E01F008089A9 /* ImageLoader.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MoviePoster: View {
     
-    let GUISize = GUISizes()
+    
   
     var urlString: String
     var posterSize: GUISizes.Sizes

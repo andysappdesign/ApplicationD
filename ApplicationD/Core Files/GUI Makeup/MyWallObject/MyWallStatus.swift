@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyWallStatus: View {
     
-    let GUISize = GUISizes()
+    
     
     let status: String
     let userImage: String

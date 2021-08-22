@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyWallCommentPP: View {
     
-    let GUISize = GUISizes()
+    
     let imageString: String
     
     var body: some View {

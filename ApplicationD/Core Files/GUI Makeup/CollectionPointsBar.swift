@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CollectionPointsBar: View {
     
-    let GUISize = GUISizes()
+    
     let text: String
     let completed: Bool
     

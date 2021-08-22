@@ -11,7 +11,7 @@ struct IndervidualInformation: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    let GUISize = GUISizes()
+    
     let generator = FriendsAndPointsGenerator()
     var genratedFriends: [String] = []
     var genratedScores: [Double] = []

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OverViewBox: View {
     
-    let GUISize = GUISizes()
+    
     let boxHeight: CGFloat
     let boxWidth: CGFloat
     let overview: String
@@ -38,7 +38,7 @@ struct OverViewBox: View {
 
 struct OverViewBox_Previews: PreviewProvider {
     static var previews: some View {
-        let GUISize = GUISizes()
+        
         let overview = "Jack Sparrow, a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging Port Royal. When the governor's daughter is kidnapped, Sparrow decides to help the girl's love save her."
         OverViewBox(boxHeight: GUISize.largePosterHeight, boxWidth: (GUISize.largePosterWidth * 2), overview: overview)
     }

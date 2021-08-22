@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyWallComment: View {
-    let GUISize = GUISizes()
+    
     
     let status: String
     let imageString: String

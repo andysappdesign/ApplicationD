@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonRowProfile: View {
     
-    let GUISize = GUISizes()
+    
     
     var body: some View {
         HStack {

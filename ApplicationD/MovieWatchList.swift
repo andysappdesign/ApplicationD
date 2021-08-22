@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieWatchList: View {
     
     
-    let GUISize = GUISizes()
+    
     let Movie: WatchlistController
     // let TV = TVWatchList()
     

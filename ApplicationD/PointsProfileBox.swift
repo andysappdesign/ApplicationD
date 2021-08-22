@@ -77,7 +77,7 @@ struct PointsProfileBox: View {
 struct PointsProfileBox_Previews: PreviewProvider {
     static var previews: some View {
         
-        let GUISize = GUISizes()
+        
         
         PointsProfileBox(boxWidth: GUISize.myProfile_pointsBoxWidth, boxHeight: GUISize.myProfile_pointsBoxHeight, totalPoints: 300)
     }

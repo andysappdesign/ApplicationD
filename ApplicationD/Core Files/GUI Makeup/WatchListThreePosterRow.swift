@@ -11,7 +11,7 @@ struct WatchListThreePosterRow: View {
     
 
     
-    let GUISize = GUISizes()
+    
     var size = GUISizes.Sizes.small
     
     // Three Objects

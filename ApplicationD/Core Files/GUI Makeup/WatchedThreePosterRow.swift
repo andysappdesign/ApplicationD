@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchedThreePosterRow: View {
     
-    let GUISize = GUISizes()
+    
     var size = GUISizes.Sizes.small
     
     // Three Objects
