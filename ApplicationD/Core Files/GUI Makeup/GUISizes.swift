@@ -75,14 +75,17 @@ class GUISizes {
     }
     
     // MARK: Page Items
-    let titleFont: Font = .title
+   
     let titleWeight: Font.Weight = .medium
     let titleColor = Color("#132A13")
     let titleShadowColor = Color("#132A13")
     let titleShadowRadius: CGFloat = 1
     let titleShadowX: CGFloat = 0
     let titleShadowY: CGFloat = 1
-    let bodyFontSize: Font = .custom("SFProText", fixedSize: 18)
+    let dynamicBodyFont: Font = .custom("SF Font", size: 14, relativeTo: .body)
+    let dynamicBodyBiggerFont: Font = .custom("SF Font", size: 18, relativeTo: .headline)
+    let dynamicTitleFont: Font = .custom("SFProText", size: 24, relativeTo: .title)
+    let dynamicLargeTitle: Font = .custom("SFProText", size: 30, relativeTo: .largeTitle)
     
     // MARK: Indervidual Information
     let indervidualInformation_OverviewBoxWidth: CGFloat

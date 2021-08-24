@@ -188,14 +188,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2205D14C26493E0B00F96882 /* Points System */ = {
-			isa = PBXGroup;
-			children = (
-				2205D14D26493E3D00F96882 /* PointSystem.swift */,
-			);
-			path = "Points System";
-			sourceTree = "<group>";
-		};
 		2205D151264955DA00F96882 /* GUI Makeup */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +240,7 @@
 				22CC62F426BFFCFB007B76AC /* CollectionsController.swift */,
 				2289E10526B2C7B3004B8953 /* SearchController.swift */,
 				22D6148F26CBD4B200D233F7 /* FriendsAndPointsGenerator.swift */,
+				2205D14D26493E3D00F96882 /* PointSystem.swift */,
 				227C9F7426B1AA8B00A86858 /* TMDb.swift */,
 				22521BD326BBFD84009E69ED /* StateChangeController.swift */,
 				22ED09FD263D6AD80048ABA6 /* WatchListController.swift */,
@@ -338,7 +331,6 @@
 				22337F942653E007008089A9 /* AsyncImage */,
 				227C9F7626B1B33500A86858 /* Background Controllers */,
 				22AE70BC26C3F47D006890CC /* JSON */,
-				2205D14C26493E0B00F96882 /* Points System */,
 				2205D151264955DA00F96882 /* GUI Makeup */,
 				22E33F4E2610B3120086A5C5 /* User Creation */,
 			);

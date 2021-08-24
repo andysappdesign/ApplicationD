@@ -12,9 +12,9 @@ struct CastRow: View {
     
     @ObservedObject var controller: CastRowController
     
-    let actorText: Font = .custom("SFProText", size: 10)
+    let actorText: Font = .custom("SFProText", size: 10, relativeTo: .body  )
     let actorWeight: Font.Weight = .medium
-    let characterText: Font = .custom("SFProText", size: 8)
+    let characterText: Font = .custom("SFProText", size: 8, relativeTo: .caption)
     let characterWeight: Font.Weight = .thin
     
     init(controller: CastRowController) {

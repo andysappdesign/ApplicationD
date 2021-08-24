@@ -32,7 +32,7 @@ struct MyWall: View {
                 Text("My Wall")
                     .font(
                         
-                        GUISize.titleFont)
+                        GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)

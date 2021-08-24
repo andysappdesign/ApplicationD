@@ -17,9 +17,9 @@ struct WatchedListView: View {
         ZStack {
             Color("#ECF39E")
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            VStack {
+            ScrollView {
                 Text("My Watched List")
-                    .font(GUISize.titleFont)
+                    .font(GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
@@ -32,6 +32,9 @@ struct WatchedListView: View {
                         WatchedThreePosterRow(object1: array[0], WatchedListController: self.controller)
                     }
                 }
+            }
+            VStack {
+                
                 Spacer()
                 BottomBar()
                 

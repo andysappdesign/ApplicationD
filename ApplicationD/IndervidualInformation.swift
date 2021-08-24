@@ -17,6 +17,7 @@ struct IndervidualInformation: View {
     let movieID: Int
     let movieTitle: String
     let posterString: String
+    let release: String
     let castRowController: CastRowController
     let collectionController: CollectionsController
     @ObservedObject var indervidualInformationController: StateChangeController
@@ -28,6 +29,7 @@ struct IndervidualInformation: View {
         self.overview = object.overview
         self.movieTitle = object.title
         self.posterString = object.poster_path
+        self.release = object.release_date
         self.castRowController = CastRowController(movieID: self.movieID)
         castRowController.populateCastRow()
         self.collectionController = CollectionsController()
@@ -43,7 +45,7 @@ struct IndervidualInformation: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
                 Text(self.movieTitle)
-                    .font(GUISize.titleFont)
+                    .font(GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .multilineTextAlignment(.center)
                     .foregroundColor(GUISize.titleColor)
@@ -64,16 +66,20 @@ struct IndervidualInformation: View {
                     .frame(height: 4)
                 HStack{
                     Spacer()
-                    CustomButtonLayout(size: .medium, text: "Trailer Link")
+                    CustomButtonLayout(size: .medium, text: "Trailer Link", inActive: true)
                     Spacer()
                     VStack {
-                        Text("Released in 2003")
-                            .font(.headline)
+                        Text("Released on \(self.release)")
+                            .font(GUISize.dynamicBodyFont)
                             .fontWeight(.medium)
-                        Spacer()
+                            .frame(width: (GUISize.indervidualInformation_OverviewBoxWidth / 3) * 2)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+                        
                         HStack {
                             Button(action: self.toggleCast, label: {
                                 Text("Cast")
+                                    .font(GUISize.dynamicBodyFont)
                             })
                         }
                         

@@ -22,11 +22,14 @@ struct BottomBar: View {
                 HStack{
                     Spacer()
                         .frame(width: GUISize.BottomBarSpacer)
-                    NavigationLink(destination: ContentView()) {
+                    ZStack {
                         Image(systemName: "house")
                             .resizable()
-                            .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .opacity(0.8)
                     }
+                    .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
                         .frame(width: GUISize.BottomBarSpacer)
                 }
@@ -66,9 +69,14 @@ struct BottomBar: View {
                 HStack {
                     Spacer()
                         .frame(width: GUISize.BottomBarSpacer)
-                    Image(systemName: "gamecontroller")
-                        .resizable()
-                        .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
+                    ZStack {
+                        Image(systemName: "gamecontroller")
+                            .resizable()
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .opacity(0.8)
+                    }
+                    .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()
                         .frame(width: GUISize.BottomBarSpacer)
                 }

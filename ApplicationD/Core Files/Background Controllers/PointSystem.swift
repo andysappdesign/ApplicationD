@@ -112,12 +112,13 @@ class PointSystem {
     // MARK:- CalculateAndAddPoints
     
     func calculateAndAddPoints(id: Int, mediaString: String, existingPoints: Int) {
+        let media = convertStringToMediaType(mediaString: mediaString)
+        calculatePoints(media: media)
         if checkIfAlreadyApplied(id: id) == false {
-            let media = convertStringToMediaType(mediaString: mediaString)
-            calculatePoints(media: media)
             addPoints(existingPoints: existingPoints)
             addToUserDefaultsWatchedList(id: id)
         }
+        
     }
     
     

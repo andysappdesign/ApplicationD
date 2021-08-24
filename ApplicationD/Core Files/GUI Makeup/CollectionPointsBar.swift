@@ -20,7 +20,7 @@ struct CollectionPointsBar: View {
                 .foregroundColor(GUISize.pointsBoxColor)
                 .shadow(radius: GUISize.titleShadowRadius)
                 .overlay(Text(self.text)
-                            .font(GUISize.titleFont)
+                            .font(GUISize.dynamicTitleFont)
                             .fontWeight(GUISize.titleWeight)
                             .foregroundColor(Color("#ECF39E"))
                             .shadow(color: GUISize.titleShadowColor, radius: 5, x: GUISize.titleShadowX, y: GUISize.titleShadowY)

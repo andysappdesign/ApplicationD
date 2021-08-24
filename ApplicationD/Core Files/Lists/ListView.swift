@@ -29,7 +29,7 @@ struct ListView: View {
             Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
             VStack {
                 Text("My Lists")
-                    .font(GUISize.titleFont)
+                    .font(GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .foregroundColor(GUISize.titleColor)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)

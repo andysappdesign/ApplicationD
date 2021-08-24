@@ -29,7 +29,7 @@ struct CollectionView: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
                 Text(self.collectionName)
-                    .font(GUISize.titleFont)
+                    .font(GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .multilineTextAlignment(.center)
                     .foregroundColor(GUISize.titleColor)

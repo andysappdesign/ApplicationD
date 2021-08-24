@@ -27,7 +27,7 @@ struct OverViewBox: View {
             
             ScrollView {
                 Text(self.overview)
-                    .font(GUISize.bodyFontSize)
+                    .font(GUISize.dynamicBodyFont)
                 
             }
             .padding(.all, 3.0)

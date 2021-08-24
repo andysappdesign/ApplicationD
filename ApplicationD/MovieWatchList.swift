@@ -23,9 +23,9 @@ struct MovieWatchList: View {
                 Color("#ECF39E")
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: GUISize.screenWidth, height: GUISize.screenHeight * 2)
-                VStack {
+                ScrollView {
                     Text("My Watch List")
-                        .font(GUISize.titleFont)
+                        .font(GUISize.dynamicTitleFont)
                         .fontWeight(GUISize.titleWeight)
                         .foregroundColor(GUISize.titleColor)
                         .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
@@ -38,6 +38,9 @@ struct MovieWatchList: View {
                             WatchListThreePosterRow(object1: array[0], MoviesWatchList: self.Movie)
                         }
                     }
+                }
+                VStack {
+                    
                     Spacer()
                     BottomBar()
                 } //end of VStack

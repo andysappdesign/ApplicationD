@@ -26,7 +26,9 @@ struct StateChangeSheet: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Change State")
-                    .font(.title)
+                    .font(GUISize.dynamicTitleFont)
+                    .fontWeight(GUISize.titleWeight)
+                    .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                 Spacer()
                 Button(action: {
                     controller.changeFilmStatus(previousState: .new, newState: .addNew, movieId: self.movieId) { _ in
@@ -34,6 +36,7 @@ struct StateChangeSheet: View {
                     }
                 }) {
                     Text("Add to Watch List")
+                        .font(GUISize.dynamicBodyBiggerFont)
                 }
                 Spacer()
                 Button(action: {
@@ -42,6 +45,7 @@ struct StateChangeSheet: View {
                     }
                 }) {
                     Text("Mark as Watched")
+                        .font(GUISize.dynamicBodyBiggerFont)
                 }
                 Spacer()
                 Button(action: {
@@ -50,6 +54,7 @@ struct StateChangeSheet: View {
                     }
                 }) {
                     Text("Remove From Watch List")
+                        .font(GUISize.dynamicBodyBiggerFont)
                 }
                 Spacer()
                 

@@ -18,9 +18,9 @@ struct MyProfile: View {
             Color(#colorLiteral(red: 0.9254901961, green: 0.9529411765, blue: 0.6196078431, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                
+                Spacer()
                 Text("My Profile")
-                    .font(GUISize.titleFont)
+                    .font(GUISize.dynamicTitleFont)
                     .fontWeight(GUISize.titleWeight)
                     .multilineTextAlignment(.center)
                     .foregroundColor(GUISize.titleColor)

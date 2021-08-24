@@ -29,12 +29,16 @@ struct ContentView: View {
                 Color(ContentView.colourString).edgesIgnoringSafeArea(.all)
                 VStack {
                     Text("My Home")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(GUISize.dynamicLargeTitle)
+                        .fontWeight(GUISize.titleWeight)
+                        .foregroundColor(GUISize.titleColor)
+                        .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                     HStack {
                         Text("Welcome \(self.name)")
-                            .font(.title)
-                            .fontWeight(.regular)
+                            .font(GUISize.dynamicTitleFont)
+                            .fontWeight(.light)
+                            .foregroundColor(GUISize.titleColor)
+                            .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                             .padding(.leading)
                         Spacer()
                     }
@@ -48,9 +52,9 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             Spacer()
                             Text("Next to watch on my list is \(self.nextFilmString)")
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(3)
+                                .font(GUISize.dynamicBodyBiggerFont)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(5)
                             Spacer()
                                 .frame(height: 30)
                             NavigationLink(
