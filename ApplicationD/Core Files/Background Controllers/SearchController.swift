@@ -71,7 +71,6 @@ class searchController: TMDB, ObservableObject {
         newObject.id = object["id"].int!
         newObject.popularity = object["popularity"].float!
         newObject.title = object["title"].string!
-        print("object name: \(newObject.title)")
         return newObject
     } // end of getObject
     
@@ -98,7 +97,6 @@ class searchController: TMDB, ObservableObject {
         if roundedRow <= 4 {
             intRow = Int(roundedRow)
         }
-        print("intRow = \(intRow)")
         //Object Positions
         self.searchRowObjectPositions = []
         var n = 0
@@ -114,7 +112,6 @@ class searchController: TMDB, ObservableObject {
             self.searchRowObjectPositions.append(rowGroup)
             rowGroup = []
         } // end of for
-        print(searchRowObjectPositions)
     }
     
     // MARK:- DiscoverMovies

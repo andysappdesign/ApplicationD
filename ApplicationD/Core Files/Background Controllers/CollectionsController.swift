@@ -64,9 +64,7 @@ class CollectionsController: TMDB, ObservableObject {
                 self.objectArray = []
                 self.jsonArray = response["parts"].arrayValue
                 for (index, _) in self.jsonArray.enumerated() {
-                    //                    print(index)
                     self.getObject(positionNumber: index) { response in
-                        print(response)
                         if response.release_date != "" {
                             self.objectArray.append(response)
                         }
@@ -74,9 +72,6 @@ class CollectionsController: TMDB, ObservableObject {
                 }
                 let count = self.objectArray.count
                 self.calculateRowAmountandObjectPositions(arrayCount: count)
-                for i in self.objectArray {
-                    print(i.title)
-                }
                 completionHander()
             } else {
                 print("responce is empty")

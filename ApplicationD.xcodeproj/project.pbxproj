@@ -199,14 +199,14 @@
 		2205D151264955DA00F96882 /* GUI Makeup */ = {
 			isa = PBXGroup;
 			children = (
-				225E77F526D27A4E004698CE /* BottomBar.swift */,
-				225E77F426D27A4E004698CE /* CustomButtonLayout.swift */,
 				2268456726A3038800E0F4EB /* BlankMoviePosition.swift */,
 				22255A89269DC8D600CE6774 /* ButtonRowHome.swift */,
+				225E77F526D27A4E004698CE /* BottomBar.swift */,
 				2245532A26C94E0900444917 /* ButtonRowProfile.swift */,
 				2260759C26C2BBB40013147A /* CollectionPointsBar.swift */,
 				2260759626C292790013147A /* CollectionThreePosterRow.swift */,
 				2260759E26C2BDDF0013147A /* CollectionsRows.swift */,
+				225E77F426D27A4E004698CE /* CustomButtonLayout.swift */,
 				22D3F69426B5790600B6BCF0 /* DiscoverThreePosterRow.swift */,
 				22255A8D269DD29700CE6774 /* GUISizes.swift */,
 				2289E10726B2EF11004B8953 /* MovieDiscover.swift */,

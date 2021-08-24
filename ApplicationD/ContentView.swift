@@ -16,17 +16,11 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @AppStorage("_isOnboarding") var isOnboarding: Bool = true
     
-    var name: String
-    var nextFilmString: String = "Luca"
-    var nextFilmImageString: String = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg"
+    var name: String = UserDefaults.standard.string(forKey: "firstName") ?? "User"
+    var nextFilmString = UserDefaults.standard.string(forKey: "nextWatchTitle") ?? "Steamboat Willie"
+    var nextFilmImageString = UserDefaults.standard.string(forKey: "nextWatchPoster") ?? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2UoMRgHgyg9SeANeUdMyxtTxyxe.jpg"
     
     static var colourString = "#ECF39E"
-    
-    
-    init() {
-        name = UserDefaults.standard.string(forKey: "firstName") ?? "User"
-    }
-    
     
     var body: some View {
         
@@ -51,13 +45,16 @@ struct ContentView: View {
                         MoviePoster(size: .large, urlString: self.nextFilmImageString)
                             .padding(.leading)
                         Spacer()
-                        VStack {
+                        VStack(alignment: .leading) {
                             Spacer()
                             Text("Next to watch on my list is \(self.nextFilmString)")
+                                .font(.body)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(3)
                             Spacer()
                                 .frame(height: 30)
                             NavigationLink(
-                                destination: ListView().environment(\.managedObjectContext, self.managedObjectContext)
+                                destination: ListView()
                             ) {
                                 CustomButtonLayout(size: .medium, text: "My Lists")
                             }

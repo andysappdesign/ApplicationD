@@ -55,9 +55,7 @@ class PointSystem {
     
     private func addPoints(existingPoints: Int) {
         let new = existingPoints + self.point_value
-        print("point value is \(self.point_value)")
         UserDefaults.standard.setValue(new, forKey: "totalPoints")
-        print("new total poimts is \(new)")
     }
     
     // MARK: CheckIfAlreadyApplied
@@ -66,10 +64,8 @@ class PointSystem {
         let array: [Int] = UserDefaults.standard.object(forKey: "watchedList") as! [Int]
         
         if array.contains(id) {
-            print("\(id) is already in the watched list")
             return true
         } else {
-            print ("\(id) is not in the watched list")
             return false
         }
     }
@@ -80,7 +76,6 @@ class PointSystem {
         var array: [Int] = UserDefaults.standard.object(forKey: "watchedList") as! [Int]
         array.append(id)
         UserDefaults.standard.setValue(array, forKey: "watchedList")
-        print ("\(id) added to watched list")
         
     }
     

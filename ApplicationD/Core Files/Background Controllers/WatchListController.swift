@@ -59,6 +59,9 @@ class WatchlistController: TMDB, ObservableObject {
         let object = watchListArray[positionNumber]
         let newObject = JSONMovieObject(id: object["id"].int!, video: object["video"].bool!, original_language: object["original_language"].string!, overview: object["overview"].string!, backdrop_path: object["backdrop_path"].string!, adult: object["adult"].bool!, vote_count: object["vote_count"].int!, vote_average: object["vote_average"].int!, orginal_title: object["original_title"].string!, release_date: object["release_date"].string!, popularity: object["popularity"].float!, title: object["title"].string!, poster_path: object["poster_path"].string!, genre_ids: object["genre_ids"].arrayObject!, media_type: object["media_type"].string ?? "Unkown")
         //        print("name = \(newObject.title), id = \(newObject.id)")
+        UserDefaults.standard.setValue(newObject.title, forKey: "nextWatchTitle")
+        let poster = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + newObject.poster_path
+        UserDefaults.standard.setValue(poster, forKey: "nextWatchPoster")
         return newObject
     } // end of getObject
     
@@ -157,9 +160,6 @@ class WatchlistController: TMDB, ObservableObject {
                             if responceC == true {
                                 UserDefaults.standard.set(super.suggestionID, forKey: "suggestionID")
                                 print("Creating lists sucessful")
-                                print(UserDefaults.standard.integer(forKey: "watchID"))
-                                print(UserDefaults.standard.integer(forKey: "watchedID"))
-                                print(UserDefaults.standard.integer(forKey: "suggestionID"))
                                 UserDefaults.standard.set(true, forKey: "listsCreated")
                                 self.restartBool.toggle()
                                 completionHandler(true)
