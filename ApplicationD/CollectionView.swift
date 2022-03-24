@@ -37,7 +37,10 @@ struct CollectionView: View {
                     .frame(width: GUISize.screenWidth - 40)
                     .lineLimit(2)
                 Spacer()
-                CollectionsRows(collectionsController: self.controller)
+                ScrollView {
+                    CollectionsRows(collectionsController: self.controller)
+                    
+                }
                 CollectionPointsBar(text: "300 Points", completed: false)
                 BottomBar()
                 

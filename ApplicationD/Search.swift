@@ -31,6 +31,7 @@ struct Search: View {
                 }.frame(height: GUISize.searchFormHeight)
                 Button(action: {
                     if controlller.searchIsNotEmpty(query: self.userSearchText) == true {
+                        hideKeyboard()
                         controlller.search(title: self.userSearchText) {
                             
                         }

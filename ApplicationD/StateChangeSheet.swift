@@ -30,39 +30,19 @@ struct StateChangeSheet: View {
                     .fontWeight(GUISize.titleWeight)
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                 Spacer()
-                Button(action: {
-                    controller.changeFilmStatus(previousState: .new, newState: .addNew, movieId: self.movieId) { _ in
-                        
-                    }
-                }) {
-                    Text("Add to Watch List")
-                        .font(GUISize.dynamicBodyBiggerFont)
-                }
+                AddRemoveFromWatchList(movieId: self.movieId, controller: self.controller)
                 Spacer()
-                Button(action: {
-                    controller.changeFilmStatus(previousState: .exisitingWatch, newState: .markAsWatched, movieId: self.movieId) { _ in
-                        
-                    }
-                }) {
-                    Text("Mark as Watched")
-                        .font(GUISize.dynamicBodyBiggerFont)
-                }
+                    .frame(height: GUISize.screenHeight / 10)
+                AddRemoveFromWatchedList(movieId: self.movieId, controller: self.controller)
                 Spacer()
-                Button(action: {
-                    controller.changeFilmStatus(previousState: .exisitingWatch, newState: .removeExisting, movieId: self.movieId) { _ in
-                        
-                    }
-                }) {
-                    Text("Remove From Watch List")
-                        .font(GUISize.dynamicBodyBiggerFont)
-                }
-                Spacer()
-                
+                    .frame(height: GUISize.screenHeight / 10)
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Dismiss")
+                    CustomButtonLayout(size: .medium, text: "Done")
                 }
+                Spacer()
+                    .frame(height: GUISize.screenHeight / 10)
             }
         }
         

@@ -11,7 +11,7 @@ import CoreData
 
 struct BottomBar: View {
     
-    
+    @Environment(\.presentationMode) var persentation
     
     var body: some View {
         ZStack {
@@ -22,12 +22,11 @@ struct BottomBar: View {
                 HStack{
                     Spacer()
                         .frame(width: GUISize.BottomBarSpacer)
-                    ZStack {
+                    Button(action: {
+                        self.persentation.wrappedValue.dismiss()
+                    }) {
                         Image(systemName: "house")
                             .resizable()
-                        Rectangle()
-                            .foregroundColor(.gray)
-                            .opacity(0.8)
                     }
                     .frame(width: GUISize.buttonSquareSize, height: GUISize.buttonSquareSize)
                     Spacer()

@@ -25,10 +25,16 @@ class StateChangeController: TMDB, ObservableObject {
         case exisitingSuggestion
     }
     
+    enum previousList {
+        case watch
+        case watched
+        case sugguested
+    }
+    
     
     // MARK:- ChangeFilmStatus
     
-    func changeFilmStatus(previousState: previousState, newState: newState, movieId: Int, completionHandler: @escaping (Bool) -> Void) {
+    func changeFilmStatus(previousState: previousState, newState: newState, movieId: Int, previousList: previousList, completionHandler: @escaping (Bool) -> Void) {
         // Add New Film
         if previousState == .new && newState == .addNew {
             print("Adding New Film")
@@ -43,8 +49,17 @@ class StateChangeController: TMDB, ObservableObject {
         // Remove Film
         if previousState == .exisitingWatch && newState == .removeExisting {
             print("Removing Exising Film")
-            let watchListId = UserDefaults.standard.integer(forKey: "watchID")
-            super.removeMovieFromList(listID: watchListId, movieID: movieId) { (responce) in
+            var list: Int = 0
+            switch previousList {
+            case .watch:
+                list = UserDefaults.standard.integer(forKey: "watchID")
+            case .watched:
+                list = UserDefaults.standard.integer(forKey: "watchedID")
+            case .sugguested:
+                list = 0
+            }
+            
+            super.removeMovieFromList(listID: list, movieID: movieId) { (responce) in
                 if responce == true {
                     self.changeStateAlert = false
                     completionHandler(true)

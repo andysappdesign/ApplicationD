@@ -27,9 +27,6 @@ struct MyProfile: View {
                     .shadow(color: GUISize.titleShadowColor, radius: GUISize.titleShadowRadius, x: GUISize.titleShadowX, y: GUISize.titleShadowY)
                     .frame(width: GUISize.screenWidth - 40)
                     .lineLimit(2)
-                Spacer()
-                    .frame(height: GUISize.screenHeight * 0.05)
-                
                 HStack(alignment: .top) {
                     Spacer()
                         .frame(width: GUISize.screenWidth * 0.1)
@@ -42,7 +39,7 @@ struct MyProfile: View {
                         .frame(width: GUISize.screenWidth * 0.01)
                     VStack(alignment: .leading) {
                         Text(name ?? "User")
-                        Text("username")
+                        Text("nerdyNaveen")
                         Spacer()
                         
                     }.frame(width: GUISize.screenWidth * 0.5)
@@ -51,7 +48,7 @@ struct MyProfile: View {
                 } .frame(width: GUISize.screenWidth, height: GUISize.screenHeight / 3.6)
                 
                 
-                
+            
                 Spacer()
                 PointsProfileBox(boxWidth: GUISize.myProfile_pointsBoxWidth, boxHeight: GUISize.myProfile_pointsBoxHeight, totalPoints: UserDefaults.standard.integer(forKey: "totalPoints"))
                 Spacer()
